@@ -22,6 +22,9 @@ cd lean
 lake build
 ```
 
+`lake build` 检查讲义示例与习题解答。`ExerciseSheet` 与 `HomeworkSheet`
+文件是留给读者填写的材料，含有未定义的占位符，因此不纳入默认 Lake 构建目标。
+
 要生成中文网页，请在仓库根目录运行：
 
 ```powershell
