@@ -46,6 +46,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-lake-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}-
 
+      - name: Fetch Mathlib cache
+        run: |
+          cd lean
+          lake exe cache get
+
       - name: Build Lean project
         run: |
           cd lean
