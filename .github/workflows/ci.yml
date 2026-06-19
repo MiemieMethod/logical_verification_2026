@@ -13,11 +13,57 @@ permissions:
   contents: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  docs:
+    name: build and deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Chinese book
+        run: |
+          python3 scripts/build_docs.py
+          test -f book_zh/_out/html-multi/index.html
+          test -f book_zh/_out/html-multi/逻辑验证漫游指南-2026-桌面版.pdf
+          test -f book_zh/_out/html-multi/逻辑验证漫游指南-2026-Pad版.pdf
+
+      - name: Install deploy helper
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync
+
+      - name: Deploy Chinese book to gh-pages
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        run: |
+          touch book_zh/_out/html-multi/.nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages || true
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git worktree add -B gh-pages gh-pages-worktree origin/gh-pages
+          else
+            git worktree add --detach gh-pages-worktree
+            cd gh-pages-worktree
+            git checkout --orphan gh-pages
+            cd ..
+          fi
+          rsync -a --delete --exclude .git book_zh/_out/html-multi/ gh-pages-worktree/
+          cd gh-pages-worktree
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No gh-pages changes to deploy."
+          else
+            git commit -m "Deploy Chinese book to GitHub Pages"
+            git push origin gh-pages
+          fi
+
+  lean:
+    name: check Lean project
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,10 +92,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-lake-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}-
 
-      - name: Build Chinese book
-        run: |
-          python3 scripts/build_docs.py
-
       - name: Fetch Mathlib cache
         run: |
           cd lean
@@ -58,31 +100,26 @@ jobs:
       - name: Build Lean project
         run: |
           cd lean
-          lake build
-
-      - name: Install deploy helper
-        if: github.event_name == 'push' && github.ref_name == 'main'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y rsync
-
-      - name: Deploy Chinese book to gh-pages
-        if: github.event_name == 'push' && github.ref_name == 'main'
-        run: |
-          touch book_zh/_out/html-multi/.nojekyll
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin gh-pages || true
-          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
-            git worktree add -B gh-pages gh-pages-worktree origin/gh-pages
-          else
-            git worktree add --detach gh-pages-worktree
-            cd gh-pages-worktree
-            git checkout --orphan gh-pages
-            cd ..
+          set +e
+          lake build 2>&1 | tee ../lean-build.log
+          status=${PIPESTATUS[0]}
+          set -e
+          if [ "$status" -ne 0 ]; then
+            echo "::group::Lean build log tail"
+            tail -n 120 ../lean-build.log
+            echo "::endgroup::"
+            {
+              echo "### Lean build failed"
+              echo
+              echo '```text'
+              tail -n 80 ../lean-build.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            grep -E "error:|failed|uncaught|unknown|type mismatch|application type mismatch" ../lean-build.log \
+              | head -n 20 \
+              | sed 's/%/%25/g; s/\r/%0D/g; s/\n/%0A/g' \
+              | while IFS= read -r line; do
+                  echo "::error::$line"
+                done
+            exit "$status"
           fi
-          rsync -a --delete --exclude .git book_zh/_out/html-multi/ gh-pages-worktree/
-          cd gh-pages-worktree
-          git add -A
-          git commit -m "Deploy Chinese book to GitHub Pages" || exit 0
-          git push origin gh-pages
