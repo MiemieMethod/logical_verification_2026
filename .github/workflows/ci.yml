@@ -46,6 +46,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-lake-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}-
 
+      - name: Build Chinese book
+        run: |
+          python3 scripts/build_docs.py
+
       - name: Fetch Mathlib cache
         run: |
           cd lean
@@ -54,11 +58,7 @@ jobs:
       - name: Build Lean project
         run: |
           cd lean
-          lake build --no-ansi
-
-      - name: Build Chinese book
-        run: |
-          python3 scripts/build_docs.py
+          lake build
 
       - name: Install deploy helper
         if: github.event_name == 'push' && github.ref_name == 'main'
