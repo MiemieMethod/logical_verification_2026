@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoVe 演示 4：正向证明</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1><a href="index.html">逻辑验证漫游指南</a></h1>
+<h2>第 1 章</h2><ul>
+<li class=""><a href="01-demo.html">讲义：前言</a></li>
+<li class=""><a href="01-exercisesheet.html">习题：练习 1：类型与项</a></li>
+<li class=""><a href="01-homeworksheet.html">作业：作业 1（10 分）：类型与项</a></li>
+</ul>
+<h2>第 2 章</h2><ul>
+<li class=""><a href="02-demo.html">讲义：演示 2：程序与定理</a></li>
+<li class=""><a href="02-exercisesheet.html">习题：练习 2：程序与定理</a></li>
+<li class=""><a href="02-homeworksheet.html">作业：作业 2（10 分）：程序与定理</a></li>
+</ul>
+<h2>第 3 章</h2><ul>
+<li class=""><a href="03-demo.html">讲义：演示 3：逆向证明</a></li>
+<li class=""><a href="03-exercisesheet.html">习题：练习 3：逆向证明</a></li>
+<li class=""><a href="03-homeworksheet.html">作业：作业 3（10 分）：逆向证明</a></li>
+</ul>
+<h2>第 4 章</h2><ul>
+<li class=" active"><a href="04-demo.html">讲义：演示 4：正向证明</a></li>
+<li class=""><a href="04-exercisesheet.html">习题：练习 4：正向证明</a></li>
+<li class=""><a href="04-homeworksheet.html">作业：作业 4（10 分）：正向证明</a></li>
+</ul>
+<h2>第 5 章</h2><ul>
+<li class=""><a href="05-demo.html">讲义：演示 5：函数式编程</a></li>
+<li class=""><a href="05-exercisesheet.html">习题：练习 5：函数式编程</a></li>
+<li class=""><a href="05-homeworksheet.html">作业：作业 5（10 分 + 2 分附加分）：函数式编程</a></li>
+</ul>
+<h2>第 6 章</h2><ul>
+<li class=""><a href="06-demo.html">讲义：演示 6：归纳谓词</a></li>
+<li class=""><a href="06-exercisesheet.html">习题：练习 6：归纳谓词</a></li>
+<li class=""><a href="06-homeworksheet.html">作业：作业 6（10 分）：归纳谓词</a></li>
+</ul>
+<h2>第 7 章</h2><ul>
+<li class=""><a href="07-demo.html">讲义：演示 7：带副作用的编程</a></li>
+<li class=""><a href="07-exercisesheet.html">习题：练习 7：带副作用的编程</a></li>
+<li class=""><a href="07-homeworksheet.html">作业：作业 7（10 分 + 1 分附加分）：单子（Monads）</a></li>
+</ul>
+<h2>第 8 章</h2><ul>
+<li class=""><a href="08-demo.html">讲义：演示 8：元编程</a></li>
+<li class=""><a href="08-exercisesheet.html">习题：练习 8：元编程</a></li>
+<li class=""><a href="08-homeworksheet.html">作业：作业 8（10 分 + 2 分附加分）：元编程</a></li>
+</ul>
+<h2>第 9 章</h2><ul>
+<li class=""><a href="09-demo.html">讲义：演示 9：操作语义</a></li>
+<li class=""><a href="09-exercisesheet.html">习题：练习 9：操作语义</a></li>
+<li class=""><a href="09-homeworksheet.html">作业：作业 9（10 分 + 1 分附加分）：操作语义</a></li>
+</ul>
+<h2>第 10 章</h2><ul>
+<li class=""><a href="10-demo.html">讲义：演示 10：霍尔逻辑</a></li>
+<li class=""><a href="10-exercisesheet.html">习题：练习 10：霍尔逻辑</a></li>
+<li class=""><a href="10-homeworksheet.html">作业：作业 10（10 分 + 1 分附加分）：霍尔逻辑</a></li>
+</ul>
+<h2>第 11 章</h2><ul>
+<li class=""><a href="11-demo.html">讲义：演示 11：指称语义</a></li>
+<li class=""><a href="11-exercisesheet.html">习题：练习 11：指称语义</a></li>
+<li class=""><a href="11-homeworksheet.html">作业：作业 11（10 分 + 2 分附加分）：指称语义</a></li>
+</ul>
+<h2>第 12 章</h2><ul>
+<li class=""><a href="12-demo.html">讲义：演示 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-exercisesheet.html">习题：练习 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-homeworksheet.html">作业：作业 12（10 分 + 2 分附加分）：</a></li>
+</ul>
+<h2>第 13 章</h2><ul>
+<li class=""><a href="13-demo.html">讲义：演示 13：基本数学结构</a></li>
+<li class=""><a href="13-exercisesheet.html">习题：练习 13：基本数学结构</a></li>
+</ul>
+<h2>第 14 章</h2><ul>
+<li class=""><a href="14-demo.html">讲义：示例 14：有理数与实数</a></li>
+<li class=""><a href="14-exercisesheet.html">习题：练习 14：有理数与实数</a></li>
+</ul>
+  </aside>
+  <main class="content">
+    <h1 id="LoVe-演示-4-正向证明">LoVe 演示 4：正向证明</h1>
+<p>在开发证明时，通常采用<strong>正向</strong>的方式进行是有意义的：从我们已经知道的内容开始，逐步推进到我们的目标。Lean 的结构化证明和原始证明项是两种支持正向推理的风格。</p>
+<h2 id="结构化构造">结构化构造</h2>
+<p>结构化证明是撒在Lean的<strong>证明项</strong>之上的语法糖。</p>
+<p>最简单的结构化证明形式是定理的名称，可能带有参数。</p>
+<pre class="lean"><code>theorem add_comm (m n : ℕ) :
+    add m n = add n m :=
+  sorry
+
+theorem add_comm_zero_left (n : ℕ) :
+    add 0 n = add n 0 :=
+  add_comm 0 n</code></pre>
+<p>等效逆向证明：</p>
+<pre class="lean"><code>theorem add_comm_zero_left_by_exact (n : ℕ) :
+    add 0 n = add n 0 :=
+  by exact add_comm 0 n</code></pre>
+<p><code>fix</code> 和 <code>assume</code> 将目标中的 <code>∀</code> 量词变量和假设移动到局部上下文中。它们可以被视为 <code>intro</code> 策略的结构化版本。</p>
+<p><code>show</code> 重复需要证明的目标。它对于文档记录或重新表述目标（直到计算）非常有用。</p>
+<pre class="lean"><code>theorem fst_of_two_props :
+    ∀a b : Prop, a → b → a :=
+  fix a b : Prop
+  assume ha : a
+  assume hb : b
+  show a from
+    ha
+
+theorem fst_of_two_props_show (a b : Prop) (ha : a) (hb : b) :
+    a :=
+  show a from
+    ha
+
+theorem fst_of_two_props_no_show (a b : Prop) (ha : a) (hb : b) :
+    a :=
+  ha</code></pre>
+<p><code>have</code> 用于证明一个中间定理，该定理可以引用局部上下文。</p>
+<pre class="lean"><code>theorem prop_comp (a b c : Prop) (hab : a → b) (hbc : b → c) :
+    a → c :=
+  assume ha : a
+  have hb : b :=
+    hab ha
+  have hc : c :=
+    hbc hb
+  show c from
+    hc
+
+theorem prop_comp_inline (a b c : Prop) (hab : a → b)
+    (hbc : b → c) :
+  a → c :=
+  assume ha : a
+  show c from
+    hbc (hab ha)</code></pre>
+<h2 id="关于连接词和量词的前向推理">关于连接词和量词的前向推理</h2>
+<pre class="lean"><code>theorem And_swap (a b : Prop) :
+    a ∧ b → b ∧ a :=
+  assume hab : a ∧ b
+  have ha : a :=
+    And.left hab
+  have hb : b :=
+    And.right hab
+  show b ∧ a from
+    And.intro hb ha
+
+theorem Or_swap (a b : Prop) :
+    a ∨ b → b ∨ a :=
+  assume hab : a ∨ b
+  show b ∨ a from
+    Or.elim hab
+      (assume ha : a
+       show b ∨ a from
+         Or.inr ha)
+      (assume hb : b
+       show b ∨ a from
+         Or.inl hb)
+
+def double (n : ℕ) : ℕ :=
+  n + n
+
+theorem Nat_exists_double_iden :
+    ∃n : ℕ, double n = n :=
+  Exists.intro 0
+    (show double 0 = 0 from
+     by rfl)
+
+theorem Nat_exists_double_iden_no_show :
+    ∃n : ℕ, double n = n :=
+  Exists.intro 0 (by rfl)
+
+theorem modus_ponens (a b : Prop) :
+    (a → b) → a → b :=
+  assume hab : a → b
+  assume ha : a
+  show b from
+    hab ha
+
+theorem not_not_intro (a : Prop) :
+    a → ¬¬ a :=
+  assume ha : a
+  assume hna : ¬ a
+  show False from
+    hna ha</code></pre>
+<p>正如您可以在逆向证明中应用正向推理一样，您也可以在正向证明中应用逆向推理（使用 <code>by</code> 表示）：</p>
+<pre class="lean"><code>theorem Forall.one_point {α : Type} (t : α) (P : α → Prop) :
+    (∀x, x = t → P x) ↔ P t :=
+  Iff.intro
+    (assume hall : ∀x, x = t → P x
+     show P t from
+       by
+         apply hall t
+         rfl)
+    (assume hp : P t
+     fix x : α
+     assume heq : x = t
+     show P x from
+       by
+         rw [heq]
+         exact hp)
+
+theorem beast_666 (beast : ℕ) :
+    (∀n, n = 666 → beast ≥ n) ↔ beast ≥ 666 :=
+  Forall.one_point _ _
+
+#print beast_666
+
+theorem Exists.one_point {α : Type} (t : α) (P : α → Prop) :
+    (∃x : α, x = t ∧ P x) ↔ P t :=
+  Iff.intro
+    (assume hex : ∃x, x = t ∧ P x
+     show P t from
+       Exists.elim hex
+         (fix x : α
+          assume hand : x = t ∧ P x
+          have hxt : x = t :=
+            And.left hand
+          have hpx : P x :=
+            And.right hand
+          show P t from
+            by
+              rw [←hxt]
+              exact hpx))
+    (assume hp : P t
+     show ∃x : α, x = t ∧ P x from
+       Exists.intro t
+         (have tt : t = t :=
+            by rfl
+          show t = t ∧ P t from
+            And.intro tt hp))</code></pre>
+<h2 id="计算式证明">计算式证明</h2>
+<p>在非正式的数学中，我们经常使用等式、不等式或等价关系的传递链（例如，<code>a ≥ b ≥ c</code>）。在 Lean 中，这种计算式证明由 <code>calc</code> 支持。</p>
+<p>语法：</p>
+<pre><code>calc</code></pre>
+<pre><code>  _项₀_ _操作₁_ _项₁_ :=</code></pre>
+<pre><code>    _证明₁_</code></pre>
+<pre><code>  _ _操作₂_ _项₂_ :=</code></pre>
+<pre><code>    _证明₂_</code></pre>
+<pre><code> ⋮</code></pre>
+<pre><code>  _ _操作N_ _项N_ :=</code></pre>
+<pre><code>    _证明N_</code></pre>
+<pre class="lean"><code>theorem two_mul_example (m n : ℕ) :
+    2 * m + n = m + n + m :=
+  calc
+    2 * m + n = m + m + n :=
+      by rw [Nat.two_mul]
+    _ = m + n + m :=
+      by ac_rfl</code></pre>
+<p><code>calc</code> 节省了一些重复的步骤、一些 <code>have</code> 标签以及一些传递性推理：</p>
+<pre class="lean"><code>theorem two_mul_example_have (m n : ℕ) :
+    2 * m + n = m + n + m :=
+  have hmul : 2 * m + n = m + m + n :=
+    by rw [Nat.two_mul]
+  have hcomm : m + m + n = m + n + m :=
+    by ac_rfl
+  show _ from
+    Eq.trans hmul hcomm</code></pre>
+<h2 id="使用策略进行前向推理">使用策略进行前向推理</h2>
+<p><code>have</code>、<code>let</code> 和 <code>calc</code> 这些结构化证明命令也可以作为策略使用。即使在策略模式下，以向前推进的方式陈述中间结果和定义仍然非常有用。</p>
+<pre class="lean"><code>theorem prop_comp_tactical (a b c : Prop) (hab : a → b)
+    (hbc : b → c) :
+    a → c :=
+  by
+    intro ha
+    have hb : b :=
+      hab ha
+    let c&#x27; := c
+    have hc : c&#x27; :=
+      hbc hb
+    exact hc</code></pre>
+<h2 id="依赖类型">依赖类型</h2>
+<p>依赖类型是依赖类型理论家族逻辑的定义性特征。</p>
+<p>考虑一个函数 <code>pick</code>，它接受一个数字 <code>n : ℕ</code> 并返回一个介于 0 和 <code>n</code> 之间的数字。从概念上讲，<code>pick</code> 具有一个依赖类型，即</p>
+<pre><code>`(n : ℕ) → {i : ℕ // i ≤ n}`</code></pre>
+<p>我们可以将这个类型视为一个 <code>ℕ</code> 索引的族，其中每个成员的类型可能依赖于索引：</p>
+<pre><code>`pick n : {i : ℕ // i ≤ n}`</code></pre>
+<p>但一个类型也可能依赖于另一个类型，例如 <code>List</code>（或 <code>fun α ↦ List α</code>）和 <code>fun α ↦ α → α</code>。</p>
+<p>一个项可能依赖于一个类型，例如 <code>fun α ↦ fun (x : α) ↦ x</code>（一个多态恒等函数）。</p>
+<p>当然，一个项也可能依赖于另一个项。</p>
+<p>除非另有说明，<strong>依赖类型</strong> 指的是依赖于项的类型。这就是我们说简单类型理论不支持依赖类型时的含义。</p>
+<p>总结一下，在归纳构造演算中（参见 Barendregt 的 <code>λ</code>-立方体），<code>fun x ↦ t</code> 有四种情况：</p>
+<p>主体 (<code>t</code>) |              | 参数 (<code>x</code>) | 描述 ---------- | ------------ | ---------- | ---------------------------------- 一个项     | 依赖于       | 一个项     | 简单类型的匿名函数 一个类型   | 依赖于       | 一个项     | 依赖类型（严格来说） 一个项     | 依赖于       | 一个类型   | 多态项 一个类型   | 依赖于       | 一个类型   | 类型构造器</p>
+<p>修订后的类型规则：</p>
+<pre><code>C ⊢ t : (x : σ) → τ[x]    C ⊢ u : σ</code></pre>
+<pre><code>———————————————————————————————————— App&#x27;</code></pre>
+<pre><code>C ⊢ t u : τ[u]</code></pre>
+<pre><code>C, x : σ ⊢ t : τ[x]</code></pre>
+<pre><code>———————————————————————————————————— Fun&#x27;</code></pre>
+<pre><code>C ⊢ (fun x : σ ↦ t) : (x : σ) → τ[x]</code></pre>
+<p>如果 <code>x</code> 不在 <code>τ[x]</code> 中出现，这两条规则退化为 <code>App</code> 和 <code>Fun</code>。</p>
+<p><code>App&#x27;</code> 的示例：</p>
+<pre><code>⊢ pick : (n : ℕ) → {i : ℕ // i ≤ n}    ⊢ 5 : ℕ</code></pre>
+<pre><code>——————————————————————————————————————————————— App&#x27;</code></pre>
+<pre><code>⊢ pick 5 : {i : ℕ // i ≤ 5}</code></pre>
+<p><code>Fun&#x27;</code> 的示例：</p>
+<pre><code>α : Type, x : α ⊢ x : α</code></pre>
+<pre><code>—————————————————————————————————— Fun 或 Fun&#x27;</code></pre>
+<pre><code>α : Type ⊢ (fun x : α ↦ x) : α → α</code></pre>
+<pre><code>————————————————————————————————————————————————————— Fun&#x27;</code></pre>
+<pre><code>⊢ (fun α : Type ↦ fun x : α ↦ x) : (α : Type) → α → α</code></pre>
+<p>值得注意的是，全称量化只是依赖类型的别名：</p>
+<pre><code>`∀x : σ, τ` := `(x : σ) → τ`</code></pre>
+<p>这一点在下面会变得更加清晰。</p>
+<h2 id="PAT-原则">PAT 原则</h2>
+<p><code>→</code> 既用作蕴涵符号，也用作函数的类型构造器。这两对概念不仅看起来相同，而且根据 PAT 原则，它们是相同的：</p>
+<ul>
+<li>PAT = 命题即类型；</li>
+<li>PAT = 证明即项。</li>
+</ul>
+<p>类型：</p>
+<ul>
+<li><code>σ → τ</code> 是从 <code>σ</code> 到 <code>τ</code> 的全函数类型。</li>
+<li><code>(x : σ) → τ[x]</code> 是从 <code>x : σ</code> 到 <code>τ[x]</code> 的依赖函数类型。</li>
+</ul>
+<p>命题：</p>
+<ul>
+<li><code>P → Q</code> 可以读作“<code>P</code> 蕴涵 <code>Q</code>”，或者作为将 <code>P</code> 的证明映射到 <code>Q</code> 的证明的函数类型。</li>
+<li><code>∀x : σ, Q[x]</code> 可以读作“对于所有 <code>x</code>，<code>Q[x]</code>”，或者作为类型为 <code>(x : σ) → Q[x]</code> 的函数类型，将类型为 <code>σ</code> 的值 <code>x</code> 映射到 <code>Q[x]</code> 的证明。</li>
+</ul>
+<p>项：</p>
+<ul>
+<li>常量是一个项。</li>
+<li>变量是一个项。</li>
+<li><code>t u</code> 是将函数 <code>t</code> 应用于值 <code>u</code>。</li>
+<li><code>fun x ↦ t[x]</code> 是一个将 <code>x</code> 映射到 <code>t[x]</code> 的函数。</li>
+</ul>
+<p>证明：</p>
+<ul>
+<li>定理或假设名称是一个证明。</li>
+<li><code>H t</code>，它将证明 <code>H</code> 的语句中的前导参数或量词实例化为项 <code>t</code>，是一个证明。</li>
+<li><code>H G</code>，它用证明 <code>G</code> 来解除 <code>H</code> 的语句中的前导假设，是一个证明。</li>
+<li><code>fun h : P ↦ H[h]</code> 是 <code>P → Q</code> 的证明，假设 <code>H[h]</code> 是 <code>Q</code> 对于 <code>h : P</code> 的证明。</li>
+<li><code>fun x : σ ↦ H[x]</code> 是 <code>∀x : σ, Q[x]</code> 的证明，假设 <code>H[x]</code> 是 <code>Q[x]</code> 对于 <code>x : σ</code> 的证明。</li>
+<p>theorem And_swap_raw (a b : Prop) :</p>
+</ul>
+<pre><code>a ∧ b → b ∧ a :=</code></pre>
+<p>fun hab : a ∧ b ↦ And.intro (And.right hab) (And.left hab)</p>
+<p>theorem And_swap_tactical (a b : Prop) :</p>
+<pre><code>a ∧ b → b ∧ a :=</code></pre>
+<p>by</p>
+<pre><code>intro hab</code></pre>
+<pre><code>apply And.intro</code></pre>
+<pre><code>apply And.right</code></pre>
+<pre><code>exact hab</code></pre>
+<pre><code>apply And.left</code></pre>
+<pre><code>exact hab</code></pre>
+<p>/- 战术证明被简化为证明项。</p>
+<pre class="lean"><code>#print And_swap
+#print And_swap_raw
+#print And_swap_tactical</code></pre>
+<h2 id="通过模式匹配和递归进行归纳">通过模式匹配和递归进行归纳</h2>
+<p>根据PAT（Proofs as Types）原则，归纳证明与递归定义的证明项是相同的。因此，作为<code>induction</code>策略的替代方案，归纳也可以通过模式匹配和递归来完成：</p>
+<ul>
+<li>归纳假设可以在我们正在证明的定理的名称下使用；</li>
+</ul>
+<ul>
+<li>参数的良基性通常会自动得到证明。</li>
+</ul>
+<pre class="lean"><code>#check reverse
+
+theorem reverse_append {α : Type} :
+    ∀xs ys : List α,
+      reverse (xs ++ ys) = reverse ys ++ reverse xs
+  | [],      ys =&gt; by simp [reverse]
+  | x :: xs, ys =&gt; by simp [reverse, reverse_append xs]
+
+theorem reverse_append_tactical {α : Type} (xs ys : List α) :
+    reverse (xs ++ ys) = reverse ys ++ reverse xs :=
+  by
+    induction xs with
+    | nil           =&gt; simp [reverse]
+    | cons x xs&#x27; ih =&gt; simp [reverse, ih]
+
+theorem reverse_reverse {α : Type} :
+    ∀xs : List α, reverse (reverse xs) = xs
+  | []      =&gt; by rfl
+  | x :: xs =&gt;
+    by simp [reverse, reverse_append, reverse_reverse xs]</code></pre>
+    <nav class="page-nav"><a href="03-homeworksheet.html">上一节：LoVe 作业 3（10 分）：逆向证明</a><a href="04-exercisesheet.html">下一节：LoVe 练习 4：正向证明</a></nav>
+  </main>
+</body>
+</html>

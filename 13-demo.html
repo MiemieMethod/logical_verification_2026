@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoVe 演示 13：基本数学结构</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1><a href="index.html">逻辑验证漫游指南</a></h1>
+<h2>第 1 章</h2><ul>
+<li class=""><a href="01-demo.html">讲义：前言</a></li>
+<li class=""><a href="01-exercisesheet.html">习题：练习 1：类型与项</a></li>
+<li class=""><a href="01-homeworksheet.html">作业：作业 1（10 分）：类型与项</a></li>
+</ul>
+<h2>第 2 章</h2><ul>
+<li class=""><a href="02-demo.html">讲义：演示 2：程序与定理</a></li>
+<li class=""><a href="02-exercisesheet.html">习题：练习 2：程序与定理</a></li>
+<li class=""><a href="02-homeworksheet.html">作业：作业 2（10 分）：程序与定理</a></li>
+</ul>
+<h2>第 3 章</h2><ul>
+<li class=""><a href="03-demo.html">讲义：演示 3：逆向证明</a></li>
+<li class=""><a href="03-exercisesheet.html">习题：练习 3：逆向证明</a></li>
+<li class=""><a href="03-homeworksheet.html">作业：作业 3（10 分）：逆向证明</a></li>
+</ul>
+<h2>第 4 章</h2><ul>
+<li class=""><a href="04-demo.html">讲义：演示 4：正向证明</a></li>
+<li class=""><a href="04-exercisesheet.html">习题：练习 4：正向证明</a></li>
+<li class=""><a href="04-homeworksheet.html">作业：作业 4（10 分）：正向证明</a></li>
+</ul>
+<h2>第 5 章</h2><ul>
+<li class=""><a href="05-demo.html">讲义：演示 5：函数式编程</a></li>
+<li class=""><a href="05-exercisesheet.html">习题：练习 5：函数式编程</a></li>
+<li class=""><a href="05-homeworksheet.html">作业：作业 5（10 分 + 2 分附加分）：函数式编程</a></li>
+</ul>
+<h2>第 6 章</h2><ul>
+<li class=""><a href="06-demo.html">讲义：演示 6：归纳谓词</a></li>
+<li class=""><a href="06-exercisesheet.html">习题：练习 6：归纳谓词</a></li>
+<li class=""><a href="06-homeworksheet.html">作业：作业 6（10 分）：归纳谓词</a></li>
+</ul>
+<h2>第 7 章</h2><ul>
+<li class=""><a href="07-demo.html">讲义：演示 7：带副作用的编程</a></li>
+<li class=""><a href="07-exercisesheet.html">习题：练习 7：带副作用的编程</a></li>
+<li class=""><a href="07-homeworksheet.html">作业：作业 7（10 分 + 1 分附加分）：单子（Monads）</a></li>
+</ul>
+<h2>第 8 章</h2><ul>
+<li class=""><a href="08-demo.html">讲义：演示 8：元编程</a></li>
+<li class=""><a href="08-exercisesheet.html">习题：练习 8：元编程</a></li>
+<li class=""><a href="08-homeworksheet.html">作业：作业 8（10 分 + 2 分附加分）：元编程</a></li>
+</ul>
+<h2>第 9 章</h2><ul>
+<li class=""><a href="09-demo.html">讲义：演示 9：操作语义</a></li>
+<li class=""><a href="09-exercisesheet.html">习题：练习 9：操作语义</a></li>
+<li class=""><a href="09-homeworksheet.html">作业：作业 9（10 分 + 1 分附加分）：操作语义</a></li>
+</ul>
+<h2>第 10 章</h2><ul>
+<li class=""><a href="10-demo.html">讲义：演示 10：霍尔逻辑</a></li>
+<li class=""><a href="10-exercisesheet.html">习题：练习 10：霍尔逻辑</a></li>
+<li class=""><a href="10-homeworksheet.html">作业：作业 10（10 分 + 1 分附加分）：霍尔逻辑</a></li>
+</ul>
+<h2>第 11 章</h2><ul>
+<li class=""><a href="11-demo.html">讲义：演示 11：指称语义</a></li>
+<li class=""><a href="11-exercisesheet.html">习题：练习 11：指称语义</a></li>
+<li class=""><a href="11-homeworksheet.html">作业：作业 11（10 分 + 2 分附加分）：指称语义</a></li>
+</ul>
+<h2>第 12 章</h2><ul>
+<li class=""><a href="12-demo.html">讲义：演示 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-exercisesheet.html">习题：练习 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-homeworksheet.html">作业：作业 12（10 分 + 2 分附加分）：</a></li>
+</ul>
+<h2>第 13 章</h2><ul>
+<li class=" active"><a href="13-demo.html">讲义：演示 13：基本数学结构</a></li>
+<li class=""><a href="13-exercisesheet.html">习题：练习 13：基本数学结构</a></li>
+</ul>
+<h2>第 14 章</h2><ul>
+<li class=""><a href="14-demo.html">讲义：示例 14：有理数与实数</a></li>
+<li class=""><a href="14-exercisesheet.html">习题：练习 14：有理数与实数</a></li>
+</ul>
+  </aside>
+  <main class="content">
+    <h1 id="LoVe-演示-13-基本数学结构">LoVe 演示 13：基本数学结构</h1>
+<p>我们介绍了关于基本数学结构（如群、域和线性序）的定义和证明。</p>
+<h2 id="单一二元运算符上的类型类">单一二元运算符上的类型类</h2>
+<p>从数学上讲，<strong>群</strong>（group）是一个集合 <code>G</code> 和一个二元运算符 <code>⬝ : G × G → G</code>，并满足以下性质，称为<strong>群公理</strong>：</p>
+<ul>
+<li><strong>结合律</strong>：对于所有 <code>a, b, c ∈ G</code>，有 <code>(a ⬝ b) ⬝ c = a ⬝ (b ⬝ c)</code>；</li>
+<li><strong>单位元</strong>：存在一个元素 <code>e ∈ G</code>，使得对于所有 <code>a ∈ G</code>，有 <code>e ⬝ a = a</code> 和 <code>a ⬝ e = a</code>；</li>
+<li><strong>逆元</strong>：对于每个 <code>a ∈ G</code>，存在一个逆元 <code>b ∈ G</code>，使得 <code>b ⬝ a = e</code> 和 <code>a ⬝ b = e</code>。</li>
+</ul>
+<p>群的例子包括：</p>
+<ul>
+<li><code>ℤ</code> 与 <code>+</code>；</li>
+<li><code>ℝ</code> 与 <code>+</code>；</li>
+<li><code>ℝ \ {0}</code> 与 <code>*</code>。</li>
+</ul>
+<p>在 Lean 中，群的类型类可以定义如下：</p>
+<pre class="lean"><code>class Group (α : Type) where
+  mul          : α → α → α
+  one          : α
+  inv          : α → α
+  mul_assoc    : ∀a b c, mul (mul a b) c = mul a (mul b c)
+  one_mul      : ∀a, mul one a = a
+  mul_left_inv : ∀a, mul (inv a) a = one</code></pre>
+<p>在 Lean 中，<code>group</code>（群）是代数结构层次体系中的一部分：</p>
+<p>| 类型类                  | 性质                                      | 示例 |------------------------|-------------------------------------------|------------------- | <code>Semigroup</code>（半群）     | <code>*</code> 的结合律                              | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> | <code>Monoid</code>（幺半群）      | 带有单位元 <code>1</code> 的 <code>Semigroup</code>             | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> | <code>LeftCancelSemigroup</code>（左消半群） | 满足 <code>c * a = c * b → a = b</code> 的 <code>Semigroup</code> | | <code>RightCancelSemigroup</code>（右消半群） | 满足 <code>a * c = b * c → a = b</code> 的 <code>Semigroup</code> | | <code>Group</code>（群）           | 带有逆元 <code>⁻¹</code> 的 <code>Monoid</code>                 |</p>
+<p>这些结构中的大多数都有对应的交换版本：<code>CommSemigroup</code>（交换半群）、<code>CommMonoid</code>（交换幺半群）、<code>CommGroup</code>（交换群）。</p>
+<p><strong>乘法</strong>结构（基于 <code>*</code>、<code>1</code>、<code>⁻¹</code>）被复制以生成<strong>加法</strong>版本（基于 <code>+</code>、<code>0</code>、<code>-</code>）：</p>
+<p>| 类型类                     | 性质                                       | 示例 |---------------------------|--------------------------------------------|------------------- | <code>AddSemigroup</code>（加法半群） | <code>+</code> 的结合律                               | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> | <code>AddMonoid</code>（加法幺半群）  | 带有单位元 <code>0</code> 的 <code>AddSemigroup</code>           | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> | <code>AddLeftCancelSemigroup</code>（左消加法半群） | 满足 <code>c + a = c + b → a = b</code> 的 <code>AddSemigroup</code> | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> | <code>AddRightCancelSemigroup</code>（右消加法半群） | 满足 <code>a + c = b + c → a = b</code> 的 <code>AddSemigroup</code> | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> | <code>AddGroup</code>（加法群）       | 带有逆元 <code>-</code> 的 <code>AddMonoid</code>                | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code></p>
+<pre class="lean"><code> Type
+  | zero
+  | one
+
+def Int2.add : Int2 → Int2 → Int2
+  | Int2.zero, a         =&gt; a
+  | Int2.one,  Int2.zero =&gt; Int2.one
+  | Int2.one,  Int2.one  =&gt; Int2.zero
+
+instance Int2.AddGroup : AddGroup Int2 :=
+  { add            := Int2.add
+    zero           := Int2.zero
+    neg            := fun a ↦ a
+    add_assoc      :=
+      by
+        intro a b c
+        cases a &lt;;&gt;
+          cases b &lt;;&gt;
+          cases c &lt;;&gt;
+          rfl
+    zero_add       :=
+      by
+        intro a
+        cases a &lt;;&gt;
+          rfl
+    add_zero       :=
+      by
+        intro a
+        cases a &lt;;&gt;
+          rfl
+    neg_add_cancel :=
+      by
+        intro a
+        cases a &lt;;&gt;
+          rfl
+    nsmul         :=
+      @nsmulRec Int2 (Zero.mk Int2.zero) (Add.mk Int2.add)
+    zsmul         :=
+      @zsmulRec Int2 (Zero.mk Int2.zero) (Add.mk Int2.add)
+        (Neg.mk (fun a ↦ a))
+        (@nsmulRec Int2 (Zero.mk Int2.zero) (Add.mk Int2.add)) }</code></pre>
+<p><code>nsmul</code> 和 <code>znmul</code> 是冗余的。它们的存在是由于技术原因所必需的。</p>
+<pre class="lean"><code>#reduce Int2.one + 0 - 0 - Int2.one</code></pre>
+<p>另一个示例：列表是一个<code>AddMonoid</code>（加法幺半群）：</p>
+<pre class="lean"><code>instance List.AddMonoid {α : Type} : AddMonoid (List α) :=
+  { zero      := []
+    add       := fun xs ys ↦ xs ++ ys
+    add_assoc := List.append_assoc
+    zero_add  := List.nil_append
+    add_zero  := List.append_nil
+    nsmul     :=
+      @nsmulRec (List α) (Zero.mk [])
+        (Add.mk (fun xs ys ↦ xs ++ ys))}</code></pre>
+<h2 id="具有两个二元运算符的类型类">具有两个二元运算符的类型类</h2>
+<p>从数学上讲，<strong>域</strong>（Field）是一个集合 <code>F</code>，满足以下条件：</p>
+<ul>
+<li><code>F</code> 在运算符 <code>+</code>（称为加法）下形成一个交换群，其单位元为 <code>0</code>。</li>
+<li><code>F \ {0}</code> 在运算符 <code>*</code>（称为乘法）下形成一个交换群。</li>
+<li>乘法对加法满足分配律，即对于所有 <code>a, b, c ∈ F</code>，有 <code>a * (b + c) = a * b + a * c</code>。</li>
+</ul>
+<p>在 Lean 中，域也是更大类型类层次结构的一部分：</p>
+<p>类型类          |  属性                                                | 示例 ----------------|-----------------------------------------------------|------------------- <code>Semiring</code>      | <code>Monoid</code> 和 <code>AddCommMonoid</code>，且满足分配律            | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> <code>CommSemiring</code>  | <code>Semiring</code>，且乘法 <code>*</code> 满足交换律                    | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code>, <code>ℕ</code> <code>Ring</code>          | <code>Monoid</code> 和 <code>AddCommGroup</code>，且满足分配律             | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code> <code>CommRing</code>      | <code>Ring</code>，且乘法 <code>*</code> 满足交换律                        | <code>ℝ</code>, <code>ℚ</code>, <code>ℤ</code> <code>DivisionRing</code>  | <code>Ring</code>，且具有乘法逆元 <code>⁻¹</code>                          | <code>ℝ</code>, <code>ℚ</code> <code>Field</code>         | <code>DivisionRing</code>，且乘法 <code>*</code> 满足交换律                | <code>ℝ</code>, <code>ℚ</code></p>
+<pre class="lean"><code>2.mul : Int2 → Int2 → Int2
+  | Int2.one,  a =&gt; a
+  | Int2.zero, _ =&gt; Int2.zero
+
+theorem Int2.mul_assoc (a b c : Int2) :
+     Int2.mul (Int2.mul a b) c = Int2.mul a (Int2.mul b c) :=
+  by
+    cases a &lt;;&gt;
+      cases b &lt;;&gt;
+      cases c &lt;;&gt;
+      rfl
+
+instance Int2.Field : Field Int2 :=
+  { Int2.AddGroup with
+    one            := Int2.one
+    mul            := Int2.mul
+    inv            := fun a ↦ a
+    add_comm       :=
+      by
+        intro a b
+        cases a &lt;;&gt;
+          cases b &lt;;&gt;
+          rfl
+    exists_pair_ne :=
+      by
+        apply Exists.intro Int2.zero
+        apply Exists.intro Int2.one
+        simp
+    zero_mul       :=
+      by
+        intro a
+        rfl
+    mul_zero       :=
+      by
+        intro a
+        cases a &lt;;&gt;
+          rfl
+    one_mul        :=
+      by
+        intro a
+        rfl
+    mul_one        :=
+      by
+        intro a
+        cases a &lt;;&gt;
+          rfl
+    mul_inv_cancel :=
+      by
+        intro a h
+        cases a
+        { apply False.elim
+          apply h
+          rfl }
+        { rfl }
+    inv_zero       := by rfl
+    mul_assoc      := Int2.mul_assoc
+    mul_comm       :=
+      by
+        intro a b
+        cases a &lt;;&gt;
+          cases b &lt;;&gt;
+          rfl
+    left_distrib   :=
+      by
+        intro a b c
+        cases a &lt;;&gt;
+          cases b &lt;;&gt;
+          rfl
+    right_distrib  :=
+      by
+        intro a b c
+        cases a &lt;;&gt;
+          cases b &lt;;&gt;
+          cases c &lt;;&gt;
+          rfl
+    nnqsmul        := _
+    nnqsmul_def    :=
+      by
+        intro a b
+        rfl
+    qsmul          := _
+    qsmul_def :=
+      by
+        intro a b
+        rfl
+    nnratCast_def  :=
+      by
+        intro q
+        rfl }
+
+#reduce (1 : Int2) * 0 / (0 - 1)
+
+#reduce (3 : Int2)
+
+theorem ring_example (a b : Int2) :
+    (a + b) ^ 3 = a ^ 3 + 3 * a ^ 2 * b + 3 * a * b ^ 2 + b ^ 3
+    :=
+  by ring</code></pre>
+<p><code>ring</code> 通过规范化表达式来证明交换环和半环上的等式。</p>
+<h2 id="强制类型转换">强制类型转换</h2>
+<p>当组合来自 <code>ℕ</code>、<code>ℤ</code>、<code>ℚ</code> 和 <code>ℝ</code> 的数字时，我们可能希望将一种类型转换为另一种类型。Lean 提供了一种机制来自动引入强制类型转换，由 <code>Coe.coe</code>（语法糖：<code>↑</code>）表示。<code>Coe.coe</code> 可以设置为在任意类型之间提供隐式强制类型转换。</p>
+<p>许多强制类型转换已经就位，包括以下内容：</p>
+<ul>
+<li><code>Coe.coe : ℕ → α</code> 将 <code>ℕ</code> 转换为另一个半环 <code>α</code>；</li>
+<li><code>Coe.coe : ℤ → α</code> 将 <code>ℤ</code> 转换为另一个环 <code>α</code>；</li>
+<li><code>Coe.coe : ℚ → α</code> 将 <code>ℚ</code> 转换为另一个除环 <code>α</code>。</li>
+</ul>
+<p>例如，即使自然数上没有定义取反操作 <code>- n</code>，以下代码仍然可以工作：</p>
+<pre class="lean"><code>theorem neg_mul_neg_Nat (n : ℕ) (z : ℤ) :
+    (- z) * (- n) = z * n :=
+  by simp</code></pre>
+<p>请注意 Lean 如何引入了 <code>↑</code> 强制转换：</p>
+<pre class="lean"><code>#check neg_mul_neg_Nat</code></pre>
+<p>类型注解可以记录我们的意图：</p>
+<pre class="lean"><code>theorem neg_Nat_mul_neg (n : ℕ) (z : ℤ) :
+    (- n : ℤ) * (- z) = n * z :=
+  by simp
+
+#print neg_Nat_mul_neg</code></pre>
+<p>在涉及强制类型转换的证明中，<code>norm_cast</code> 策略可能会非常方便。</p>
+<pre class="lean"><code>theorem Eq_coe_int_imp_Eq_Nat (m n : ℕ)
+      (h : (m : ℤ) = (n : ℤ)) :
+    m = n :=
+  by norm_cast at h
+
+theorem Nat_coe_Int_add_eq_add_Nat_coe_Int (m n : ℕ) :
+    (m : ℤ) + (n : ℤ) = ((m + n : ℕ) : ℤ) :=
+  by norm_cast</code></pre>
+<p><code>norm_cast</code> 将强制类型转换推向表达式的内部，作为一种简化的形式。与 <code>simp</code> 类似，它通常会产生一个子目标。</p>
+<p><code>norm_cast</code> 依赖于以下定理：</p>
+<pre class="lean"><code>#check Nat.cast_add
+#check Int.cast_add
+#check Rat.cast_add</code></pre>
+<h3 id="列表-多重集与有限集">列表、多重集与有限集</h3>
+<p>对于元素的有限集合，有以下几种不同的数据结构可供使用：</p>
+<ul>
+<li><strong>列表（Lists）</strong>：顺序和重复元素均重要；</li>
+<li><strong>多重集（Multisets）</strong>：仅重复元素重要；</li>
+<li><strong>有限集（Finsets）</strong>：顺序和重复元素均不重要。</li>
+</ul>
+<pre class="lean"><code>theorem List_duplicates_example :
+    [2, 3, 3, 4] ≠ [2, 3, 4] :=
+  by decide
+
+theorem List_order_example :
+    [4, 3, 2] ≠ [2, 3, 4] :=
+  by decide
+
+theorem Multiset_duplicates_example :
+    ({2, 3, 3, 4} : Multiset ℕ) ≠ {2, 3, 4} :=
+  by decide
+
+theorem Multiset_order_example :
+    ({2, 3, 4} : Multiset ℕ) = {4, 3, 2} :=
+  by decide
+
+theorem Finset_duplicates_example :
+    ({2, 3, 3, 4} : Finset ℕ) = {2, 3, 4} :=
+  by decide
+
+theorem Finset_order_example :
+    ({2, 3, 4} : Finset ℕ) = {4, 3, 2} :=
+  by decide</code></pre>
+<p><code>decide</code> 是一种可用于处理真值可判定目标（例如，一个可执行的表达式为真）的策略。</p>
+<pre class="lean"><code>def List.elems : Tree ℕ → List ℕ
+  | Tree.nil        =&gt; []
+  | Tree.node a l r =&gt; a :: List.elems l ++ List.elems r
+
+def Multiset.elems : Tree ℕ → Multiset ℕ
+  | Tree.nil        =&gt; ∅
+  | Tree.node a l r =&gt;
+    {a} ∪ Multiset.elems l ∪ Multiset.elems r
+
+def Finset.elems : Tree ℕ → Finset ℕ
+  | Tree.nil        =&gt; ∅
+  | Tree.node a l r =&gt; {a} ∪ Finset.elems l ∪ Finset.elems r
+
+#eval List.sum [2, 3, 4]
+#eval Multiset.sum ({2, 3, 4} : Multiset ℕ)
+
+#eval List.prod [2, 3, 4]
+#eval Multiset.prod ({2, 3, 4} : Multiset ℕ)</code></pre>
+<h2 id="订单类型类">订单类型类</h2>
+<p>上述介绍的许多结构都可以进行排序。例如，自然数上的众所周知的有序关系可以定义如下：</p>
+<pre class="lean"><code>inductive Nat.le : ℕ → ℕ → Prop
+  | refl : ∀a : ℕ, Nat.le a a
+  | step : ∀a b : ℕ, Nat.le a b → Nat.le a (b + 1)
+
+#print Preorder</code></pre>
+<p>这是一个线性序的例子。<strong>线性序</strong>（或<strong>全序</strong>）是一种二元关系 <code>≤</code>，对于所有的 <code>a</code>、<code>b</code>、<code>c</code>，以下性质成立：</p>
+<ul>
+<li><strong>自反性</strong>：<code>a ≤ a</code>；</li>
+<li><strong>传递性</strong>：如果 <code>a ≤ b</code> 且 <code>b ≤ c</code>，则 <code>a ≤ c</code>；</li>
+<li><strong>反对称性</strong>：如果 <code>a ≤ b</code> 且 <code>b ≤ a</code>，则 <code>a = b</code>；</li>
+<li><strong>全序性</strong>：<code>a ≤ b</code> 或 <code>b ≤ a</code>。</li>
+</ul>
+<p>如果一个关系满足前三个性质，则它是一个<strong>偏序</strong>。例如，集合、有限集或多重集上的 <code>⊆</code> 关系。如果一个关系只满足前两个性质，则它是一个<strong>预序</strong>。例如，通过列表的长度来比较列表。</p>
+<p>在 Lean 中，这些不同类型的序有对应的类型类：<code>LinearOrder</code>、<code>PartialOrder</code> 和 <code>Preorder</code>。</p>
+<pre class="lean"><code>#print Preorder
+#print PartialOrder
+#print LinearOrder</code></pre>
+<p>我们可以声明一个列表上的预序（preorder），该预序通过列表的长度来比较列表，具体如下：</p>
+<pre class="lean"><code>instance List.length.Preorder {α : Type} : Preorder (List α) :=
+  { le :=
+      fun xs ys ↦ List.length xs ≤ List.length ys
+    lt :=
+      fun xs ys ↦ List.length xs &lt; List.length ys
+    le_refl :=
+      by
+        intro xs
+        apply Nat.le_refl
+    le_trans :=
+      by
+        intro xs ys zs
+        exact Nat.le_trans
+    lt_iff_le_not_le :=
+      by
+        intro a b
+        exact Nat.lt_iff_le_not_le }</code></pre>
+<p>本实例介绍了中缀语法 <code>≤</code> 以及关系运算符 <code>≥</code>、<code>&lt;</code> 和 <code>&gt;</code>：</p>
+<pre class="lean"><code>theorem list.length.Preorder_example :
+    [1] &gt; [] :=
+  by decide</code></pre>
+<p>完全格（第11讲）被形式化为另一种类型类 <code>CompleteLattice</code>，它继承自 <code>PartialOrder</code>。</p>
+<p>结合了序和代数结构的类型类也是可用的：</p>
+<pre><code>`OrderedCancelCommMonoid`（有序可消交换幺半群）</code></pre>
+<pre><code>`OrderedCommGroup`（有序交换群）</code></pre>
+<pre><code>`OrderedSemiring`（有序半环）</code></pre>
+<pre><code>`LinearOrderedSemiring`（线性有序半环）</code></pre>
+<pre><code>`LinearOrderedCommRing`（线性有序交换环）</code></pre>
+<pre><code>`LinearOrderedField`（线性有序域）</code></pre>
+<p>所有这些数学结构通过单调性规则（例如，<code>a ≤ b → c ≤ d → a + c ≤ b + d</code>）和消去规则（例如，<code>c + a ≤ c + b → a ≤ b</code>）将 <code>≤</code> 和 <code>&lt;</code> 与 <code>0</code>、<code>1</code>、<code>+</code> 和 <code>*</code> 联系起来。</p>
+    <nav class="page-nav"><a href="12-homeworksheet.html">上一节：LoVe 作业 12（10 分 + 2 分附加分）：</a><a href="13-exercisesheet.html">下一节：LoVe 练习 13：基本数学结构</a></nav>
+  </main>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoVe 示例 14：有理数与实数</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1><a href="index.html">逻辑验证漫游指南</a></h1>
+<h2>第 1 章</h2><ul>
+<li class=""><a href="01-demo.html">讲义：前言</a></li>
+<li class=""><a href="01-exercisesheet.html">习题：练习 1：类型与项</a></li>
+<li class=""><a href="01-homeworksheet.html">作业：作业 1（10 分）：类型与项</a></li>
+</ul>
+<h2>第 2 章</h2><ul>
+<li class=""><a href="02-demo.html">讲义：演示 2：程序与定理</a></li>
+<li class=""><a href="02-exercisesheet.html">习题：练习 2：程序与定理</a></li>
+<li class=""><a href="02-homeworksheet.html">作业：作业 2（10 分）：程序与定理</a></li>
+</ul>
+<h2>第 3 章</h2><ul>
+<li class=""><a href="03-demo.html">讲义：演示 3：逆向证明</a></li>
+<li class=""><a href="03-exercisesheet.html">习题：练习 3：逆向证明</a></li>
+<li class=""><a href="03-homeworksheet.html">作业：作业 3（10 分）：逆向证明</a></li>
+</ul>
+<h2>第 4 章</h2><ul>
+<li class=""><a href="04-demo.html">讲义：演示 4：正向证明</a></li>
+<li class=""><a href="04-exercisesheet.html">习题：练习 4：正向证明</a></li>
+<li class=""><a href="04-homeworksheet.html">作业：作业 4（10 分）：正向证明</a></li>
+</ul>
+<h2>第 5 章</h2><ul>
+<li class=""><a href="05-demo.html">讲义：演示 5：函数式编程</a></li>
+<li class=""><a href="05-exercisesheet.html">习题：练习 5：函数式编程</a></li>
+<li class=""><a href="05-homeworksheet.html">作业：作业 5（10 分 + 2 分附加分）：函数式编程</a></li>
+</ul>
+<h2>第 6 章</h2><ul>
+<li class=""><a href="06-demo.html">讲义：演示 6：归纳谓词</a></li>
+<li class=""><a href="06-exercisesheet.html">习题：练习 6：归纳谓词</a></li>
+<li class=""><a href="06-homeworksheet.html">作业：作业 6（10 分）：归纳谓词</a></li>
+</ul>
+<h2>第 7 章</h2><ul>
+<li class=""><a href="07-demo.html">讲义：演示 7：带副作用的编程</a></li>
+<li class=""><a href="07-exercisesheet.html">习题：练习 7：带副作用的编程</a></li>
+<li class=""><a href="07-homeworksheet.html">作业：作业 7（10 分 + 1 分附加分）：单子（Monads）</a></li>
+</ul>
+<h2>第 8 章</h2><ul>
+<li class=""><a href="08-demo.html">讲义：演示 8：元编程</a></li>
+<li class=""><a href="08-exercisesheet.html">习题：练习 8：元编程</a></li>
+<li class=""><a href="08-homeworksheet.html">作业：作业 8（10 分 + 2 分附加分）：元编程</a></li>
+</ul>
+<h2>第 9 章</h2><ul>
+<li class=""><a href="09-demo.html">讲义：演示 9：操作语义</a></li>
+<li class=""><a href="09-exercisesheet.html">习题：练习 9：操作语义</a></li>
+<li class=""><a href="09-homeworksheet.html">作业：作业 9（10 分 + 1 分附加分）：操作语义</a></li>
+</ul>
+<h2>第 10 章</h2><ul>
+<li class=""><a href="10-demo.html">讲义：演示 10：霍尔逻辑</a></li>
+<li class=""><a href="10-exercisesheet.html">习题：练习 10：霍尔逻辑</a></li>
+<li class=""><a href="10-homeworksheet.html">作业：作业 10（10 分 + 1 分附加分）：霍尔逻辑</a></li>
+</ul>
+<h2>第 11 章</h2><ul>
+<li class=""><a href="11-demo.html">讲义：演示 11：指称语义</a></li>
+<li class=""><a href="11-exercisesheet.html">习题：练习 11：指称语义</a></li>
+<li class=""><a href="11-homeworksheet.html">作业：作业 11（10 分 + 2 分附加分）：指称语义</a></li>
+</ul>
+<h2>第 12 章</h2><ul>
+<li class=""><a href="12-demo.html">讲义：演示 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-exercisesheet.html">习题：练习 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-homeworksheet.html">作业：作业 12（10 分 + 2 分附加分）：</a></li>
+</ul>
+<h2>第 13 章</h2><ul>
+<li class=""><a href="13-demo.html">讲义：演示 13：基本数学结构</a></li>
+<li class=""><a href="13-exercisesheet.html">习题：练习 13：基本数学结构</a></li>
+</ul>
+<h2>第 14 章</h2><ul>
+<li class=" active"><a href="14-demo.html">讲义：示例 14：有理数与实数</a></li>
+<li class=""><a href="14-exercisesheet.html">习题：练习 14：有理数与实数</a></li>
+</ul>
+  </aside>
+  <main class="content">
+    <h1 id="LoVe-示例-14-有理数与实数">LoVe 示例 14：有理数与实数</h1>
+<p>我们回顾了将 <code>ℚ</code> 和 <code>ℝ</code> 构造为商类型的过程。</p>
+<p>我们构造具有特定属性的类型的步骤如下：</p>
+<ul>
+<li>创建一个新类型，该类型可以表示所有元素，但不一定以唯一的方式表示。</li>
+</ul>
+<ul>
+<li>对这个表示进行商化，将应该相等的元素等同起来。</li>
+</ul>
+<ul>
+<li>通过从基类型提升函数来定义商类型上的运算符，并证明它们与商关系兼容。</li>
+</ul>
+<p>我们在第12讲中使用了这种方法来构造 <code>ℤ</code>。这种方法同样适用于 <code>ℚ</code> 和 <code>ℝ</code>。</p>
+<h2 id="有理数">有理数</h2>
+<p><strong>步骤 1:</strong> 有理数是指可以表示为整数 <code>n</code> 和 <code>d ≠ 0</code> 的分数 <code>n / d</code> 的数：</p>
+<pre class="lean"><code>structure Fraction where
+  num            : ℤ
+  denom          : ℤ
+  denom_Neq_zero : denom ≠ 0</code></pre>
+<p>数字 <code>n</code> 被称为<strong>分子</strong>，数字 <code>d</code> 被称为<strong>分母</strong>。</p>
+<p>有理数表示为分数的形式并不唯一——例如，<code>1 / 2 = 2 / 4 = -1 / -2</code>。</p>
+<p><strong>步骤 2：</strong> 如果两个分数 <code>n₁ / d₁</code> 和 <code>n₂ / d₂</code> 的分子与分母的比例相同，即 <code>n₁ * d₂ = n₂ * d₁</code>，那么它们表示的是同一个有理数。这将作为我们在分数上的等价关系 <code>≈</code>。</p>
+<pre class="lean"><code>instance Setoid : Setoid Fraction :=
+  { r :=
+      fun a b : Fraction ↦ num a * denom b = num b * denom a
+    iseqv :=
+      { refl  := by aesop
+        symm  := by aesop
+        trans :=
+          by
+            intro a b c heq_ab heq_bc
+            apply Int.eq_of_mul_eq_mul_right (denom_Neq_zero b)
+            calc
+              num a * denom c * denom b
+              = num a * denom b * denom c :=
+                by ac_rfl
+              _ = num b * denom a * denom c :=
+                by rw [heq_ab]
+              _ = num b * denom c * denom a :=
+                by ac_rfl
+              _ = num c * denom b * denom a :=
+                by rw [heq_bc]
+              _ = num c * denom a * denom b :=
+                by ac_rfl
+            } }
+
+theorem Setoid_Iff (a b : Fraction) :
+    a ≈ b ↔ num a * denom b = num b * denom a :=
+  by rfl</code></pre>
+<p><strong>步骤 3:</strong> 定义 <code>0 := 0 / 1</code>，<code>1 := 1 / 1</code>，加法、乘法等运算。</p>
+<pre><code>`n₁ / d₁ + n₂ / d₂`     := `(n₁ * d₂ + n₂ * d₁) / (d₁ * d₂)`</code></pre>
+<pre><code>`(n₁ / d₁) * (n₂ / d₂)` := `(n₁ * n₂) / (d₁ * d₂)`</code></pre>
+<p>然后证明这些定义与等价关系 <code>≈</code> 是兼容的。</p>
+<pre class="lean"><code>def of_int (i : ℤ) : Fraction :=
+  { num            := i
+    denom          := 1
+    denom_Neq_zero := by simp }
+
+instance Zero : Zero Fraction :=
+  { zero := of_int 0 }
+
+instance One : One Fraction :=
+  { one := of_int 1 }
+
+instance Add : Add Fraction :=
+  { add := fun a b : Fraction ↦
+      { num            := num a * denom b + num b * denom a
+        denom          := denom a * denom b
+        denom_Neq_zero := by simp [denom_Neq_zero] } }
+
+@[simp] theorem add_num (a b : Fraction) :
+    num (a + b) = num a * denom b + num b * denom a :=
+  by rfl
+
+@[simp] theorem add_denom (a b : Fraction) :
+    denom (a + b) = denom a * denom b :=
+  by rfl
+
+theorem Setoid_add {a a&#x27; b b&#x27; : Fraction} (ha : a ≈ a&#x27;)
+      (hb : b ≈ b&#x27;) :
+    a + b ≈ a&#x27; + b&#x27; :=
+  by
+    simp [Setoid_Iff, add_denom, add_num] at *
+    calc
+      (num a * denom b + num b * denom a)
+          * (denom a&#x27; * denom b&#x27;)
+      = num a * denom a&#x27; * denom b * denom b&#x27;
+        + num b * denom b&#x27; * denom a * denom a&#x27; :=
+        by
+          simp [add_mul, mul_add]
+          ac_rfl
+      _ = num a&#x27; * denom a * denom b * denom b&#x27;
+            + num b&#x27; * denom b * denom a * denom a&#x27; :=
+        by simp [*]
+      _ = (num a&#x27; * denom b&#x27; + num b&#x27; * denom a&#x27;)
+            * (denom a * denom b) :=
+        by
+          simp [add_mul, mul_add]
+          ac_rfl
+
+instance Neg : Neg Fraction :=
+  { neg := fun a : Fraction ↦
+      { a with
+        num := - num a } }
+
+@[simp] theorem neg_num (a : Fraction) :
+    num (- a) = - num a :=
+  by rfl
+
+@[simp] theorem neg_denom (a : Fraction) :
+    denom (- a) = denom a :=
+  by rfl
+
+theorem Setoid_neg {a a&#x27; : Fraction} (hab : a ≈ a&#x27;) :
+    - a ≈ - a&#x27; :=
+  by
+    simp [Setoid_Iff] at *
+    exact hab
+
+instance Mul : Mul Fraction :=
+  { mul := fun a b : Fraction ↦
+      { num            := num a * num b
+        denom          := denom a * denom b
+        denom_Neq_zero :=
+          by simp [Int.mul_eq_zero, denom_Neq_zero] } }
+
+@[simp] theorem mul_num (a b : Fraction) :
+    num (a * b) = num a * num b :=
+  by rfl
+
+@[simp] theorem mul_denom (a b : Fraction) :
+    denom (a * b) = denom a * denom b :=
+  by rfl
+
+theorem Setoid_mul {a a&#x27; b b&#x27; : Fraction} (ha : a ≈ a&#x27;)
+      (hb : b ≈ b&#x27;) :
+    a * b ≈ a&#x27; * b&#x27; :=
+  by
+    simp [Setoid_Iff] at *
+    calc
+      num a * num b * (denom a&#x27; * denom b&#x27;)
+      = (num a * denom a&#x27;) * (num b * denom b&#x27;) :=
+        by ac_rfl
+      _ = (num a&#x27; * denom a) * (num b&#x27; * denom b) :=
+        by simp [*]
+      _ = num a&#x27; * num b&#x27; * (denom a * denom b) :=
+        by ac_rfl
+
+instance Inv : Inv Fraction :=
+  { inv := fun a : Fraction ↦
+      if ha : num a = 0 then
+        0
+      else
+        { num            := denom a
+          denom          := num a
+          denom_Neq_zero := ha } }
+
+theorem inv_def (a : Fraction) (ha : num a ≠ 0) :
+    a⁻¹ =
+    { num            := denom a
+      denom          := num a
+      denom_Neq_zero := ha } :=
+  dif_neg ha
+
+theorem inv_zero (a : Fraction) (ha : num a = 0) :
+    a⁻¹ = 0 :=
+  dif_pos ha
+
+@[simp] theorem inv_num (a : Fraction) (ha : num a ≠ 0) :
+    num (a⁻¹) = denom a :=
+  by rw [inv_def a ha]
+
+@[simp] theorem inv_denom (a : Fraction) (ha : num a ≠ 0) :
+    denom (a⁻¹) = num a :=
+  by rw [inv_def a ha]
+
+theorem Setoid_inv {a a&#x27; : Fraction} (ha : a ≈ a&#x27;) :
+    a⁻¹ ≈ a&#x27;⁻¹ :=
+  by
+    cases Classical.em (num a = 0) with
+    | inl ha0 =&gt;
+      cases Classical.em (num a&#x27; = 0) with
+      | inl ha&#x27;0 =&gt;
+        simp [ha0, ha&#x27;0, inv_zero]
+      | inr ha&#x27;0 =&gt;
+        simp [ha0, ha&#x27;0, Setoid_Iff, denom_Neq_zero] at ha
+    | inr ha0 =&gt;
+      cases Classical.em (num a&#x27; = 0) with
+      | inl ha&#x27;0 =&gt;
+        simp [ha0, ha&#x27;0, Setoid_Iff, denom_Neq_zero] at ha
+      | inr ha&#x27;0 =&gt;
+        simp [Setoid_Iff, ha0, ha&#x27;0] at *
+        linarith
+
+
+def Rat : Type :=
+  Quotient Fraction.Setoid
+
+
+def mk : Fraction → Rat :=
+  Quotient.mk Fraction.Setoid
+
+instance Zero : Zero Rat :=
+  { zero := mk 0 }
+
+instance One : One Rat :=
+  { one := mk 1 }
+
+instance Add : Add Rat :=
+  { add := Quotient.lift₂ (fun a b : Fraction ↦ mk (a + b))
+      (by
+         intro a b a&#x27; b&#x27; ha hb
+         apply Quotient.sound
+         exact Fraction.Setoid_add ha hb) }
+
+instance Neg : Neg Rat :=
+  { neg := Quotient.lift (fun a : Fraction ↦ mk (- a))
+      (by
+         intro a a&#x27; ha
+         apply Quotient.sound
+         exact Fraction.Setoid_neg ha) }
+
+instance Mul : Mul Rat :=
+  { mul := Quotient.lift₂ (fun a b : Fraction ↦ mk (a * b))
+      (by
+         intro a b a&#x27; b&#x27; ha hb
+         apply Quotient.sound
+         exact Fraction.Setoid_mul ha hb) }
+
+instance Inv : Inv Rat :=
+  { inv := Quotient.lift (fun a : Fraction ↦ mk (a⁻¹))
+      (by
+         intro a a&#x27; ha
+         apply Quotient.sound
+         exact Fraction.Setoid_inv ha) }</code></pre>
+<h3 id="的替代定义"><code>ℚ</code> 的替代定义</h3>
+<p>将 <code>ℚ</code> 定义为 <code>fraction</code> 的子类型，要求分母为正数，且分子和分母除了 <code>1</code> 和 <code>-1</code> 之外没有其他公约数：</p>
+<pre class="lean"><code>def Rat.IsCanonical (a : Fraction) : Prop :=
+  Fraction.denom a &gt; 0
+  ∧ Nat.Coprime (Int.natAbs (Fraction.num a))
+      (Int.natAbs (Fraction.denom a))
+
+def Rat : Type :=
+  {a : Fraction // Rat.IsCanonical a}</code></pre>
+<p>这大致是 <code>mathlib</code> 的定义。</p>
+<p>优点：</p>
+<ul>
+<li>不需要商集（quotient）；</li>
+<li>计算效率更高；</li>
+<li>更多性质在计算上是语法等价的。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>函数定义更为复杂。</li>
+</ul>
+<h3 id="实数">实数</h3>
+<p>一些有理数序列看起来是收敛的，因为序列中的数越来越接近，但它们并不收敛到一个有理数。</p>
+<p>示例：</p>
+<pre><code>`a₀ = 1`</code></pre>
+<pre><code>`a₁ = 1.4`</code></pre>
+<pre><code>`a₂ = 1.41`</code></pre>
+<pre><code>`a₃ = 1.414`</code></pre>
+<pre><code>`a₄ = 1.4142`</code></pre>
+<pre><code>`a₅ = 1.41421`</code></pre>
+<pre><code>`a₆ = 1.414213`</code></pre>
+<pre><code>`a₇ = 1.4142135`</code></pre>
+<pre><code>   ⋮</code></pre>
+<p>这个序列看起来是收敛的，因为每个 <code>aₙ</code> 与后续数的差距最多为 <code>10^-n</code>。但极限是 <code>√2</code>，它不是一个有理数。</p>
+<p>有理数是不完备的，而实数是它们的<strong>完备化</strong>。</p>
+<p>为了构造实数，我们需要填补这些看起来收敛但实际上不收敛的序列所揭示的“空隙”。</p>
+<p>从数学上讲，一个有理数序列 <code>a₀, a₁, …</code> 是<strong>柯西序列</strong>（Cauchy），如果对于任意 <code>ε &gt; 0</code>，存在一个 <code>N ∈ ℕ</code>，使得对于所有 <code>m ≥ N</code>，都有 <code>|a_N - a_m| &lt; ε</code>。</p>
+<p>换句话说，无论我们选择的 <code>ε</code> 有多小，我们总能找到序列中的一个点，使得从该点开始的所有后续数与它的偏差都小于 <code>ε</code>。</p>
+<pre class="lean"><code>def IsCauchySeq (f : ℕ → ℚ) : Prop :=
+  ∀ε &gt; 0, ∃N, ∀m ≥ N, abs (f N - f m) &lt; ε</code></pre>
+<p>并非每个序列都是柯西序列：</p>
+<pre class="lean"><code>theorem id_Not_CauchySeq :
+    ¬ IsCauchySeq (fun n : ℕ ↦ (n : ℚ)) :=
+  by
+    rw [IsCauchySeq]
+    intro h
+    cases h 1 zero_lt_one with
+    | intro i hi =&gt;
+      have hi_succi :=
+        hi (i + 1) (by simp)
+      simp [←sub_sub] at hi_succi</code></pre>
+<p>我们将一种柯西序列定义为子类型：</p>
+<pre class="lean"><code>def CauchySeq : Type :=
+  {f : ℕ → ℚ // IsCauchySeq f}
+
+def seqOf (f : CauchySeq) : ℕ → ℚ :=
+  Subtype.val f</code></pre>
+<p>柯西序列表示实数：</p>
+<ul>
+<li><code>a_n = 1 / n</code> 表示实数 <code>0</code>；</li>
+<li><code>1, 1.4, 1.41, …</code> 表示实数 <code>√2</code>；</li>
+<li><code>a_n = 0</code> 也表示实数 <code>0</code>。</li>
+</ul>
+<p>由于不同的柯西序列可以表示相同的实数，我们需要进行等价类的划分。形式上，当两个序列的差收敛于零时，它们表示相同的实数：</p>
+<pre class="lean"><code>instance Setoid : Setoid CauchySeq :=
+{ r :=
+    fun f g : CauchySeq ↦
+      ∀ε &gt; 0, ∃N, ∀m ≥ N, abs (seqOf f m - seqOf g m) &lt; ε
+  iseqv :=
+    { refl :=
+        by
+          intro f ε hε
+          apply Exists.intro 0
+          aesop
+      symm :=
+        by
+          intro f g hfg ε hε
+          cases hfg ε hε with
+          | intro N hN =&gt;
+            apply Exists.intro N
+            intro m hm
+            rw [abs_sub_comm]
+            apply hN m hm
+      trans :=
+        by
+          intro f g h hfg hgh ε hε
+          cases hfg (ε / 2) (by linarith) with
+          | intro N₁ hN₁ =&gt;
+            cases hgh (ε / 2) (by linarith) with
+            | intro N₂ hN₂ =&gt;
+              apply Exists.intro (max N₁ N₂)
+              intro m hm
+              calc
+                abs (seqOf f m - seqOf h m)
+                ≤ abs (seqOf f m - seqOf g m)
+                  + abs (seqOf g m - seqOf h m) :=
+                  by apply abs_sub_le
+              _ &lt; ε / 2 + ε / 2 :=
+                add_lt_add (hN₁ m (le_of_max_le_left hm))
+                  (hN₂ m (le_of_max_le_right hm))
+              _ = ε :=
+                by simp } }
+
+theorem Setoid_iff (f g : CauchySeq) :
+    f ≈ g ↔
+    ∀ε &gt; 0, ∃N, ∀m ≥ N, abs (seqOf f m - seqOf g m) &lt; ε :=
+  by rfl</code></pre>
+<p>我们可以将诸如 <code>0</code> 和 <code>1</code> 这样的常量定义为常量序列。任何常量序列都是柯西序列：</p>
+<pre class="lean"><code>def const (q : ℚ) : CauchySeq :=
+  Subtype.mk (fun _ : ℕ ↦ q)
+    (by
+       rw [IsCauchySeq]
+       intro ε hε
+       aesop)</code></pre>
+<p>定义实数的加法需要稍多一些步骤。我们将柯西序列的加法定义为逐项相加：</p>
+<pre class="lean"><code>instance Add : Add CauchySeq :=
+  { add := fun f g : CauchySeq ↦
+      Subtype.mk (fun n : ℕ ↦ seqOf f n + seqOf g n) sorry }</code></pre>
+<p>在上文中，我们省略了两个柯西序列相加仍为柯西序列的证明。</p>
+<p>接下来，我们需要证明这种加法与<code>≈</code>是兼容的。</p>
+<pre class="lean"><code>theorem Setoid_add {f f&#x27; g g&#x27; : CauchySeq} (hf : f ≈ f&#x27;)
+      (hg : g ≈ g&#x27;) :
+    f + g ≈ f&#x27; + g&#x27; :=
+  by
+    intro ε₀ hε₀
+    simp [Setoid_iff]
+    cases hf (ε₀ / 2) (by linarith) with
+    | intro Nf hNf =&gt;
+      cases hg (ε₀ / 2) (by linarith) with
+      | intro Ng hNg =&gt;
+        apply Exists.intro (max Nf Ng)
+        intro m hm
+        calc
+          abs (seqOf (f + g) m - seqOf (f&#x27; + g&#x27;) m)
+          = abs ((seqOf f m + seqOf g m)
+            - (seqOf f&#x27; m + seqOf g&#x27; m)) :=
+            by rfl
+          _ = abs ((seqOf f m - seqOf f&#x27; m)
+              + (seqOf g m - seqOf g&#x27; m)) :=
+            by
+              have arg_eq :
+                seqOf f m + seqOf g m
+                  - (seqOf f&#x27; m + seqOf g&#x27; m) =
+                seqOf f m - seqOf f&#x27; m
+                  + (seqOf g m - seqOf g&#x27; m) :=
+                by linarith
+              rw [arg_eq]
+          _ ≤ abs (seqOf f m - seqOf f&#x27; m)
+              + abs (seqOf g m - seqOf g&#x27; m) :=
+            by apply abs_add
+          _ &lt; ε₀ / 2 + ε₀ / 2 :=
+            add_lt_add (hNf m (le_of_max_le_left hm))
+              (hNg m (le_of_max_le_right hm))
+          _ = ε₀ :=
+            by simp</code></pre>
+<p>实数是通过商（quotient）的方式定义的。</p>
+<pre class="lean"><code>def Real : Type :=
+  Quotient CauchySeq.Setoid
+
+
+instance Zero : Zero Real :=
+  { zero := ⟦CauchySeq.const 0⟧ }
+
+instance One : One Real :=
+  { one := ⟦CauchySeq.const 1⟧ }
+
+instance Add : Add Real :=
+{ add := Quotient.lift₂ (fun a b : CauchySeq ↦ ⟦a + b⟧)
+    (by
+       intro a b a&#x27; b&#x27; ha hb
+       apply Quotient.sound
+       exact CauchySeq.Setoid_add ha hb) }</code></pre>
+<h3 id="的替代定义"><code>ℝ</code> 的替代定义</h3>
+<ul>
+<li><strong>戴德金分割</strong>：<code>r : ℝ</code> 本质上表示为 <code>{x : ℚ | x &lt; r}</code>。</li>
+</ul>
+<ul>
+<li><strong>二进制序列</strong>：<code>ℕ → Bool</code> 可以表示区间 <code>[0, 1]</code>。这可以用于构建 <code>ℝ</code>。</li>
+</ul>
+    <nav class="page-nav"><a href="13-exercisesheet.html">上一节：LoVe 练习 13：基本数学结构</a><a href="14-exercisesheet.html">下一节：LoVe 练习 14：有理数与实数</a></nav>
+  </main>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoVe 演示 12：数学的逻辑基础</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1><a href="index.html">逻辑验证漫游指南</a></h1>
+<h2>第 1 章</h2><ul>
+<li class=""><a href="01-demo.html">讲义：前言</a></li>
+<li class=""><a href="01-exercisesheet.html">习题：练习 1：类型与项</a></li>
+<li class=""><a href="01-homeworksheet.html">作业：作业 1（10 分）：类型与项</a></li>
+</ul>
+<h2>第 2 章</h2><ul>
+<li class=""><a href="02-demo.html">讲义：演示 2：程序与定理</a></li>
+<li class=""><a href="02-exercisesheet.html">习题：练习 2：程序与定理</a></li>
+<li class=""><a href="02-homeworksheet.html">作业：作业 2（10 分）：程序与定理</a></li>
+</ul>
+<h2>第 3 章</h2><ul>
+<li class=""><a href="03-demo.html">讲义：演示 3：逆向证明</a></li>
+<li class=""><a href="03-exercisesheet.html">习题：练习 3：逆向证明</a></li>
+<li class=""><a href="03-homeworksheet.html">作业：作业 3（10 分）：逆向证明</a></li>
+</ul>
+<h2>第 4 章</h2><ul>
+<li class=""><a href="04-demo.html">讲义：演示 4：正向证明</a></li>
+<li class=""><a href="04-exercisesheet.html">习题：练习 4：正向证明</a></li>
+<li class=""><a href="04-homeworksheet.html">作业：作业 4（10 分）：正向证明</a></li>
+</ul>
+<h2>第 5 章</h2><ul>
+<li class=""><a href="05-demo.html">讲义：演示 5：函数式编程</a></li>
+<li class=""><a href="05-exercisesheet.html">习题：练习 5：函数式编程</a></li>
+<li class=""><a href="05-homeworksheet.html">作业：作业 5（10 分 + 2 分附加分）：函数式编程</a></li>
+</ul>
+<h2>第 6 章</h2><ul>
+<li class=""><a href="06-demo.html">讲义：演示 6：归纳谓词</a></li>
+<li class=""><a href="06-exercisesheet.html">习题：练习 6：归纳谓词</a></li>
+<li class=""><a href="06-homeworksheet.html">作业：作业 6（10 分）：归纳谓词</a></li>
+</ul>
+<h2>第 7 章</h2><ul>
+<li class=""><a href="07-demo.html">讲义：演示 7：带副作用的编程</a></li>
+<li class=""><a href="07-exercisesheet.html">习题：练习 7：带副作用的编程</a></li>
+<li class=""><a href="07-homeworksheet.html">作业：作业 7（10 分 + 1 分附加分）：单子（Monads）</a></li>
+</ul>
+<h2>第 8 章</h2><ul>
+<li class=""><a href="08-demo.html">讲义：演示 8：元编程</a></li>
+<li class=""><a href="08-exercisesheet.html">习题：练习 8：元编程</a></li>
+<li class=""><a href="08-homeworksheet.html">作业：作业 8（10 分 + 2 分附加分）：元编程</a></li>
+</ul>
+<h2>第 9 章</h2><ul>
+<li class=""><a href="09-demo.html">讲义：演示 9：操作语义</a></li>
+<li class=""><a href="09-exercisesheet.html">习题：练习 9：操作语义</a></li>
+<li class=""><a href="09-homeworksheet.html">作业：作业 9（10 分 + 1 分附加分）：操作语义</a></li>
+</ul>
+<h2>第 10 章</h2><ul>
+<li class=""><a href="10-demo.html">讲义：演示 10：霍尔逻辑</a></li>
+<li class=""><a href="10-exercisesheet.html">习题：练习 10：霍尔逻辑</a></li>
+<li class=""><a href="10-homeworksheet.html">作业：作业 10（10 分 + 1 分附加分）：霍尔逻辑</a></li>
+</ul>
+<h2>第 11 章</h2><ul>
+<li class=""><a href="11-demo.html">讲义：演示 11：指称语义</a></li>
+<li class=""><a href="11-exercisesheet.html">习题：练习 11：指称语义</a></li>
+<li class=""><a href="11-homeworksheet.html">作业：作业 11（10 分 + 2 分附加分）：指称语义</a></li>
+</ul>
+<h2>第 12 章</h2><ul>
+<li class=" active"><a href="12-demo.html">讲义：演示 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-exercisesheet.html">习题：练习 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-homeworksheet.html">作业：作业 12（10 分 + 2 分附加分）：</a></li>
+</ul>
+<h2>第 13 章</h2><ul>
+<li class=""><a href="13-demo.html">讲义：演示 13：基本数学结构</a></li>
+<li class=""><a href="13-exercisesheet.html">习题：练习 13：基本数学结构</a></li>
+</ul>
+<h2>第 14 章</h2><ul>
+<li class=""><a href="14-demo.html">讲义：示例 14：有理数与实数</a></li>
+<li class=""><a href="14-exercisesheet.html">习题：练习 14：有理数与实数</a></li>
+</ul>
+  </aside>
+  <main class="content">
+    <h1 id="LoVe-演示-12-数学的逻辑基础">LoVe 演示 12：数学的逻辑基础</h1>
+<p>我们深入探讨 Lean 的逻辑基础。本文描述的大多数特性特别适用于定义数学对象并证明与之相关的定理。</p>
+<h2 id="宇宙-Universes">宇宙（Universes）</h2>
+<p>不仅项（terms）具有类型，类型本身也具有类型。例如：</p>
+<pre><code>`@And.intro : ∀a b, a → b → a ∧ b`</code></pre>
+<p>以及</p>
+<pre><code>`∀a b, a → b → a ∧ b : Prop`</code></pre>
+<p>那么，<code>Prop</code> 的类型是什么？<code>Prop</code> 的类型与我们迄今为止构造的几乎所有其他类型相同：</p>
+<pre><code>`Prop : Type`</code></pre>
+<p><code>Type</code> 的类型又是什么？如果写成 <code>Type : Type</code>，会导致一个矛盾，称为 <strong>吉拉尔悖论（Girard&#x27;s paradox）</strong>，类似于罗素悖论（Russell&#x27;s paradox）。因此，取而代之的是：</p>
+<pre><code>`Type   : Type 1`</code></pre>
+<pre><code>`Type 1 : Type 2`</code></pre>
+<pre><code>`Type 2 : Type 3`</code></pre>
+<pre><code>⋮</code></pre>
+<p>别名：</p>
+<pre><code>`Type`   := `Type 0`</code></pre>
+<pre><code>`Prop`   := `Sort 0`</code></pre>
+<pre><code>`Type u` := `Sort (u + 1)`</code></pre>
+<p>类型的类型（<code>Sort u</code>、<code>Type u</code> 和 <code>Prop</code>）被称为 <strong>宇宙（universes）</strong>。<code>Sort u</code> 中的 <code>u</code> 被称为 <strong>宇宙层级（universe level）</strong>。</p>
+<p>这种层级关系通过以下类型判断（typing judgment）来体现：</p>
+<pre><code>————————————————————————— Sort</code></pre>
+<pre><code>C ⊢ Sort u : Sort (u + 1)</code></pre>
+<pre class="lean"><code>#check @And.intro
+#check ∀a b : Prop, a → b → a ∧ b
+#check Prop
+#check ℕ
+#check Type
+#check Type 1
+#check Type 2
+
+universe u v
+
+#check Type u
+
+#check Sort 0
+#check Sort 1
+#check Sort 2
+#check Sort u
+
+#check Type _</code></pre>
+<h2 id="Prop-的特殊性">Prop 的特殊性</h2>
+<p><code>Prop</code> 在许多方面与其他宇宙（universe）不同。</p>
+<h3 id="非直谓性-Impredicativity">非直谓性（Impredicativity）</h3>
+<p>函数类型 <code>σ → τ</code> 被放入 <code>σ</code> 和 <code>τ</code> 所在的较大宇宙中：</p>
+<pre><code>C ⊢ σ : Type u    C ⊢ τ : Type v</code></pre>
+<pre><code>————————————————————————————————— SimpleArrow-Type</code></pre>
+<pre><code>C ⊢ σ → τ : Type (max u v)</code></pre>
+<p>对于依赖类型，这可以推广为：</p>
+<pre><code>C ⊢ σ : Type u    C, x : σ ⊢ τ[x] : Type v</code></pre>
+<pre><code>——————————————————————————————————————————— Arrow-Type</code></pre>
+<pre><code>C ⊢ (x : σ) → τ[x] : Type (max u v)</code></pre>
+<p>宇宙 <code>Type v</code> 的这种行为被称为<strong>直谓性（predicativity）</strong>。</p>
+<p>为了强制将诸如 <code>∀a : Prop, a → a</code> 这样的表达式仍然归类为 <code>Prop</code> 类型，我们需要为 <code>Prop</code> 制定一个特殊的类型规则：</p>
+<pre><code>C ⊢ σ : Sort u    x : σ ⊢ τ[x] : Prop</code></pre>
+<pre><code>—————————————————————————————————————— Arrow-Prop</code></pre>
+<pre><code>C ⊢ (∀x : σ, τ[x]) : Prop</code></pre>
+<p><code>Prop</code> 的这种行为被称为<strong>非直谓性（impredicativity）</strong>。</p>
+<p>规则 <code>Arrow-Type</code> 和 <code>Arrow-Prop</code> 可以推广为一条规则：</p>
+<pre><code>C ⊢ σ : Sort u    C, x : σ ⊢ τ[x] : Sort v</code></pre>
+<pre><code>——————————————————————————————————————————— Arrow</code></pre>
+<pre><code>C ⊢ (x : σ) → τ[x] : Sort (imax u v)</code></pre>
+<p>其中</p>
+<pre><code>`imax u 0       = 0`</code></pre>
+<pre><code>`imax u (v + 1) = max u (v + 1)`</code></pre>
+<pre class="lean"><code>#check fun (α : Type u) (β : Type v) ↦ α → β
+#check ∀a : Prop, a → a</code></pre>
+<h3 id="证明无关性">证明无关性</h3>
+<p><code>Prop</code> 和 <code>Type u</code> 之间的第二个区别是 <strong>证明无关性</strong>：</p>
+<pre><code>`∀(a : Prop) (h₁ h₂ : a), h₁ = h₂`</code></pre>
+<p>这使得依赖类型的推理更加容易。</p>
+<p>当我们将命题视为类型，并将证明视为该类型的元素时，证明无关性意味着一个命题要么是一个空类型，要么恰好有一个元素。</p>
+<p>证明无关性可以通过 <code>rfl</code> 来证明。</p>
+<p>证明无关性的一个不幸后果是，它阻止了我们通过模式匹配和递归来执行规则归纳。</p>
+<pre class="lean"><code>#check proof_irrel
+
+theorem proof_irrel {a : Prop} (h₁ h₂ : a) :
+    h₁ = h₂ :=
+  by rfl</code></pre>
+<h3 id="无大消除">无大消除</h3>
+<p><code>Prop</code> 和 <code>Type u</code> 之间的另一个区别是，<code>Prop</code> 不允许<strong>大消除</strong>（large elimination），这意味着无法从命题的证明中提取数据。</p>
+<p>这是为了保证<strong>证明无关性</strong>（proof irrelevance）所必需的。</p>
+<p>-- 失败 def 非平方 (i : ℤ) (hsq : ∃j, i = j * j) : ℤ := match hsq with | Exists.intro j _ =&gt; j</p>
+<p>翻译说明：</p>
+<ul>
+<li><code>fails</code> 翻译为“失败”，表示该函数可能在某些情况下无法正常工作。</li>
+<li><code>unsquare</code> 翻译为“非平方”，表示该函数的目的是找到一个整数的平方根。</li>
+<li><code>i : ℤ</code> 翻译为“i : ℤ”，表示整数类型。</li>
+<li><code>hsq : ∃j, i = j * j</code> 翻译为“hsq : ∃j, i = j * j”，表示存在一个整数 j，使得 i 等于 j 的平方。</li>
+<li><code>match hsq with</code> 翻译为“匹配 hsq”，表示对 hsq 进行模式匹配。</li>
+<li><code>Exists.intro j _ =&gt; j</code> 翻译为“Exists.intro j _ =&gt; j”，表示如果 hsq 是 Exists.intro j _ 的形式，则返回 j。</li>
+</ul>
+<pre class="lean"><code>以翻译为“故障”或“失效”。例如：
+- **System fails**：系统故障
+- **Component fails**：组件失效
+
+如果需要更具体的翻译，请提供完整句子或上下文。def unsquare (i : ℤ) (hsq : ∃j, i = j * j) : ℤ :=
+  match hsq with
+  | Exists.intro j _ =&gt; j
+-/</code></pre>
+<p>如果上述内容被接受，我们可以按如下方式推导出 <code>False</code>。</p>
+<p>令</p>
+<pre><code>`hsq₁` := `Exists.intro 3 (by linarith)`</code></pre>
+<pre><code>`hsq₂` := `Exists.intro (-3) (by linarith)`</code></pre>
+<p>为 <code>∃j, (9 : ℤ) = j * j</code> 的两个证明。那么</p>
+<pre><code>`unsquare 9 hsq₁ = 3`</code></pre>
+<pre><code>`unsquare 9 hsq₂ = -3`</code></pre>
+<p>然而，根据证明无关性（proof irrelevance），<code>hsq₁ = hsq₂</code>。因此</p>
+<pre><code>`unsquare 9 hsq₂ = 3`</code></pre>
+<p>从而</p>
+<pre><code>`3 = -3`</code></pre>
+<p>这是一个矛盾。</p>
+<p>作为一种折衷方案，Lean 允许<strong>小消除</strong>（small elimination）。之所以称为小消除，是因为它只能消除到 <code>Prop</code> 中，而大消除（large elimination）可以消除到任意大的宇宙 <code>Sort u</code> 中。这意味着我们可以使用 <code>match</code> 来分析证明的结构、提取存在性见证等，只要 <code>match</code> 表达式本身是一个证明。我们在第5讲中已经看到了几个这样的例子。</p>
+<p>作为进一步的折衷，Lean 允许对<strong>语法单例</strong>（syntactic subsingletons）进行大消除：这些是 <code>Prop</code> 中的类型，可以通过语法方式确定它们的基数为0或1。这些命题包括 <code>False</code> 和 <code>a ∧ b</code> 等，它们最多只能以一种方式被证明。</p>
+<h2 id="选择公理">选择公理</h2>
+<p>Lean 的逻辑包含了选择公理（Axiom of Choice），这使得从任何非空类型中获取任意元素成为可能。</p>
+<p>考虑 Lean 的 <code>Nonempty</code> 归纳谓词：</p>
+<pre class="lean"><code>#print Nonempty</code></pre>
+<p>该谓词表明 <code>α</code> 至少有一个元素。</p>
+<p>为了证明 <code>Nonempty α</code>，我们必须向 <code>Nonempty.intro</code> 提供一个 <code>α</code> 值。</p>
+<pre class="lean"><code>theorem Nat.Nonempty :
+    Nonempty ℕ :=
+  Nonempty.intro 0</code></pre>
+<p>由于 <code>Nonempty</code> 存在于 <code>Prop</code> 中，无法进行大范围消除（large elimination），因此我们无法从 <code>Nonempty α</code> 的证明中提取出所使用的元素。</p>
+<p>选择公理（axiom of choice）允许我们在能够证明 <code>Nonempty α</code> 的情况下，获取某个类型为 <code>α</code> 的元素。</p>
+<pre class="lean"><code>#check Classical.choice</code></pre>
+<p>这将仅仅为我们提供一个 <code>α</code> 的任意元素；我们无法确定这是否是用于证明 <code>Nonempty α</code> 的那个元素。</p>
+<p>常量 <code>Classical.choice</code> 是不可计算的，这就是为什么一些逻辑学家倾向于在没有这个公理的情况下工作。</p>
+<p>#eval Classical.choice Nat.Nonempty     -- 失败</p>
+<pre class="lean"><code>&quot;fails&quot; 的翻译：
+
+**fails**
+**故障** 或 **失效**
+
+在技术文档中，&quot;fails&quot; 通常指系统、设备或组件未能按预期工作或达到预期性能。根据上下文，可以翻译为“故障”或“失效”。例如：
+- **System fails to start**: 系统启动失败
+- **Component fails under stress**: 组件在压力下失效
+
+如果需要更具体的翻译，请提供完整句子或上下文。-/
+#reduce Classical.choice Nat.Nonempty</code></pre>
+<p>选择公理在Lean的核心库中仅作为一条公理存在，这为用户提供了选择是否使用它的自由。</p>
+<p>使用选择公理的定义必须标记为<code>noncomputable</code>（不可计算的）。</p>
+<pre class="lean"><code>noncomputable def arbitraryNat : ℕ :=
+  Classical.choice Nat.Nonempty</code></pre>
+<p>以下工具依赖于选择。</p>
+<h3 id="排中律">排中律</h3>
+<pre class="lean"><code>#check Classical.em</code></pre>
+<h3 id="希尔伯特选择">希尔伯特选择</h3>
+<p><strong>希尔伯特选择</strong>（Hilbert Choice）是一种在数学和计算机科学中用于优化和决策问题的技术。它基于希尔伯特空间理论，通过在高维空间中进行选择和优化，来解决复杂的决策问题。该方法通常用于机器学习、数据分析和优化算法中，以提高决策的准确性和效率。</p>
+<p><strong>关键概念：</strong></p>
+<ul>
+<li><strong>希尔伯特空间</strong>：一个完备的内积空间，允许进行向量运算和几何分析。</li>
+<li><strong>选择函数</strong>：用于在多个选项中选择最优解的数学函数。</li>
+<li><strong>优化</strong>：通过最小化或最大化目标函数来找到最佳解决方案的过程。</li>
+</ul>
+<p><strong>应用领域：</strong> - <strong>机器学习</strong>：用于特征选择和模型优化。 - <strong>数据分析</strong>：用于数据降维和模式识别。 - <strong>优化算法</strong>：用于解决复杂的优化问题，如资源分配和路径规划。</p>
+<p><strong>优势：</strong> - <strong>高维处理能力</strong>：能够有效处理高维数据。 - <strong>灵活性</strong>：适用于多种类型的数据和问题。 - <strong>准确性</strong>：通过精确的数学方法提高决策的准确性。</p>
+<p><strong>挑战：</strong> - <strong>计算复杂度</strong>：在高维空间中计算可能较为复杂。 - <strong>数据需求</strong>：需要大量数据来训练和验证模型。</p>
+<p><strong>未来发展方向：</strong> - <strong>算法改进</strong>：开发更高效的算法以降低计算复杂度。 - <strong>跨学科应用</strong>：将希尔伯特选择应用于更多领域，如生物信息学和金融工程。</p>
+<p>通过深入理解和应用希尔伯特选择，可以在复杂的决策问题中获得更优的解决方案。</p>
+<pre class="lean"><code>#check Classical.choose
+#check Classical.choose_spec</code></pre>
+<h3 id="集合论的选择公理">集合论的选择公理</h3>
+<p>选择公理（Axiom of Choice，简称AC）是集合论中的一个重要公理，它陈述如下：</p>
+<p><strong>选择公理</strong>：对于任何一组非空集合的集合，存在一个选择函数，能够从每个集合中选择一个元素。</p>
+<p>用形式化的语言描述，设 \( \mathcal{A} \) 是一个由非空集合组成的集合族，即 \( \mathcal{A} = \{A_i\}_{i \in I} \)，其中每个 \( A_i \) 都是非空的。那么存在一个函数 \( f: \mathcal{A} \to \bigcup_{i \in I} A_i \)，使得对于所有的 \( i \in I \)，有 \( f(A_i) \in A_i \)。</p>
+<p>选择公理在数学的许多分支中都有重要应用，尤其是在证明某些存在性定理时。然而，它也是一个颇具争议的公理，因为它允许在不明确构造选择函数的情况下做出选择，这在某些情况下可能导致非直观的结果。</p>
+<p>选择公理的一个著名推论是<strong>佐恩引理</strong>（Zorn&#x27;s Lemma），它在代数、拓扑学和其他领域中有着广泛的应用。佐恩引理陈述如下：</p>
+<p><strong>佐恩引理</strong>：如果一个偏序集中的每个全序子集都有上界，那么这个偏序集至少有一个极大元。</p>
+<p>选择公理与集合论的其他公理（如策梅洛-弗兰克尔公理系统，ZFC）一起，构成了现代数学的基础。尽管它在逻辑上是独立的，但在大多数数学领域中，选择公理被广泛接受并使用。</p>
+<pre class="lean"><code>#print Classical.axiomOfChoice</code></pre>
+<h2 id="子类型">子类型</h2>
+<p>子类型化是一种从现有类型创建新类型的机制。</p>
+<p>给定一个关于基类型元素的谓词，<strong>子类型</strong>仅包含满足该属性的基类型元素。更准确地说，子类型包含元素-证明对，这些对由基类型的元素和证明其满足该属性的证明组成。</p>
+<p>子类型化对于那些无法定义为归纳类型的类型非常有用。例如，任何尝试按照以下方式定义有限集类型的尝试都注定会失败：</p>
+<pre class="lean"><code>-- 请提供需要翻译的技术文档内容，我将为您进行准确且专业的翻译。inductive Finset (α : Type) : Type
+  | empty  : Finset α
+  | insert : α → Finset α → Finset α</code></pre>
+<p>为什么这不适用于有限集合的建模？</p>
+<p>给定一个基类型和一个属性，子类型的语法如下：</p>
+<pre><code>`{` _变量_ `:` _基类型_ `//` _应用于变量的属性_ `}`</code></pre>
+<p>别名：</p>
+<pre><code>`{x : τ // P[x]}` := `@Subtype τ (fun x ↦ P[x])`</code></pre>
+<p>示例：</p>
+<pre><code>`{i : ℕ // i ≤ n}`            := `@Subtype ℕ (fun i ↦ i ≤ n)`</code></pre>
+<pre><code>`{A : Set α // Set.Finite A}` := `@Subtype (Set α) Set.Finite`</code></pre>
+<h3 id="第一个示例-满二叉树">第一个示例：满二叉树</h3>
+<pre class="lean"><code>#check Tree
+#check IsFull
+#check mirror
+#check IsFull_mirror
+#check mirror_mirror
+
+def FullTree (α : Type) : Type :=
+  {t : Tree α // IsFull t}
+
+#print Subtype
+#check Subtype.mk</code></pre>
+<p>要定义 <code>FullTree</code> 的元素，我们需要提供一个 <code>Tree</code> 并证明它是满的：</p>
+<pre class="lean"><code>def nilFullTree : FullTree ℕ :=
+  Subtype.mk Tree.nil IsFull.nil
+
+def fullTree6 : FullTree ℕ :=
+  Subtype.mk (Tree.node 6 Tree.nil Tree.nil)
+    (by
+       apply IsFull.node
+       apply IsFull.nil
+       apply IsFull.nil
+       rfl)
+
+#reduce Subtype.val fullTree6
+#check Subtype.property fullTree6</code></pre>
+<p>我们可以将现有的 <code>Tree</code> 操作提升到 <code>FullTree</code> 上：</p>
+<pre class="lean"><code>def FullTree.mirror {α : Type} (t : FullTree α) :
+  FullTree α :=
+  Subtype.mk (LoVe.mirror (Subtype.val t))
+    (by
+       apply IsFull_mirror
+       apply Subtype.property t)
+
+#reduce Subtype.val (FullTree.mirror fullTree6)</code></pre>
+<p>当然，我们可以证明关于提升操作的定理：</p>
+<pre class="lean"><code>theorem FullTree.mirror_mirror {α : Type}
+      (t : FullTree α) :
+    (FullTree.mirror (FullTree.mirror t)) = t :=
+  by
+    apply Subtype.eq
+    simp [FullTree.mirror, LoVe.mirror_mirror]
+
+#check Subtype.eq</code></pre>
+<h3 id="第二个示例-向量">第二个示例：向量</h3>
+<pre class="lean"><code>def Vector (α : Type) (n : ℕ) : Type :=
+  {xs : List α // List.length xs = n}
+
+def vector123 : Vector ℤ 3 :=
+  Subtype.mk [1, 2, 3] (by rfl)
+
+def Vector.neg {n : ℕ} (v : Vector ℤ n) : Vector ℤ n :=
+  Subtype.mk (List.map Int.neg (Subtype.val v))
+    (by
+       rw [List.length_map]
+       exact Subtype.property v)
+
+theorem Vector.neg_neg (n : ℕ) (v : Vector ℤ n) :
+    Vector.neg (Vector.neg v) = v :=
+  by
+    apply Subtype.eq
+    simp [Vector.neg]</code></pre>
+<h2 id="商类型">商类型</h2>
+<p>商类型是数学中一种强大的构造方法，用于构建 <code>ℤ</code>、<code>ℚ</code>、<code>ℝ</code> 以及许多其他类型。</p>
+<p>与子类型类似，商类型也是从现有类型中构造出一个新类型。但与子类型不同的是，商类型包含了基类型的所有元素，只不过在基类型中不同的某些元素在商类型中被视为相等。用数学术语来说，商类型与基类型的一个划分是同构的。</p>
+<p>要定义一个商类型，我们需要提供一个基类型以及一个等价关系，该等价关系决定了哪些元素在商类型中被视为相等。</p>
+<pre class="lean"><code>#check Quotient
+#print Setoid
+
+#check Quotient.mk
+#check Quotient.sound
+#check Quotient.exact
+
+#check Quotient.lift
+#check Quotient.lift₂
+#check @Quotient.inductionOn</code></pre>
+<h2 id="第一个示例-整数">第一个示例：整数</h2>
+<p>让我们通过自然数对 <code>ℕ × ℕ</code> 的商集来构建整数 <code>ℤ</code>。</p>
+<p>一个自然数对 <code>(p, n)</code> 表示整数 <code>p - n</code>。非负整数 <code>p</code> 可以用 <code>(p, 0)</code> 表示。负整数 <code>-n</code> 可以用 <code>(0, n)</code> 表示。然而，同一个整数可能有多种表示方式；例如，<code>(7, 0)</code>、<code>(8, 1)</code>、<code>(9, 2)</code> 和 <code>(10, 3)</code> 都表示整数 <code>7</code>。</p>
+<p>我们应该使用哪种等价关系呢？</p>
+<p>我们希望当 <code>p₁ - n₁ = p₂ - n₂</code> 时，两个对 <code>(p₁, n₁)</code> 和 <code>(p₂, n₂)</code> 相等。然而，这在 <code>ℕ</code> 上并不适用，因为减法在 <code>ℕ</code> 上表现不佳（例如，<code>0 - 1 = 0</code>）。因此，我们改用 <code>p₁ + n₂ = p₂ + n₁</code>。</p>
+<pre class="lean"><code>instance Int.Setoid : Setoid (ℕ × ℕ) :=
+  { r :=
+      fun pn₁ pn₂ : ℕ × ℕ ↦
+        Prod.fst pn₁ + Prod.snd pn₂ =
+        Prod.fst pn₂ + Prod.snd pn₁
+    iseqv :=
+      { refl :=
+          by
+            intro pn
+            rfl
+        symm :=
+          by
+            intro pn₁ pn₂ h
+            rw [h]
+        trans :=
+          by
+            intro pn₁ pn₂ pn₃ h₁₂ h₂₃
+            linarith } }
+
+theorem Int.Setoid_Iff (pn₁ pn₂ : ℕ × ℕ) :
+    pn₁ ≈ pn₂ ↔
+    Prod.fst pn₁ + Prod.snd pn₂ =
+    Prod.fst pn₂ + Prod.snd pn₁ :=
+  by rfl
+
+def Int : Type :=
+  Quotient Int.Setoid
+
+def Int.zero : Int :=
+  ⟦(0, 0)⟧
+
+theorem Int.zero_Eq (m : ℕ) :
+    Int.zero = ⟦(m, m)⟧ :=
+  by
+    rw [Int.zero]
+    apply Quotient.sound
+    rw [Int.Setoid_Iff]
+    simp
+
+def Int.add : Int → Int → Int :=
+  Quotient.lift₂
+    (fun pn₁ pn₂ : ℕ × ℕ ↦
+       ⟦(Prod.fst pn₁ + Prod.fst pn₂,
+         Prod.snd pn₁ + Prod.snd pn₂)⟧)
+    (by
+       intro pn₁ pn₂ pn₁&#x27; pn₂&#x27; h₁ h₂
+       apply Quotient.sound
+       rw [Int.Setoid_Iff] at *
+       linarith)
+
+theorem Int.add_Eq (p₁ n₁ p₂ n₂ : ℕ) :
+    Int.add ⟦(p₁, n₁)⟧ ⟦(p₂, n₂)⟧ =
+    ⟦(p₁ + p₂, n₁ + n₂)⟧ :=
+  by rfl
+
+theorem Int.add_zero (i : Int) :
+    Int.add Int.zero i = i :=
+  by
+    induction i using Quotient.inductionOn with
+    | h pn =&gt;
+      cases pn with
+      | mk p n =&gt; simp [Int.zero, Int.add]</code></pre>
+<p>这个定义语法会很不错：</p>
+<p>-- 失败 def Int.add : Int → Int → Int | ⟦(p₁, n₁)⟧, ⟦(p₂, n₂)⟧ =&gt; ⟦(p₁ + p₂, n₁ + n₂)⟧</p>
+<p>翻译为中文：</p>
+<p>-- 失败 def Int.add : Int → Int → Int | ⟦(p₁, n₁)⟧, ⟦(p₂, n₂)⟧ =&gt; ⟦(p₁ + p₂, n₁ + n₂)⟧</p>
+<p>解释： - <code>Int.add</code> 是一个函数，接受两个 <code>Int</code> 类型的参数，并返回一个 <code>Int</code> 类型的结果。 - <code>⟦(p₁, n₁)⟧</code> 和 <code>⟦(p₂, n₂)⟧</code> 是模式匹配的语法，表示将两个 <code>Int</code> 类型的参数分别解构为 <code>(p₁, n₁)</code> 和 <code>(p₂, n₂)</code>。 - <code>p₁ + p₂</code> 和 <code>n₁ + n₂</code> 分别表示将两个 <code>Int</code> 类型的参数的正数部分和负数部分相加。 - <code>⟦(p₁ + p₂, n₁ + n₂)⟧</code> 表示将相加后的结果重新构造为一个 <code>Int</code> 类型的值。</p>
+<p>这个函数的作用是将两个整数相加，返回它们的和。</p>
+<pre class="lean"><code>况。
+   - 示例：The system fails to start. → 系统启动故障。
+
+2. **失败**：用于描述操作、任务或过程未能达到预期结果。
+   - 示例：The operation fails due to insufficient resources. → 由于资源不足，操作失败。
+
+3. **失效**：用于描述功能或性能的丧失。
+   - 示例：The safety mechanism fails under extreme conditions. → 在极端条件下，安全机制失效。
+
+请根据具体上下文选择合适的翻译。def Int.add : Int → Int → Int
+  | ⟦(p₁, n₁)⟧, ⟦(p₂, n₂)⟧ =&gt; ⟦(p₁ + p₂, n₁ + n₂)⟧
+-/</code></pre>
+<p>但这将是危险的：</p>
+<p>-- 失败 def Int.fst : Int → ℕ | ⟦(p, n)⟧ =&gt; p</p>
+<p>翻译为中文：</p>
+<p>-- 失败 def Int.fst : Int → ℕ | ⟦(p, n)⟧ =&gt; p</p>
+<p>在这个技术文档中，<code>Int.fst</code> 是一个函数定义，它将一个整数 <code>Int</code> 映射到一个自然数 <code>ℕ</code>。函数的模式匹配部分 <code>| ⟦(p, n)⟧ =&gt; p</code> 表示当输入的整数是一个由两个自然数 <code>p</code> 和 <code>n</code> 组成的对时，函数返回第一个自然数 <code>p</code>。这里的 <code>⟦(p, n)⟧</code> 可能表示某种特定的数据结构或编码方式，具体取决于上下文。</p>
+<pre class="lean"><code>式：
+
+1. **故障**：用于描述系统、设备或组件未能按预期工作的情况。
+   - 示例：The system fails to start.
+     翻译：系统启动**故障**。
+
+2. **失败**：用于描述操作、任务或测试未达到预期结果的情况。
+   - 示例：The test fails due to an unexpected error.
+     翻译：由于意外错误，测试**失败**。
+
+3. **失效**：用于描述功能或性能的丧失。
+   - 示例：The safety mechanism fails under extreme conditions.
+     翻译：在极端条件下，安全机制**失效**。
+
+请根据具体上下文选择合适的翻译。如果需要更具体的翻译，请提供完整的句子或段落。def Int.fst : Int → ℕ
+  | ⟦(p, n)⟧ =&gt; p
+-/</code></pre>
+<p>使用 <code>Int.fst</code>，我们可以推导出 <code>False</code>。首先，我们有</p>
+<pre><code>`Int.fst ⟦(0, 0)⟧ = 0`</code></pre>
+<pre><code>`Int.fst ⟦(1, 1)⟧ = 1`</code></pre>
+<p>但由于 <code>⟦(0, 0)⟧ = ⟦(1, 1)⟧</code>，我们得到</p>
+<pre><code>`0 = 1`</code></pre>
+<h3 id="第二个示例-无序对">第二个示例：无序对</h3>
+<p><strong>无序对</strong> 是指不区分第一个和第二个元素的对。它们通常写作 <code>{a, b}</code>。</p>
+<p>我们将引入无序对的类型 <code>UPair</code>，作为对 <code>(a, b)</code> 关于“包含相同元素”关系的商类型。</p>
+<pre class="lean"><code>instance UPair.Setoid (α : Type) : Setoid (α × α) :=
+{ r :=
+    fun ab₁ ab₂ : α × α ↦
+      ({Prod.fst ab₁, Prod.snd ab₁} : Set α) =
+      ({Prod.fst ab₂, Prod.snd ab₂} : Set α)
+  iseqv :=
+    { refl  := by simp
+      symm  := by aesop
+      trans := by aesop } }
+
+theorem UPair.Setoid_Iff {α : Type} (ab₁ ab₂ : α × α) :
+    ab₁ ≈ ab₂ ↔
+    ({Prod.fst ab₁, Prod.snd ab₁} : Set α) =
+    ({Prod.fst ab₂, Prod.snd ab₂} : Set α) :=
+  by rfl
+
+def UPair (α : Type) : Type :=
+  Quotient (UPair.Setoid α)
+
+#check UPair.Setoid</code></pre>
+<p>很容易证明我们的配对确实是无序的：</p>
+<pre class="lean"><code>theorem UPair.mk_symm {α : Type} (a b : α) :
+    (⟦(a, b)⟧ : UPair α) = ⟦(b, a)⟧ :=
+  by
+    apply Quotient.sound
+    rw [UPair.Setoid_Iff]
+    aesop</code></pre>
+<p>无序对的另一种表示形式是基数为1或2的集合。以下操作将<code>UPair</code>转换为该表示形式：</p>
+<pre class="lean"><code>def Set_of_UPair {α : Type} : UPair α → Set α :=
+  Quotient.lift (fun ab : α × α ↦ {Prod.fst ab, Prod.snd ab})
+    (by
+       intro ab₁ ab₂ h
+       rw [UPair.Setoid_Iff] at *
+       exact h)</code></pre>
+<h3 id="通过归一化和子类型化的替代定义">通过归一化和子类型化的替代定义</h3>
+<p>商类型的每个元素对应于一个<code>≈</code>等价类。如果存在一种系统化的方法来为每个类获取<strong>规范代表</strong>，我们可以使用子类型而不是商类型，仅保留规范代表。</p>
+<p>考虑上述的商类型<code>Int</code>。我们可以说，如果<code>p</code>或<code>n</code>为<code>0</code>，则一对<code>(p, n)</code>是<strong>规范的</strong>。</p>
+<pre class="lean"><code>inductive Int.IsCanonical : ℕ × ℕ → Prop
+  | nonpos {n : ℕ} : Int.IsCanonical (0, n)
+  | nonneg {p : ℕ} : Int.IsCanonical (p, 0)
+
+def Int : Type :=
+  {pn : ℕ × ℕ // Int.IsCanonical pn}</code></pre>
+<p><strong>归一化</strong>自然数对的操作非常简单：</p>
+<pre class="lean"><code>def Int.normalize : ℕ × ℕ → ℕ × ℕ
+  | (p, n) =&gt; if p ≥ n then (p - n, 0) else (0, n - p)
+
+theorem Int.IsCanonical_normalize (pn : ℕ × ℕ) :
+    Int.IsCanonical (Int.normalize pn) :=
+  by
+    cases pn with
+    | mk p n =&gt;
+      simp [Int.normalize]
+      cases Classical.em (p ≥ n) with
+      | inl hpn =&gt;
+        simp [*]
+        exact Int.IsCanonical.nonneg
+      | inr hpn =&gt;
+        simp [*]
+        exact Int.IsCanonical.nonpos</code></pre>
+<p>对于无序对，除了始终将较小的元素放在前面（或后面）之外，没有明显的标准形式。这需要在类型 <code>α</code> 上定义一个线性序 <code>≤</code>。</p>
+<pre class="lean"><code>def UPair.IsCanonical {α : Type} [LinearOrder α] :
+  α × α → Prop
+  | (a, b) =&gt; a ≤ b
+
+def UPair (α : Type) [LinearOrder α] : Type :=
+  {ab : α × α // UPair.IsCanonical ab}</code></pre>
+    <nav class="page-nav"><a href="11-homeworksheet.html">上一节：LoVe 作业 11（10 分 + 2 分附加分）：指称语义</a><a href="12-exercisesheet.html">下一节：LoVe 练习 12：数学的逻辑基础</a></nav>
+  </main>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoVe 演示 10：霍尔逻辑</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1><a href="index.html">逻辑验证漫游指南</a></h1>
+<h2>第 1 章</h2><ul>
+<li class=""><a href="01-demo.html">讲义：前言</a></li>
+<li class=""><a href="01-exercisesheet.html">习题：练习 1：类型与项</a></li>
+<li class=""><a href="01-homeworksheet.html">作业：作业 1（10 分）：类型与项</a></li>
+</ul>
+<h2>第 2 章</h2><ul>
+<li class=""><a href="02-demo.html">讲义：演示 2：程序与定理</a></li>
+<li class=""><a href="02-exercisesheet.html">习题：练习 2：程序与定理</a></li>
+<li class=""><a href="02-homeworksheet.html">作业：作业 2（10 分）：程序与定理</a></li>
+</ul>
+<h2>第 3 章</h2><ul>
+<li class=""><a href="03-demo.html">讲义：演示 3：逆向证明</a></li>
+<li class=""><a href="03-exercisesheet.html">习题：练习 3：逆向证明</a></li>
+<li class=""><a href="03-homeworksheet.html">作业：作业 3（10 分）：逆向证明</a></li>
+</ul>
+<h2>第 4 章</h2><ul>
+<li class=""><a href="04-demo.html">讲义：演示 4：正向证明</a></li>
+<li class=""><a href="04-exercisesheet.html">习题：练习 4：正向证明</a></li>
+<li class=""><a href="04-homeworksheet.html">作业：作业 4（10 分）：正向证明</a></li>
+</ul>
+<h2>第 5 章</h2><ul>
+<li class=""><a href="05-demo.html">讲义：演示 5：函数式编程</a></li>
+<li class=""><a href="05-exercisesheet.html">习题：练习 5：函数式编程</a></li>
+<li class=""><a href="05-homeworksheet.html">作业：作业 5（10 分 + 2 分附加分）：函数式编程</a></li>
+</ul>
+<h2>第 6 章</h2><ul>
+<li class=""><a href="06-demo.html">讲义：演示 6：归纳谓词</a></li>
+<li class=""><a href="06-exercisesheet.html">习题：练习 6：归纳谓词</a></li>
+<li class=""><a href="06-homeworksheet.html">作业：作业 6（10 分）：归纳谓词</a></li>
+</ul>
+<h2>第 7 章</h2><ul>
+<li class=""><a href="07-demo.html">讲义：演示 7：带副作用的编程</a></li>
+<li class=""><a href="07-exercisesheet.html">习题：练习 7：带副作用的编程</a></li>
+<li class=""><a href="07-homeworksheet.html">作业：作业 7（10 分 + 1 分附加分）：单子（Monads）</a></li>
+</ul>
+<h2>第 8 章</h2><ul>
+<li class=""><a href="08-demo.html">讲义：演示 8：元编程</a></li>
+<li class=""><a href="08-exercisesheet.html">习题：练习 8：元编程</a></li>
+<li class=""><a href="08-homeworksheet.html">作业：作业 8（10 分 + 2 分附加分）：元编程</a></li>
+</ul>
+<h2>第 9 章</h2><ul>
+<li class=""><a href="09-demo.html">讲义：演示 9：操作语义</a></li>
+<li class=""><a href="09-exercisesheet.html">习题：练习 9：操作语义</a></li>
+<li class=""><a href="09-homeworksheet.html">作业：作业 9（10 分 + 1 分附加分）：操作语义</a></li>
+</ul>
+<h2>第 10 章</h2><ul>
+<li class=" active"><a href="10-demo.html">讲义：演示 10：霍尔逻辑</a></li>
+<li class=""><a href="10-exercisesheet.html">习题：练习 10：霍尔逻辑</a></li>
+<li class=""><a href="10-homeworksheet.html">作业：作业 10（10 分 + 1 分附加分）：霍尔逻辑</a></li>
+</ul>
+<h2>第 11 章</h2><ul>
+<li class=""><a href="11-demo.html">讲义：演示 11：指称语义</a></li>
+<li class=""><a href="11-exercisesheet.html">习题：练习 11：指称语义</a></li>
+<li class=""><a href="11-homeworksheet.html">作业：作业 11（10 分 + 2 分附加分）：指称语义</a></li>
+</ul>
+<h2>第 12 章</h2><ul>
+<li class=""><a href="12-demo.html">讲义：演示 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-exercisesheet.html">习题：练习 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-homeworksheet.html">作业：作业 12（10 分 + 2 分附加分）：</a></li>
+</ul>
+<h2>第 13 章</h2><ul>
+<li class=""><a href="13-demo.html">讲义：演示 13：基本数学结构</a></li>
+<li class=""><a href="13-exercisesheet.html">习题：练习 13：基本数学结构</a></li>
+</ul>
+<h2>第 14 章</h2><ul>
+<li class=""><a href="14-demo.html">讲义：示例 14：有理数与实数</a></li>
+<li class=""><a href="14-exercisesheet.html">习题：练习 14：有理数与实数</a></li>
+</ul>
+  </aside>
+  <main class="content">
+    <h1 id="LoVe-演示-10-霍尔逻辑">LoVe 演示 10：霍尔逻辑</h1>
+<p>我们回顾第二种指定编程语言语义的方法：霍尔逻辑。如果操作语义对应于一个理想化的解释器，那么<strong>霍尔逻辑</strong>（也称为<strong>公理语义</strong>）则对应于一个验证器。霍尔逻辑特别适用于对具体程序进行推理。</p>
+<pre class="lean"><code>open Lean
+open Lean.Meta
+open Lean.Elab.Tactic</code></pre>
+<h2 id="Hoare-三元组">Hoare 三元组</h2>
+<p>Hoare 逻辑的基本判断通常称为 <strong>Hoare 三元组</strong>。它们的形式为：</p>
+<pre><code>`{P} S {Q}`</code></pre>
+<p>其中 <code>S</code> 是一个语句，<code>P</code> 和 <code>Q</code>（称为 <strong>前置条件</strong> 和 <strong>后置条件</strong>）是关于状态变量的逻辑公式。</p>
+<p><strong>预期含义</strong>：</p>
+<pre><code>如果在执行 `S` 之前 `P` 成立，并且执行正常终止，那么在终止时 `Q` 成立。</code></pre>
+<p>这是一个 <strong>部分正确性</strong> 的陈述：如果程序正常终止（即没有运行时错误、没有无限循环或发散），则程序是正确的。</p>
+<p>以下所有 Hoare 三元组都是有效的（符合预期含义）：</p>
+<pre><code>`{True} b := 4 {b = 4}`</code></pre>
+<pre><code>`{a = 2} b := 2 * a {a = 2 ∧ b = 4}`</code></pre>
+<pre><code>`{b ≥ 5} b := b + 1 {b ≥ 6}`</code></pre>
+<pre><code>`{False} skip {b = 100}`</code></pre>
+<pre><code>`{True} while i ≠ 100 do i := i + 1 {i = 100}`</code></pre>
+<h2 id="Hoare-规则">Hoare 规则</h2>
+<p>以下是用于推理 WHILE 程序的完整规则集：</p>
+<pre><code>———————————— Skip</code></pre>
+<pre><code>{P} skip {P}</code></pre>
+<pre><code>——————————————————— Assign</code></pre>
+<pre><code>{Q[a/x]} x := a {Q}</code></pre>
+<pre><code>{P} S {R}   {R} S&#x27; {Q}</code></pre>
+<pre><code>—————————————————————— Seq</code></pre>
+<pre><code>{P} S; S&#x27; {Q}</code></pre>
+<pre><code>{P ∧ B} S {Q}   {P ∧ ¬B} S&#x27; {Q}</code></pre>
+<pre><code>——————————————————————————————— If</code></pre>
+<pre><code>{P} if B then S else S&#x27; {Q}</code></pre>
+<pre><code>{P ∧ B} S {P}</code></pre>
+<pre><code>————————————————————————— While</code></pre>
+<pre><code>{P} while B do S {P ∧ ¬B}</code></pre>
+<pre><code>P&#x27; → P   {P} S {Q}   Q → Q&#x27;</code></pre>
+<pre><code>——————————————————————————— Conseq</code></pre>
+<pre><code>{P&#x27;} S {Q&#x27;}</code></pre>
+<p><code>Q[a/x]</code> 表示将 <code>Q</code> 中的 <code>x</code> 替换为 <code>a</code>。</p>
+<p>在 <code>While</code> 规则中，<code>P</code> 被称为 <strong>不变式</strong>。</p>
+<p>除了 <code>Conseq</code> 之外，这些规则都是语法驱动的：通过查看程序，我们可以立即知道应该应用哪条规则。</p>
+<p><strong>示例推导</strong>：</p>
+<pre><code>—————————————————————— Assign   —————————————————————— Assign</code></pre>
+<pre><code>{a = 2} b := a {b = 2}          {b = 2} c := b {c = 2}</code></pre>
+<pre><code>—————————————————————————————————————————————————————— Seq</code></pre>
+<pre><code>{a = 2} b := a; c := b {c = 2}</code></pre>
+<pre><code>                 —————————————————————— Assign</code></pre>
+<pre><code>x &gt; 10 → x &gt; 5   {x &gt; 5} y := x {y &gt; 5}   y &gt; 5 → y &gt; 0</code></pre>
+<pre><code>——————————————————————————————————————————————————————— Conseq</code></pre>
+<pre><code>{x &gt; 10} y := x {y &gt; 0}</code></pre>
+<p>可以通过标准规则证明各种 <strong>派生规则</strong> 的正确性。例如，我们可以为 <code>skip</code>、<code>:=</code> 和 <code>while</code> 推导出双向规则：</p>
+<pre><code>P → Q</code></pre>
+<pre><code>———————————— Skip&#x27;</code></pre>
+<pre><code>{P} skip {Q}</code></pre>
+<pre><code>P → Q[a/x]</code></pre>
+<pre><code>—————————————— Assign&#x27;</code></pre>
+<pre><code>{P} x := a {Q}</code></pre>
+<pre><code>{P ∧ B} S {P}   P ∧ ¬B → Q</code></pre>
+<pre><code>—————————————————————————— While&#x27;</code></pre>
+<pre><code>{P} while B do S {Q}</code></pre>
+<h2 id="Hoare-逻辑的语义方法">Hoare 逻辑的语义方法</h2>
+<p>我们可以在 Lean 中 <strong>语义地</strong> 定义 Hoare 三元组。</p>
+<p>我们将使用状态上的谓词（<code>State → Prop</code>）来表示前置条件和后置条件，遵循浅嵌入风格。</p>
+<pre class="lean"><code>def PartialHoare (P : State → Prop) (S : Stmt)
+    (Q : State → Prop) : Prop :=
+  ∀s t, P s → (S, s) ⟹ t → Q t
+
+macro &quot;{*&quot; P:term &quot; *} &quot; &quot;(&quot; S:term &quot;)&quot; &quot; {* &quot; Q:term &quot; *}&quot; : term =&gt;
+  `(PartialHoare $P $S $Q)
+
+
+theorem skip_intro {P} :
+    {* P *} (Stmt.skip) {* P *} :=
+  by
+    intro s t hs hst
+    cases hst
+    assumption
+
+theorem assign_intro (P) {x a} :
+    {* fun s ↦ P (s[x ↦ a s]) *} (Stmt.assign x a) {* P *} :=
+  by
+    intro s t P&#x27; hst
+    cases hst with
+    | assign =&gt; assumption
+
+theorem seq_intro {P Q R S T} (hS : {* P *} (S) {* Q *})
+      (hT : {* Q *} (T) {* R *}) :
+    {* P *} (S; T) {* R *} :=
+  by
+    intro s t hs hst
+    cases hst with
+    | seq _ _ _ u d hS&#x27; hT&#x27; =&gt;
+      apply hT
+      { apply hS
+        { exact hs }
+        { assumption } }
+      { assumption }
+
+theorem if_intro {B P Q S T}
+      (hS : {* fun s ↦ P s ∧ B s *} (S) {* Q *})
+      (hT : {* fun s ↦ P s ∧ ¬ B s *} (T) {* Q *}) :
+    {* P *} (Stmt.ifThenElse B S T) {* Q *} :=
+  by
+    intro s t hs hst
+    cases hst with
+    | if_true _ _ _ _ _ hB hS&#x27; =&gt;
+      apply hS
+      exact And.intro hs hB
+      assumption
+    | if_false _ _ _ _ _ hB hT&#x27; =&gt;
+      apply hT
+      exact And.intro hs hB
+      assumption
+
+theorem while_intro (P) {B S}
+      (h : {* fun s ↦ P s ∧ B s *} (S) {* P *}) :
+    {* P *} (Stmt.whileDo B S) {* fun s ↦ P s ∧ ¬ B s *} :=
+  by
+    intro s t hs hst
+    generalize ws_eq : (Stmt.whileDo B S, s) = Ss
+    rw [ws_eq] at hst
+    induction hst generalizing s with
+    | skip s&#x27;                       =&gt; cases ws_eq
+    | assign x a s&#x27;                 =&gt; cases ws_eq
+    | seq S T s&#x27; t&#x27; u hS hT ih      =&gt; cases ws_eq
+    | if_true B S T s&#x27; t&#x27; hB hS ih  =&gt; cases ws_eq
+    | if_false B S T s&#x27; t&#x27; hB hT ih =&gt; cases ws_eq
+    | while_true B&#x27; S&#x27; s&#x27; t&#x27; u hB&#x27; hS hw ih_hS ih_hw =&gt;
+      cases ws_eq
+      apply ih_hw
+      { apply h
+        { apply And.intro &lt;;&gt;
+            assumption }
+        { exact hS } }
+      { rfl }
+    | while_false B&#x27; S&#x27; s&#x27; hB&#x27;      =&gt;
+      cases ws_eq
+      aesop
+
+theorem consequence {P P&#x27; Q Q&#x27; S}
+      (h : {* P *} (S) {* Q *}) (hp : ∀s, P&#x27; s → P s)
+      (hq : ∀s, Q s → Q&#x27; s) :
+    {* P&#x27; *} (S) {* Q&#x27; *} :=
+  fix s t : State
+  assume hs : P&#x27; s
+  assume hst : (S, s) ⟹ t
+  show Q&#x27; t from
+    hq _ (h s t (hp s hs) hst)
+
+theorem consequence_left (P&#x27;) {P Q S}
+      (h : {* P *} (S) {* Q *}) (hp : ∀s, P&#x27; s → P s) :
+    {* P&#x27; *} (S) {* Q *} :=
+  consequence h hp (by aesop)
+
+theorem consequence_right (Q) {Q&#x27; P S}
+      (h : {* P *} (S) {* Q *}) (hq : ∀s, Q s → Q&#x27; s) :
+    {* P *} (S) {* Q&#x27; *} :=
+  consequence h (by aesop) hq
+
+theorem skip_intro&#x27; {P Q} (h : ∀s, P s → Q s) :
+    {* P *} (Stmt.skip) {* Q *} :=
+  consequence skip_intro h (by aesop)
+
+theorem assign_intro&#x27; {P Q x a}
+      (h : ∀s, P s → Q (s[x ↦ a s])):
+    {* P *} (Stmt.assign x a) {* Q *} :=
+  consequence (assign_intro Q) h (by aesop)
+
+theorem seq_intro&#x27; {P Q R S T} (hT : {* Q *} (T) {* R *})
+      (hS : {* P *} (S) {* Q *}) :
+    {* P *} (S; T) {* R *} :=
+  seq_intro hS hT
+
+theorem while_intro&#x27; {B P Q S} (I)
+      (hS : {* fun s ↦ I s ∧ B s *} (S) {* I *})
+      (hP : ∀s, P s → I s)
+      (hQ : ∀s, ¬ B s → I s → Q s) :
+    {* P *} (Stmt.whileDo B S) {* Q *} :=
+  consequence (while_intro I hS) hP (by aesop)
+
+theorem assign_intro_forward (P) {x a} :
+    {* P *}
+    (Stmt.assign x a)
+    {* fun s ↦ ∃n₀, P (s[x ↦ n₀])
+       ∧ s x = a (s[x ↦ n₀]) *} :=
+  by
+    apply assign_intro&#x27;
+    intro s hP
+    apply Exists.intro (s x)
+    simp [*]
+
+theorem assign_intro_backward (Q) {x a} :
+    {* fun s ↦ ∃n&#x27;, Q (s[x ↦ n&#x27;]) ∧ n&#x27; = a s *}
+    (Stmt.assign x a)
+    {* Q *} :=
+  by
+    apply assign_intro&#x27;
+    intro s hP
+    cases hP with
+    | intro n&#x27; hQ =&gt; aesop</code></pre>
+<h2 id="第一个程序-交换两个变量">第一个程序：交换两个变量</h2>
+<pre class="lean"><code>def SWAP : Stmt :=
+  Stmt.assign &quot;t&quot; (fun s ↦ s &quot;a&quot;);
+  Stmt.assign &quot;a&quot; (fun s ↦ s &quot;b&quot;);
+  Stmt.assign &quot;b&quot; (fun s ↦ s &quot;t&quot;)
+
+theorem SWAP_correct (a₀ b₀ : ℕ) :
+    {* fun s ↦ s &quot;a&quot; = a₀ ∧ s &quot;b&quot; = b₀ *}
+    (SWAP)
+    {* fun s ↦ s &quot;a&quot; = b₀ ∧ s &quot;b&quot; = a₀ *} :=
+  by
+    apply PartialHoare.seq_intro&#x27;
+    apply PartialHoare.seq_intro&#x27;
+    apply PartialHoare.assign_intro
+    apply PartialHoare.assign_intro
+    apply PartialHoare.assign_intro&#x27;
+    aesop</code></pre>
+<h2 id="第二个程序-两数相加">第二个程序：两数相加</h2>
+<pre class="lean"><code>def ADD : Stmt :=
+  Stmt.whileDo (fun s ↦ s &quot;n&quot; ≠ 0)
+    (Stmt.assign &quot;n&quot; (fun s ↦ s &quot;n&quot; - 1);
+     Stmt.assign &quot;m&quot; (fun s ↦ s &quot;m&quot; + 1))
+
+theorem ADD_correct (n₀ m₀ : ℕ) :
+    {* fun s ↦ s &quot;n&quot; = n₀ ∧ s &quot;m&quot; = m₀ *}
+    (ADD)
+    {* fun s ↦ s &quot;n&quot; = 0 ∧ s &quot;m&quot; = n₀ + m₀ *} :=
+  PartialHoare.while_intro&#x27; (fun s ↦ s &quot;n&quot; + s &quot;m&quot; = n₀ + m₀)
+    (by
+      apply PartialHoare.seq_intro&#x27;
+      { apply PartialHoare.assign_intro }
+      { apply PartialHoare.assign_intro&#x27;
+        aesop })
+    (by aesop)
+    (by aesop)</code></pre>
+<p>我们是如何得出这个不变式的？不变式必须满足以下条件：</p>
+<ul>
+<li>在进入循环之前为真；</li>
+<li>如果在迭代之前为真，则在每次迭代后仍然为真；</li>
+<li>足够强以蕴含所需的循环后条件。</li>
+</ul>
+<p>不变式 <code>True</code> 满足条件1和2，但通常不满足条件3。类似地，<code>False</code> 满足条件2和3，但通常不满足条件1。合适的不变式通常具有以下形式：</p>
+<p><strong>已完成的工作</strong> + <strong>剩余的工作</strong> = <strong>期望的结果</strong></p>
+<p>其中 <code>+</code> 是某种合适的运算符。当我们进入循环时，<strong>已完成的工作</strong> 通常为 <code>0</code>。当我们退出循环时，<strong>剩余的工作</strong> 应为 <code>0</code>。</p>
+<p>对于 <code>ADD</code> 循环：</p>
+<ul>
+<li><strong>已完成的工作</strong> 是 <code>m</code>；</li>
+<li><strong>剩余的工作</strong> 是 <code>n</code>；</li>
+<li><strong>期望的结果</strong> 是 <code>n₀ + m₀</code>。</li>
+</ul>
+<h2 id="验证条件生成器">验证条件生成器</h2>
+<p><strong>验证条件生成器</strong>（Verification Condition Generators，VCGs）是自动应用霍尔规则的程序，生成用户必须证明的<strong>验证条件</strong>。用户通常还需要在程序中提供足够强的不变式作为注释。</p>
+<p>我们可以使用 Lean 的元编程框架来定义一个简单的验证条件生成器。</p>
+<p>数以百计的程序验证工具都基于这些原理。</p>
+<p>验证条件生成器通常从后条件开始逆向工作，使用逆向规则（这些规则以任意的 <code>Q</code> 作为其后条件）。这种方法效果很好，因为 <code>Assign</code> 是逆向的。</p>
+<pre class="lean"><code>def Stmt.invWhileDo (I B : State → Prop) (S : Stmt) : Stmt :=
+  Stmt.whileDo B S
+
+
+theorem invWhile_intro {B I Q S}
+      (hS : {* fun s ↦ I s ∧ B s *} (S) {* I *})
+      (hQ : ∀s, ¬ B s → I s → Q s) :
+    {* I *} (Stmt.invWhileDo I B S) {* Q *} :=
+  while_intro&#x27; I hS (by aesop) hQ
+
+theorem invWhile_intro&#x27; {B I P Q S}
+      (hS : {* fun s ↦ I s ∧ B s *} (S) {* I *})
+      (hP : ∀s, P s → I s) (hQ : ∀s, ¬ B s → I s → Q s) :
+    {* P *} (Stmt.invWhileDo I B S) {* Q *} :=
+  while_intro&#x27; I hS hP hQ
+
+
+def matchPartialHoare : Expr → Option (Expr × Expr × Expr)
+  | (Expr.app (Expr.app (Expr.app
+       (Expr.const ``PartialHoare _) P) S) Q) =&gt;
+    Option.some (P, S, Q)
+  | _ =&gt;
+    Option.none
+
+partial def vcg : TacticM Unit :=
+  do
+    let goals ← getUnsolvedGoals
+    if goals.length != 0 then
+      let target ← getMainTarget
+      match matchPartialHoare target with
+      | Option.none           =&gt; return
+      | Option.some (P, S, Q) =&gt;
+        if Expr.isAppOfArity S ``Stmt.skip 0 then
+          if Expr.isMVar P then
+            applyConstant ``PartialHoare.skip_intro
+          else
+            applyConstant ``PartialHoare.skip_intro&#x27;
+        else if Expr.isAppOfArity S ``Stmt.assign 2 then
+          if Expr.isMVar P then
+            applyConstant ``PartialHoare.assign_intro
+          else
+            applyConstant ``PartialHoare.assign_intro&#x27;
+        else if Expr.isAppOfArity S ``Stmt.seq 2 then
+          andThenOnSubgoals
+            (applyConstant ``PartialHoare.seq_intro&#x27;) vcg
+        else if Expr.isAppOfArity S ``Stmt.ifThenElse 3 then
+          andThenOnSubgoals
+            (applyConstant ``PartialHoare.if_intro) vcg
+        else if Expr.isAppOfArity S ``Stmt.invWhileDo 3 then
+          if Expr.isMVar P then
+            andThenOnSubgoals
+              (applyConstant ``PartialHoare.invWhile_intro) vcg
+          else
+            andThenOnSubgoals
+              (applyConstant ``PartialHoare.invWhile_intro&#x27;)
+              vcg
+        else
+          failure
+
+elab &quot;vcg&quot; : tactic =&gt;
+  vcg</code></pre>
+<h2 id="第二个程序回顾-两数相加">第二个程序回顾：两数相加</h2>
+<pre class="lean"><code>theorem ADD_correct_vcg (n₀ m₀ : ℕ) :
+    {* fun s ↦ s &quot;n&quot; = n₀ ∧ s &quot;m&quot; = m₀ *}
+    (ADD)
+    {* fun s ↦ s &quot;n&quot; = 0 ∧ s &quot;m&quot; = n₀ + m₀ *} :=
+  show {* fun s ↦ s &quot;n&quot; = n₀ ∧ s &quot;m&quot; = m₀ *}
+     (Stmt.invWhileDo (fun s ↦ s &quot;n&quot; + s &quot;m&quot; = n₀ + m₀)
+        (fun s ↦ s &quot;n&quot; ≠ 0)
+        (Stmt.assign &quot;n&quot; (fun s ↦ s &quot;n&quot; - 1);
+         Stmt.assign &quot;m&quot; (fun s ↦ s &quot;m&quot; + 1)))
+     {* fun s ↦ s &quot;n&quot; = 0 ∧ s &quot;m&quot; = n₀ + m₀ *} from
+  by
+    vcg &lt;;&gt;
+      aesop</code></pre>
+<h2 id="完全正确性的霍尔三元组">完全正确性的霍尔三元组</h2>
+<p><strong>完全正确性</strong>不仅断言程序是部分正确的，还断言程序总是能正常终止。用于完全正确性的霍尔三元组具有以下形式：</p>
+<pre><code>[P] S [Q]</code></pre>
+<p>其预期含义为：</p>
+<pre><code>如果在执行 `S` 之前 `P` 成立，则执行会正常终止，并且在最终状态中 `Q` 成立。</code></pre>
+<p>对于确定性程序，等价的表述如下：</p>
+<pre><code>如果在执行 `S` 之前 `P` 成立，则存在一个状态，在该状态下执行会正常终止，并且 `Q` 在该状态中成立。</code></pre>
+<p>示例：</p>
+<pre><code>`[i ≤ 10] while i ≠ 10 do i := i + 1 [i = 10]`</code></pre>
+<p>在我们的 WHILE 语言中，这仅影响 while 循环，现在必须为 while 循环标注一个<strong>变体</strong> <code>V</code>（一个随着每次迭代递减的自然数）：</p>
+<pre><code>[I ∧ B ∧ V = v₀] S [I ∧ V &lt; v₀]</code></pre>
+<pre><code>——————————————————————————————— While-Var</code></pre>
+<pre><code>[I] while B do S [I ∧ ¬B]</code></pre>
+<p>对于上述示例，合适的变体是什么？</p>
+    <nav class="page-nav"><a href="09-homeworksheet.html">上一节：LoVe 作业 9（10 分 + 1 分附加分）：操作语义</a><a href="10-exercisesheet.html">下一节：LoVe 练习 10：霍尔逻辑</a></nav>
+  </main>
+</body>
+</html>

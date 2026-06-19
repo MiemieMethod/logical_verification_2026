@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoVe 演示 11：指称语义</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1><a href="index.html">逻辑验证漫游指南</a></h1>
+<h2>第 1 章</h2><ul>
+<li class=""><a href="01-demo.html">讲义：前言</a></li>
+<li class=""><a href="01-exercisesheet.html">习题：练习 1：类型与项</a></li>
+<li class=""><a href="01-homeworksheet.html">作业：作业 1（10 分）：类型与项</a></li>
+</ul>
+<h2>第 2 章</h2><ul>
+<li class=""><a href="02-demo.html">讲义：演示 2：程序与定理</a></li>
+<li class=""><a href="02-exercisesheet.html">习题：练习 2：程序与定理</a></li>
+<li class=""><a href="02-homeworksheet.html">作业：作业 2（10 分）：程序与定理</a></li>
+</ul>
+<h2>第 3 章</h2><ul>
+<li class=""><a href="03-demo.html">讲义：演示 3：逆向证明</a></li>
+<li class=""><a href="03-exercisesheet.html">习题：练习 3：逆向证明</a></li>
+<li class=""><a href="03-homeworksheet.html">作业：作业 3（10 分）：逆向证明</a></li>
+</ul>
+<h2>第 4 章</h2><ul>
+<li class=""><a href="04-demo.html">讲义：演示 4：正向证明</a></li>
+<li class=""><a href="04-exercisesheet.html">习题：练习 4：正向证明</a></li>
+<li class=""><a href="04-homeworksheet.html">作业：作业 4（10 分）：正向证明</a></li>
+</ul>
+<h2>第 5 章</h2><ul>
+<li class=""><a href="05-demo.html">讲义：演示 5：函数式编程</a></li>
+<li class=""><a href="05-exercisesheet.html">习题：练习 5：函数式编程</a></li>
+<li class=""><a href="05-homeworksheet.html">作业：作业 5（10 分 + 2 分附加分）：函数式编程</a></li>
+</ul>
+<h2>第 6 章</h2><ul>
+<li class=""><a href="06-demo.html">讲义：演示 6：归纳谓词</a></li>
+<li class=""><a href="06-exercisesheet.html">习题：练习 6：归纳谓词</a></li>
+<li class=""><a href="06-homeworksheet.html">作业：作业 6（10 分）：归纳谓词</a></li>
+</ul>
+<h2>第 7 章</h2><ul>
+<li class=""><a href="07-demo.html">讲义：演示 7：带副作用的编程</a></li>
+<li class=""><a href="07-exercisesheet.html">习题：练习 7：带副作用的编程</a></li>
+<li class=""><a href="07-homeworksheet.html">作业：作业 7（10 分 + 1 分附加分）：单子（Monads）</a></li>
+</ul>
+<h2>第 8 章</h2><ul>
+<li class=""><a href="08-demo.html">讲义：演示 8：元编程</a></li>
+<li class=""><a href="08-exercisesheet.html">习题：练习 8：元编程</a></li>
+<li class=""><a href="08-homeworksheet.html">作业：作业 8（10 分 + 2 分附加分）：元编程</a></li>
+</ul>
+<h2>第 9 章</h2><ul>
+<li class=""><a href="09-demo.html">讲义：演示 9：操作语义</a></li>
+<li class=""><a href="09-exercisesheet.html">习题：练习 9：操作语义</a></li>
+<li class=""><a href="09-homeworksheet.html">作业：作业 9（10 分 + 1 分附加分）：操作语义</a></li>
+</ul>
+<h2>第 10 章</h2><ul>
+<li class=""><a href="10-demo.html">讲义：演示 10：霍尔逻辑</a></li>
+<li class=""><a href="10-exercisesheet.html">习题：练习 10：霍尔逻辑</a></li>
+<li class=""><a href="10-homeworksheet.html">作业：作业 10（10 分 + 1 分附加分）：霍尔逻辑</a></li>
+</ul>
+<h2>第 11 章</h2><ul>
+<li class=" active"><a href="11-demo.html">讲义：演示 11：指称语义</a></li>
+<li class=""><a href="11-exercisesheet.html">习题：练习 11：指称语义</a></li>
+<li class=""><a href="11-homeworksheet.html">作业：作业 11（10 分 + 2 分附加分）：指称语义</a></li>
+</ul>
+<h2>第 12 章</h2><ul>
+<li class=""><a href="12-demo.html">讲义：演示 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-exercisesheet.html">习题：练习 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-homeworksheet.html">作业：作业 12（10 分 + 2 分附加分）：</a></li>
+</ul>
+<h2>第 13 章</h2><ul>
+<li class=""><a href="13-demo.html">讲义：演示 13：基本数学结构</a></li>
+<li class=""><a href="13-exercisesheet.html">习题：练习 13：基本数学结构</a></li>
+</ul>
+<h2>第 14 章</h2><ul>
+<li class=""><a href="14-demo.html">讲义：示例 14：有理数与实数</a></li>
+<li class=""><a href="14-exercisesheet.html">习题：练习 14：有理数与实数</a></li>
+</ul>
+  </aside>
+  <main class="content">
+    <h1 id="LoVe-演示-11-指称语义">LoVe 演示 11：指称语义</h1>
+<p>我们回顾第三种指定编程语言语义的方法：<strong>指称语义</strong>。指称语义试图直接指定程序的含义。</p>
+<p>如果操作语义是一个理想化的解释器，霍尔逻辑是一个理想化的验证器，那么指称语义就是一个理想化的编译器。</p>
+<h2 id="组合性">组合性</h2>
+<p><strong>指称语义学</strong> 将每个程序的含义定义为一个数学对象：</p>
+<pre><code>`⟦ ⟧ : 语法 → 语义`</code></pre>
+<p>指称语义学的一个关键属性是 <strong>组合性</strong>：复合语句的含义应基于其组成部分的含义来定义。这使得以下定义不符合要求：</p>
+<pre><code>`⟦S⟧ = {st | (S, Prod.fst st) ⟹ Prod.snd st}`</code></pre>
+<p>（即</p>
+<pre><code>`⟦S⟧ = {(s, t) | (S, s) ⟹ t}`）</code></pre>
+<p>因为操作语义学不具备组合性。</p>
+<p>简而言之，我们希望：</p>
+<pre><code>`⟦S; T⟧               = … ⟦S⟧ … ⟦T⟧ …`</code></pre>
+<pre><code>`⟦if B then S else T⟧ = … ⟦S⟧ … ⟦T⟧ …`</code></pre>
+<pre><code>`⟦while B do S⟧       = … ⟦S⟧ …`</code></pre>
+<p>算术表达式的求值函数</p>
+<pre><code>`eval : AExp → ((String → ℤ) → ℤ)`</code></pre>
+<p>是指称语义学的一个例子。我们希望命令式程序也能有类似的语义定义。</p>
+<h2 id="一种关系型指称语义学">一种关系型指称语义学</h2>
+<p>我们可以将命令式程序的语义表示为从初始状态到最终状态的函数，或者更一般地表示为初始状态与最终状态之间的关系：<code>Set (State × State)</code>。</p>
+<p>对于 <code>skip</code>、<code>:=</code>、<code>;</code> 和 <code>if then else</code>，指称语义学的定义是简单的：</p>
+<pre class="lean"><code>def denote : Stmt → Set (State × State)
+  | Stmt.skip             =&gt; Id
+  | Stmt.assign x a       =&gt;
+    {st | Prod.snd st = (Prod.fst st)[x ↦ a (Prod.fst st)]}
+  | Stmt.seq S T          =&gt; denote S ◯ denote T
+  | Stmt.ifThenElse B S T =&gt;
+    (denote S ⇃ B) ∪ (denote T ⇃ (fun s ↦ ¬ B s))
+  | Stmt.whileDo B S      =&gt; sorry</code></pre>
+<p>我们将 <code>⟦S⟧</code> 表示为 <code>denote S</code>。对于 <code>while</code> 语句，我们希望写成</p>
+<pre><code>`((denote S ◯ denote (Stmt.whileDo B S)) ⇃ B)`</code></pre>
+<pre><code>`∪ (Id ⇃ (fun s ↦ ¬ B s))`</code></pre>
+<p>但由于对 <code>Stmt.whileDo B S</code> 的递归调用，这是不合理的。</p>
+<p>我们需要找到一个 <code>X</code>，使得</p>
+<pre><code>`X = ((denote S ◯ X) ⇃ B) ∪ (Id ⇃ (fun s ↦ ¬ B s))`</code></pre>
+<p>换句话说，我们正在寻找一个不动点。</p>
+<p>本讲座的大部分内容涉及构建一个最小不动点操作符 <code>lfp</code>，它将允许我们定义 <code>while</code> 语句的情况：</p>
+<pre><code>`lfp (fun X ↦ ((denote S ◯ X) ⇃ B) ∪ (Id ⇃ (fun s ↦ ¬ B s)))`</code></pre>
+<h2 id="不动点">不动点</h2>
+<p><code>f</code> 的<strong>不动点</strong>（或固定点）是方程 <code>X = f X</code> 中 <code>X</code> 的解。</p>
+<p>通常，不动点可能根本不存在（例如，<code>f := Nat.succ</code>），或者可能存在多个不动点（例如，<code>f := id</code>）。但在某些条件下，<code>f</code> 的唯一<strong>最小不动点</strong>和唯一<strong>最大不动点</strong>是保证存在的。</p>
+<p>考虑以下<strong>不动点方程</strong>：</p>
+<pre><code>`X = (fun (P : ℕ → Prop) (n : ℕ) ↦ n = 0 ∨ ∃m : ℕ, n = m + 2 ∧ P m) X`</code></pre>
+<pre><code>  `= (fun n : ℕ ↦ n = 0 ∨ ∃m : ℕ, n = m + 2 ∧ X m)`</code></pre>
+<p>其中 <code>X : ℕ → Prop</code> 且 <code>f := (fun (P : ℕ → Prop) (n : ℕ) ↦ n = 0 ∨ ∃m : ℕ, n = m + 2 ∧ P m)</code>。</p>
+<p>上述示例仅有一个不动点。不动点方程唯一地指定 <code>X</code> 为描述偶数的谓词。</p>
+<p>通常，最小和最大不动点可能不同：</p>
+<pre><code>`X = X`</code></pre>
+<p>这里，最小不动点是 <code>fun _ ↦ False</code>，最大不动点是 <code>fun _ ↦ True</code>。按照惯例，<code>False &lt; True</code>，因此 <code>(fun _ ↦ False) &lt; (fun _ ↦ True)</code>。类似地，<code>∅ &lt; @Set.univ ℕ</code>。</p>
+<p>对于编程语言的语义：</p>
+<ul>
+<li><code>X</code> 的类型为 <code>Set (State × State)</code>（与 <code>State → State → Prop</code> 同构），表示状态之间的关系；</li>
+<li><code>f</code> 对应于要么进行循环的额外一次迭代（如果条件 <code>B</code> 为真），要么是恒等函数（如果 <code>B</code> 为假）。</li>
+</ul>
+<p>最小不动点对应于程序的有限执行，这是我们关心的全部内容。</p>
+<p><strong>关键观察</strong>：</p>
+<pre><code>归纳谓词对应于最小不动点，但它们已内置于 Lean 的逻辑（归纳构造的演算）中。</code></pre>
+<h2 id="单调函数">单调函数</h2>
+<p>设 <code>α</code> 和 <code>β</code> 为具有偏序 <code>≤</code> 的类型。函数 <code>f : α → β</code> 是<strong>单调的</strong>，如果</p>
+<pre><code>`a₁ ≤ a₂ → f a₁ ≤ f a₂`   对于所有 `a₁`, `a₂`</code></pre>
+<p>许多集合操作（例如，<code>∪</code>）、关系操作（例如，<code>◯</code>）和函数操作（例如，<code>fun x ↦ x</code>，<code>fun _ ↦ k</code>，<code>∘</code>）是单调的或保持单调性。</p>
+<p>所有单调函数 <code>f : Set α → Set α</code> 都允许最小和最大不动点。</p>
+<p><strong>非单调函数的示例</strong>：</p>
+<pre><code>`f A = (if A = ∅ then Set.univ else ∅)`</code></pre>
+<p>假设 <code>α</code> 是非空的，我们有 <code>∅ ⊆ Set.univ</code>，但 <code>f ∅ = Set.univ ⊈ ∅ = f Set.univ</code>。</p>
+<pre class="lean"><code>def Monotone {α β : Type} [PartialOrder α] [PartialOrder β]
+  (f : α → β) : Prop :=
+  ∀a₁ a₂, a₁ ≤ a₂ → f a₁ ≤ f a₂
+
+theorem Monotone_id {α : Type} [PartialOrder α] :
+    Monotone (fun a : α ↦ a) :=
+  by
+    intro a₁ a₂ ha
+    exact ha
+
+theorem Monotone_const {α β : Type} [PartialOrder α]
+    [PartialOrder β] (b : β) :
+    Monotone (fun _ : α ↦ b) :=
+  by
+    intro a₁ a₂ ha
+    exact le_refl b
+
+theorem Monotone_union {α β : Type} [PartialOrder α]
+      (f g : α → Set β) (hf : Monotone f) (hg : Monotone g) :
+    Monotone (fun a ↦ f a ∪ g a) :=
+  by
+    intro a₁ a₂ ha b hb
+    cases hb with
+    | inl h =&gt; exact Or.inl (hf a₁ a₂ ha h)
+    | inr h =&gt; exact Or.inr (hg a₁ a₂ ha h)</code></pre>
+<p>我们将在练习中证明以下两个定理。</p>
+<pre class="lean"><code>theorem Monotone_comp {α β : Type} [PartialOrder α]
+      (f g : α → Set (β × β)) (hf : Monotone f)
+      (hg : Monotone g) :
+    Monotone (fun a ↦ f a ◯ g a) :=
+  sorry
+
+theorem Monotone_restrict {α β : Type} [PartialOrder α]
+      (f : α → Set (β × β)) (P : β → Prop) (hf : Monotone f) :
+    Monotone (fun a ↦ f a ⇃ P) :=
+  sorry</code></pre>
+<h2 id="完全格">完全格</h2>
+<p>为了在集合上定义最小不动点，我们需要使用 <code>⊆</code> 和 <code>⋂</code>：⋂ {A | f A ⊆ A}。完全格抽象地捕捉了这一概念。一个<strong>完全格</strong>是一个有序类型 <code>α</code>，其中每个类型为 <code>Set α</code> 的集合都有一个下确界。</p>
+<p>更准确地说，一个完全格由以下部分组成：</p>
+<ul>
+<li>一个偏序关系 <code>≤ : α → α → Prop</code>（即一个自反、反对称、传递的二元谓词）；</li>
+<li>一个操作符 <code>Inf : Set α → α</code>，称为<strong>下确界</strong>。</li>
+</ul>
+<p>此外，<code>Inf A</code> 必须满足以下两个性质：</p>
+<ul>
+<li><code>Inf A</code> 是 <code>A</code> 的一个下界：对于所有 <code>b ∈ A</code>，有 <code>Inf A ≤ b</code>；</li>
+<li><code>Inf A</code> 是最大的下界：对于所有满足 <code>∀a, a ∈ A → b ≤ a</code> 的 <code>b</code>，有 <code>b ≤ Inf A</code>。</li>
+</ul>
+<p><strong>警告：</strong> <code>Inf A</code> 不一定是 <code>A</code> 的元素。</p>
+<p>示例：</p>
+<ul>
+<li>对于所有 <code>α</code>，<code>Set α</code> 是关于 <code>⊆</code> 和 <code>⋂</code> 的一个实例；</li>
+<li><code>Prop</code> 是关于 <code>→</code> 和 <code>∀</code> 的一个实例（<code>Inf A := ∀a ∈ A, a</code>）；</li>
+<li><code>ENat := ℕ ∪ {∞}</code>；</li>
+<li><code>EReal := ℝ ∪ {- ∞, ∞}</code>；</li>
+<li>如果 <code>α</code> 是一个完全格，那么 <code>β → α</code> 也是一个完全格；</li>
+<li>如果 <code>α</code> 和 <code>β</code> 都是完全格，那么 <code>α × β</code> 也是一个完全格。</li>
+</ul>
+<p>有限示例（抱歉使用 ASCII 艺术）：</p>
+<pre><code>            Z            Inf {}           = ?</code></pre>
+<pre><code>          /   \          Inf {Z}          = ?</code></pre>
+<pre><code>         A     B         Inf {A, B}       = ?</code></pre>
+<pre><code>          \   /          Inf {Z, A}       = ?</code></pre>
+<pre><code>            Y            Inf {Z, A, B, Y} = ?</code></pre>
+<p>非示例：</p>
+<ul>
+<li><code>ℕ</code>、<code>ℤ</code>、<code>ℚ</code>、<code>ℝ</code>：对于 <code>∅</code> 没有下确界。</li>
+<li><code>ERat := ℚ ∪ {- ∞, ∞}</code>：<code>Inf {q | 2 &lt; q * q} = sqrt 2</code> 不在 <code>ERat</code> 中。</li>
+</ul>
+<pre class="lean"><code>class CompleteLattice (α : Type)
+  extends PartialOrder α : Type where
+  Inf    : Set α → α
+  Inf_le : ∀A b, b ∈ A → Inf A ≤ b
+  le_Inf : ∀A b, (∀a, a ∈ A → b ≤ a) → b ≤ Inf A</code></pre>
+<p>对于集合：</p>
+<pre class="lean"><code>instance Set.CompleteLattice {α : Type} :
+  CompleteLattice (Set α) :=
+  { @Set.PartialOrder α with
+    Inf         := fun X ↦ {a | ∀A, A ∈ X → a ∈ A}
+    Inf_le      := by aesop
+    le_Inf      := by aesop }</code></pre>
+<h2 id="最小不动点">最小不动点</h2>
+<p>在计算机科学和数学中，<strong>最小不动点</strong>（Least Fixpoint）是一个重要的概念，尤其在形式化方法、程序分析和语义学等领域中广泛应用。不动点是指一个函数在某个点上的值等于该点本身，即 \( f(x) = x \)。最小不动点则是指在所有满足这一条件的点中，最小的那个点。</p>
+<h3 id="应用场景">应用场景</h3>
+<p>最小不动点常用于递归定义和迭代计算中。例如，在程序分析中，最小不动点可以用来确定程序变量的可能取值范围；在形式化语义中，它可以用来定义递归函数的语义。</p>
+<h3 id="计算方法">计算方法</h3>
+<p>计算最小不动点通常使用迭代方法，从一个初始值开始，反复应用函数 \( f \)，直到结果不再变化。这个过程被称为<strong>不动点迭代</strong>。</p>
+<h3 id="示例">示例</h3>
+<p>假设有一个函数 \( f(x) = x^2 \)，我们想要找到它的最小不动点。通过迭代计算，可以发现当 \( x = 0 \) 时，\( f(0) = 0 \)，因此 0 是这个函数的最小不动点。</p>
+<h3 id="相关概念">相关概念</h3>
+<p>- <strong>最大不动点</strong>（Greatest Fixpoint）：在所有满足 \( f(x) = x \) 的点中，最大的那个点。 - <strong>不动点定理</strong>（Fixpoint Theorem）：保证在某些条件下，不动点存在的定理。</p>
+<p>理解最小不动点的概念对于深入掌握程序分析和形式化方法至关重要。</p>
+<pre class="lean"><code>def lfp {α : Type} [CompleteLattice α] (f : α → α) : α :=
+  CompleteLattice.Inf {a | f a ≤ a}
+
+theorem lfp_le {α : Type} [CompleteLattice α] (f : α → α)
+      (a : α) (h : f a ≤ a) :
+    lfp f ≤ a :=
+  CompleteLattice.Inf_le _ _ h
+
+theorem le_lfp {α : Type} [CompleteLattice α] (f : α → α)
+      (a : α) (h : ∀a&#x27;, f a&#x27; ≤ a&#x27; → a ≤ a&#x27;) :
+    a ≤ lfp f :=
+  CompleteLattice.le_Inf _ _ h</code></pre>
+<p><strong>Knaster-Tarski 定理：</strong> 对于任意单调函数 <code>f</code>：</p>
+<ul>
+<li><code>lfp f</code> 是一个不动点：<code>lfp f = f (lfp f)</code>（定理 <code>lfp_eq</code>）；</li>
+<li><code>lfp f</code> 小于任何其他不动点：<code>X = f X → lfp f ≤ X</code>。</li>
+</ul>
+<pre class="lean"><code>theorem lfp_eq {α : Type} [CompleteLattice α] (f : α → α)
+      (hf : Monotone f) :
+    lfp f = f (lfp f) :=
+  by
+    have h : f (lfp f) ≤ lfp f :=
+      by
+        apply le_lfp
+        intro a&#x27; ha&#x27;
+        apply le_trans
+        { apply hf
+          apply lfp_le
+          assumption }
+        { assumption }
+    apply le_antisymm
+    { apply lfp_le
+      apply hf
+      assumption }
+    { assumption }</code></pre>
+<h2 id="关系指称语义学-续">关系指称语义学（续）</h2>
+<p>在本节中，我们将继续探讨关系指称语义学的相关内容。关系指称语义学是一种形式化方法，用于描述程序或语言构造的语义，通过建立输入与输出之间的关系来定义其行为。这种方法在程序验证、编译器优化以及形式化方法中具有重要应用。</p>
+<h3 id="1-基本概念">1. 基本概念</h3>
+<p>在关系指称语义学中，程序的行为被建模为一个二元关系，其中输入状态与输出状态之间通过程序执行建立联系。具体来说，给定一个程序 \( P \)，其语义可以表示为一个关系 \( R_P \subseteq \Sigma \times \Sigma \)，其中 \( \Sigma \) 表示程序状态空间。对于任意两个状态 \( \sigma, \sigma&#x27; \in \Sigma \)，如果 \( (\sigma, \sigma&#x27;) \in R_P \)，则表示程序 \( P \) 从状态 \( \sigma \) 开始执行，可能终止于状态 \( \sigma&#x27; \)。</p>
+<h3 id="2-关系的组合与迭代">2. 关系的组合与迭代</h3>
+<p>关系指称语义学的一个重要特性是支持关系的组合与迭代操作。给定两个程序 \( P_1 \) 和 \( P_2 \)，其语义关系分别为 \( R_{P_1} \) 和 \( R_{P_2} \)，则顺序组合 \( P_1; P_2 \) 的语义关系可以通过关系的复合运算得到： \[ R_{P_1; P_2} = R_{P_2} \circ R_{P_1} \] 其中，\( \circ \) 表示关系的复合运算，定义为： \[ R_2 \circ R_1 = \{ (\sigma, \sigma&#x27;&#x27;) \mid \exists \sigma&#x27; \in \Sigma, (\sigma, \sigma&#x27;) \in R_1 \land (\sigma&#x27;, \sigma&#x27;&#x27;) \in R_2 \} \]</p>
+<p>此外，对于循环结构（如 <code>while</code> 循环），其语义可以通过关系的迭代来定义。具体来说，给定一个条件 \( b \) 和一个程序体 \( P \)，<code>while b do P</code> 的语义关系可以表示为： \[ R_{\text{while } b \text{ do } P} = \bigcup_{n=0}^{\infty} R_{\text{while } b \text{ do } P}^n \] 其中，\( R_{\text{while } b \text{ do } P}^n \) 表示关系 \( R_P \) 在条件 \( b \) 下的 \( n \) 次迭代。</p>
+<h3 id="3-非确定性语义">3. 非确定性语义</h3>
+<p>关系指称语义学天然支持非确定性程序的语义描述。对于非确定性程序，其语义关系可能包含多个可能的输出状态。例如，给定一个非确定性选择语句 \( P_1 \sqcup P_2 \)，其语义关系为： \[ R_{P_1 \sqcup P_2} = R_{P_1} \cup R_{P_2} \] 这表示程序可能选择执行 \( P_1 \) 或 \( P_2 \)，从而导致不同的输出状态。</p>
+<h3 id="4-应用与扩展">4. 应用与扩展</h3>
+<p>关系指称语义学在程序验证中具有重要应用。通过将程序的语义表示为关系，可以方便地使用形式化方法（如霍尔逻辑或抽象解释）来验证程序的性质。此外，关系指称语义学还可以扩展到并发程序、概率程序以及高阶函数等更复杂的语言构造中。</p>
+<h3 id="5-总结">5. 总结</h3>
+<p>关系指称语义学提供了一种强大且灵活的工具，用于形式化描述程序的行为。通过将程序语义建模为关系，可以清晰地表达程序的输入输出行为，并支持组合、迭代以及非确定性等复杂语义的建模。这种方法在程序验证、编译器设计以及形式化方法研究中具有广泛的应用前景。</p>
+<p>---</p>
+<p>以上是关系指称语义学的进一步讨论。通过深入理解其基本概念与操作，可以更好地应用这一理论工具解决实际问题。</p>
+<pre class="lean"><code>def denote : Stmt → Set (State × State)
+  | Stmt.skip             =&gt; Id
+  | Stmt.assign x a       =&gt;
+    {st | Prod.snd st = (Prod.fst st)[x ↦ a (Prod.fst st)]}
+  | Stmt.seq S T          =&gt; denote S ◯ denote T
+  | Stmt.ifThenElse B S T =&gt;
+    (denote S ⇃ B) ∪ (denote T ⇃ (fun s ↦ ¬ B s))
+  | Stmt.whileDo B S      =&gt;
+    lfp (fun X ↦ ((denote S ◯ X) ⇃ B)
+      ∪ (Id ⇃ (fun s ↦ ¬ B s)))
+
+notation (priority := high) &quot;⟦&quot; S &quot;⟧&quot; =&gt; denote S
+
+theorem Monotone_while_lfp_arg (S B) :
+    Monotone (fun X ↦ ⟦S⟧ ◯ X ⇃ B ∪ Id ⇃ (fun s ↦ ¬ B s)) :=
+  by
+    apply Monotone_union
+    { apply SorryTheorems.Monotone_restrict
+      apply SorryTheorems.Monotone_comp
+      { exact Monotone_const _ }
+      { exact Monotone_id } }
+    { apply SorryTheorems.Monotone_restrict
+      exact Monotone_const _ }</code></pre>
+<h2 id="程序等价性应用">程序等价性应用</h2>
+<p>基于指称语义学，我们引入程序等价性的概念：<code>S₁ ~ S₂</code>。（与练习9进行比较。）</p>
+<pre class="lean"><code>def DenoteEquiv (S₁ S₂ : Stmt) : Prop :=
+  ⟦S₁⟧ = ⟦S₂⟧
+
+infix:50 (priority := high) &quot; ~ &quot; =&gt; DenoteEquiv</code></pre>
+<p>从定义中可以明显看出，<code>~</code> 是一个等价关系。</p>
+<p>程序等价性可用于将子程序替换为具有相同语义的其他子程序。这是通过以下同余规则实现的：</p>
+<pre class="lean"><code>theorem DenoteEquiv.seq_congr {S₁ S₂ T₁ T₂ : Stmt}
+      (hS : S₁ ~ S₂) (hT : T₁ ~ T₂) :
+    S₁; T₁ ~ S₂; T₂ :=
+  by
+    simp [DenoteEquiv, denote] at *
+    simp [*]
+
+theorem DenoteEquiv.if_congr {B} {S₁ S₂ T₁ T₂ : Stmt}
+      (hS : S₁ ~ S₂) (hT : T₁ ~ T₂) :
+    Stmt.ifThenElse B S₁ T₁ ~ Stmt.ifThenElse B S₂ T₂ :=
+  by
+    simp [DenoteEquiv, denote] at *
+    simp [*]
+
+theorem DenoteEquiv.while_congr {B} {S₁ S₂ : Stmt}
+      (hS : S₁ ~ S₂) :
+    Stmt.whileDo B S₁ ~ Stmt.whileDo B S₂ :=
+  by
+    simp [DenoteEquiv, denote] at *
+    simp [*]</code></pre>
+<p>请比较这些证明的简洁性与大步语义（练习8）中相应证明的简洁性。</p>
+<p>让我们证明一些程序等价性。</p>
+<pre class="lean"><code>theorem DenoteEquiv.skip_assign_id {x} :
+    Stmt.assign x (fun s ↦ s x) ~ Stmt.skip :=
+  by simp [DenoteEquiv, denote, Id]
+
+theorem DenoteEquiv.seq_skip_left {S} :
+    Stmt.skip; S ~ S :=
+  by simp [DenoteEquiv, denote, Id, comp]
+
+theorem DenoteEquiv.seq_skip_right {S} :
+    S; Stmt.skip ~ S :=
+  by simp [DenoteEquiv, denote, Id, comp]
+
+theorem DenoteEquiv.if_seq_while {B S} :
+    Stmt.ifThenElse B (S; Stmt.whileDo B S) Stmt.skip
+    ~ Stmt.whileDo B S :=
+  by
+    simp [DenoteEquiv, denote]
+    apply Eq.symm
+    apply lfp_eq
+    apply Monotone_while_lfp_arg</code></pre>
+<h2 id="指称语义与大步语义的等价性">指称语义与大步语义的等价性</h2>
+<h2 id="可选">（<strong>可选</strong>）</h2>
+<pre class="lean"><code>theorem denote_of_BigStep (Ss : Stmt × State) (t : State)
+      (h : Ss ⟹ t) :
+    (Prod.snd Ss, t) ∈ ⟦Prod.fst Ss⟧ :=
+  by
+    induction h with
+    | skip s =&gt; simp [denote]
+    | assign x a s =&gt; simp [denote]
+    | seq S T s t u hS hT ihS ihT =&gt;
+      simp [denote]
+      aesop
+    | if_true B S T s t hB hS ih =&gt;
+      simp at *
+      simp [denote, *]
+    | if_false B S T s t hB hT ih =&gt;
+      simp at *
+      simp [denote, *]
+    | while_true B S s t u hB hS hw ihS ihw =&gt;
+      rw [Eq.symm DenoteEquiv.if_seq_while]
+      simp at *
+      simp [denote, *]
+      aesop
+    | while_false B S s hB =&gt;
+      rw [Eq.symm DenoteEquiv.if_seq_while]
+      simp at *
+      simp [denote, *]
+
+theorem BigStep_of_denote :
+    ∀(S : Stmt) (s t : State), (s, t) ∈ ⟦S⟧ → (S, s) ⟹ t
+  | Stmt.skip,             s, t =&gt; by simp [denote]
+  | Stmt.assign x a,       s, t =&gt; by simp [denote]
+  | Stmt.seq S T,          s, t =&gt;
+    by
+      intro hst
+      simp [denote] at hst
+      cases hst with
+      | intro u hu =&gt;
+        cases hu with
+        | intro hsu hut =&gt;
+          apply BigStep.seq
+          { exact BigStep_of_denote _ _ _ hsu }
+          { exact BigStep_of_denote _ _ _ hut }
+  | Stmt.ifThenElse B S T, s, t =&gt;
+    by
+      intro hst
+      simp [denote] at hst
+      cases hst with
+      | inl htrue =&gt;
+        cases htrue with
+        | intro hst hB =&gt;
+          apply BigStep.if_true
+          { exact hB }
+          { exact BigStep_of_denote _ _ _ hst }
+      | inr hfalse =&gt;
+        cases hfalse with
+        | intro hst hB =&gt;
+          apply BigStep.if_false
+          { exact hB }
+          { exact BigStep_of_denote _ _ _ hst }
+  | Stmt.whileDo B S,      s, t =&gt;
+    by
+      have hw : ⟦Stmt.whileDo B S⟧
+        ≤ {st | (Stmt.whileDo B S, Prod.fst st) ⟹
+             Prod.snd st} :=
+        by
+          apply lfp_le _ _ _
+          intro uv huv
+          cases uv with
+          | mk u v =&gt;
+            simp at huv
+            cases huv with
+            | inl hand =&gt;
+              cases hand with
+              | intro hst hB =&gt;
+                cases hst with
+                | intro w hw =&gt;
+                  cases hw with
+                  | intro huw hw =&gt;
+                    apply BigStep.while_true
+                    { exact hB }
+                    { exact BigStep_of_denote _ _ _ huw }
+                    { exact hw }
+            | inr hand =&gt;
+              cases hand with
+              | intro hvu hB =&gt;
+                cases hvu
+                apply BigStep.while_false
+                exact hB
+      apply hw
+
+theorem denote_Iff_BigStep (S : Stmt) (s t : State) :
+    (s, t) ∈ ⟦S⟧ ↔ (S, s) ⟹ t :=
+  Iff.intro (BigStep_of_denote S s t) (denote_of_BigStep (S, s) t)</code></pre>
+<h2 id="基于归纳谓词的简化方法-可选">基于归纳谓词的简化方法（<strong>可选</strong>）</h2>
+<pre class="lean"><code>inductive Awhile (B : State → Prop)
+    (r : Set (State × State)) :
+  State → State → Prop
+  | true {s t u} (hcond : B s) (hbody : (s, t) ∈ r)
+      (hrest : Awhile B r t u) :
+    Awhile B r s u
+  | false {s} (hcond : ¬ B s) :
+    Awhile B r s s
+
+def denoteAwhile : Stmt → Set (State × State)
+  | Stmt.skip             =&gt; Id
+  | Stmt.assign x a       =&gt;
+    {st | Prod.snd st = (Prod.fst st)[x ↦ a (Prod.fst st)]}
+  | Stmt.seq S T          =&gt; denoteAwhile S ◯ denoteAwhile T
+  | Stmt.ifThenElse B S T =&gt;
+    (denoteAwhile S ⇃ B)
+    ∪ (denoteAwhile T ⇃ (fun s ↦ ¬ B s))
+  | Stmt.whileDo B S      =&gt;
+    {st | Awhile B (denoteAwhile S) (Prod.fst st)
+       (Prod.snd st)}</code></pre>
+    <nav class="page-nav"><a href="10-homeworksheet.html">上一节：LoVe 作业 10（10 分 + 1 分附加分）：霍尔逻辑</a><a href="11-exercisesheet.html">下一节：LoVe 练习 11：指称语义</a></nav>
+  </main>
+</body>
+</html>

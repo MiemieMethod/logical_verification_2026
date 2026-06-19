@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoVe 练习 7：带副作用的编程</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1><a href="index.html">逻辑验证漫游指南</a></h1>
+<h2>第 1 章</h2><ul>
+<li class=""><a href="01-demo.html">讲义：前言</a></li>
+<li class=""><a href="01-exercisesheet.html">习题：练习 1：类型与项</a></li>
+<li class=""><a href="01-homeworksheet.html">作业：作业 1（10 分）：类型与项</a></li>
+</ul>
+<h2>第 2 章</h2><ul>
+<li class=""><a href="02-demo.html">讲义：演示 2：程序与定理</a></li>
+<li class=""><a href="02-exercisesheet.html">习题：练习 2：程序与定理</a></li>
+<li class=""><a href="02-homeworksheet.html">作业：作业 2（10 分）：程序与定理</a></li>
+</ul>
+<h2>第 3 章</h2><ul>
+<li class=""><a href="03-demo.html">讲义：演示 3：逆向证明</a></li>
+<li class=""><a href="03-exercisesheet.html">习题：练习 3：逆向证明</a></li>
+<li class=""><a href="03-homeworksheet.html">作业：作业 3（10 分）：逆向证明</a></li>
+</ul>
+<h2>第 4 章</h2><ul>
+<li class=""><a href="04-demo.html">讲义：演示 4：正向证明</a></li>
+<li class=""><a href="04-exercisesheet.html">习题：练习 4：正向证明</a></li>
+<li class=""><a href="04-homeworksheet.html">作业：作业 4（10 分）：正向证明</a></li>
+</ul>
+<h2>第 5 章</h2><ul>
+<li class=""><a href="05-demo.html">讲义：演示 5：函数式编程</a></li>
+<li class=""><a href="05-exercisesheet.html">习题：练习 5：函数式编程</a></li>
+<li class=""><a href="05-homeworksheet.html">作业：作业 5（10 分 + 2 分附加分）：函数式编程</a></li>
+</ul>
+<h2>第 6 章</h2><ul>
+<li class=""><a href="06-demo.html">讲义：演示 6：归纳谓词</a></li>
+<li class=""><a href="06-exercisesheet.html">习题：练习 6：归纳谓词</a></li>
+<li class=""><a href="06-homeworksheet.html">作业：作业 6（10 分）：归纳谓词</a></li>
+</ul>
+<h2>第 7 章</h2><ul>
+<li class=""><a href="07-demo.html">讲义：演示 7：带副作用的编程</a></li>
+<li class=" active"><a href="07-exercisesheet.html">习题：练习 7：带副作用的编程</a></li>
+<li class=""><a href="07-homeworksheet.html">作业：作业 7（10 分 + 1 分附加分）：单子（Monads）</a></li>
+</ul>
+<h2>第 8 章</h2><ul>
+<li class=""><a href="08-demo.html">讲义：演示 8：元编程</a></li>
+<li class=""><a href="08-exercisesheet.html">习题：练习 8：元编程</a></li>
+<li class=""><a href="08-homeworksheet.html">作业：作业 8（10 分 + 2 分附加分）：元编程</a></li>
+</ul>
+<h2>第 9 章</h2><ul>
+<li class=""><a href="09-demo.html">讲义：演示 9：操作语义</a></li>
+<li class=""><a href="09-exercisesheet.html">习题：练习 9：操作语义</a></li>
+<li class=""><a href="09-homeworksheet.html">作业：作业 9（10 分 + 1 分附加分）：操作语义</a></li>
+</ul>
+<h2>第 10 章</h2><ul>
+<li class=""><a href="10-demo.html">讲义：演示 10：霍尔逻辑</a></li>
+<li class=""><a href="10-exercisesheet.html">习题：练习 10：霍尔逻辑</a></li>
+<li class=""><a href="10-homeworksheet.html">作业：作业 10（10 分 + 1 分附加分）：霍尔逻辑</a></li>
+</ul>
+<h2>第 11 章</h2><ul>
+<li class=""><a href="11-demo.html">讲义：演示 11：指称语义</a></li>
+<li class=""><a href="11-exercisesheet.html">习题：练习 11：指称语义</a></li>
+<li class=""><a href="11-homeworksheet.html">作业：作业 11（10 分 + 2 分附加分）：指称语义</a></li>
+</ul>
+<h2>第 12 章</h2><ul>
+<li class=""><a href="12-demo.html">讲义：演示 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-exercisesheet.html">习题：练习 12：数学的逻辑基础</a></li>
+<li class=""><a href="12-homeworksheet.html">作业：作业 12（10 分 + 2 分附加分）：</a></li>
+</ul>
+<h2>第 13 章</h2><ul>
+<li class=""><a href="13-demo.html">讲义：演示 13：基本数学结构</a></li>
+<li class=""><a href="13-exercisesheet.html">习题：练习 13：基本数学结构</a></li>
+</ul>
+<h2>第 14 章</h2><ul>
+<li class=""><a href="14-demo.html">讲义：示例 14：有理数与实数</a></li>
+<li class=""><a href="14-exercisesheet.html">习题：练习 14：有理数与实数</a></li>
+</ul>
+  </aside>
+  <main class="content">
+    <h1 id="LoVe-练习-7-带副作用的编程">LoVe 练习 7：带副作用的编程</h1>
+<p>将占位符（例如，<code>:= sorry</code>）替换为你的解决方案。</p>
+<h2 id="问题1-带有失败处理的状态单子-State-Monad-with-Failure">问题1：带有失败处理的状态单子（State Monad with Failure）</h2>
+<p>我们引入了一种更为丰富的合法单子（lawful monad）概念，它提供了一个满足某些定律的<code>orelse</code>操作符，具体定律如下所示。<code>emp</code>表示失败。<code>orelse x y</code>首先尝试执行<code>x</code>，如果<code>x</code>失败，则回退执行<code>y</code>。</p>
+<pre class="lean"><code>class LawfulMonadWithOrelse (m : Type → Type)
+  extends LawfulMonad m where
+  emp {α : Type} : m α
+  orelse {α : Type} : m α → m α → m α
+  emp_orelse {α : Type} (a : m α) :
+    orelse emp a = a
+  orelse_emp {α : Type} (a : m α) :
+    orelse a emp = a
+  orelse_assoc {α : Type} (a b c : m α) :
+    orelse (orelse a b) c = orelse a (orelse b c)
+  emp_bind {α β : Type} (f : α → m β) :
+    (emp &gt;&gt;= f) = emp
+  bind_emp {α β : Type} (f : m α) :
+    (f &gt;&gt;= (fun a ↦ (emp : m β))) = emp</code></pre>
+<p>1.1. 我们将 <code>Option</code> 类型构造器设置为一个 <code>LawfulMonad_with_orelse</code>。请完成证明。</p>
+<p>提示：使用 <code>simp [Bind.bind]</code> 来展开绑定操作符的定义， 并使用 <code>simp [Option.orelse]</code> 来展开 <code>orelse</code> 操作符的定义。</p>
+<pre class="lean"><code>def Option.orelse {α : Type} : Option α → Option α → Option α
+  | Option.none,   ma&#x27; =&gt; ma&#x27;
+  | Option.some a, _   =&gt; Option.some a
+
+instance Option.LawfulMonadWithOrelse :
+  LawfulMonadWithOrelse Option :=
+  { Option.LawfulMonad with
+    emp          := Option.none
+    orelse       := Option.orelse
+    emp_orelse   :=
+      sorry
+    orelse_emp   :=
+      by
+        intro α ma
+        simp [Option.orelse]
+        cases ma
+        { rfl }
+        { rfl }
+    orelse_assoc :=
+      sorry
+    emp_bind     :=
+      by
+        intro α β f
+        simp [Bind.bind]
+        rfl
+    bind_emp     :=
+      sorry
+  }
+
+@[simp] theorem Option.some_bind {α β : Type} (a : α) (g : α → Option β) :
+    (Option.some a &gt;&gt;= g) = g a :=
+  sorry</code></pre>
+<p>1.2. 现在我们已经准备好定义 <code>FAction σ</code>：一个具有内部状态类型为 <code>σ</code> 且可能失败的单子（与 <code>Action σ</code> 不同）。</p>
+<p>我们首先定义 <code>FAction σ α</code>，其中 <code>σ</code> 是内部状态的类型，<code>α</code> 是单子中存储的值的类型。我们使用 <code>Option</code> 来模拟失败。这意味着在定义 <code>FAction</code> 上的单子操作时，我们也可以使用 <code>Option</code> 的单子操作。</p>
+<p>提示：</p>
+<ul>
+<li>请记住，<code>FAction σ α</code> 是一个函数类型的别名，因此你可以使用模式匹配和 <code>fun s ↦ …</code> 来定义类型为 <code>FAction σ α</code> 的值。</li>
+</ul>
+<ul>
+<li><code>FAction</code> 与课程演示中的 <code>Action</code> 非常相似。你可以参考那里的内容以获取灵感。</li>
+</ul>
+<pre class="lean"><code>def FAction (σ : Type) (α : Type) : Type :=
+  sorry</code></pre>
+<p>1.3. 为 <code>FAction</code> 定义 <code>get</code> 和 <code>set</code> 函数，其中 <code>get</code> 返回通过状态单子传递的状态，而 <code>set s</code> 将状态更改为 <code>s</code>。</p>
+<pre class="lean"><code>def get {σ : Type} : FAction σ σ :=
+  sorry
+
+def set {σ : Type} (s : σ) : FAction σ Unit :=
+  sorry</code></pre>
+<p>我们在 <code>FAction</code> 上设置了 <code>&gt;&gt;=</code> 语法。</p>
+<pre class="lean"><code>def FAction.bind {σ α β : Type} (f : FAction σ α) (g : α → FAction σ β) :
+  FAction σ β
+  | s =&gt; f s &gt;&gt;= (fun (a, s) ↦ g a s)
+
+instance FAction.Bind {σ : Type} : Bind (FAction σ) :=
+  { bind := FAction.bind }
+
+theorem FAction.bind_apply {σ α β : Type} (f : FAction σ α)
+      (g : α → FAction σ β) (s : σ) :
+    (f &gt;&gt;= g) s = (f s &gt;&gt;= (fun as ↦ g (Prod.fst as) (Prod.snd as))) :=
+  by rfl</code></pre>
+<p>1.4. 为 <code>FAction</code> 定义 <code>pure</code> 操作符，使其满足以下三条定律。</p>
+<pre class="lean"><code>def FAction.pure {σ α : Type} (a : α) : FAction σ α :=
+  sorry</code></pre>
+<p>我们为 <code>FAction</code> 上的 <code>pure</code> 设置了语法：</p>
+<pre class="lean"><code>instance FAction.Pure {σ : Type} : Pure (FAction σ) :=
+  { pure := FAction.pure }
+
+theorem FAction.pure_apply {σ α : Type} (a : α) (s : σ) :
+    (pure a : FAction σ α) s = Option.some (a, s) :=
+  by rfl</code></pre>
+<p>1.5. 将 <code>FAction</code> 注册为单子（monad）。</p>
+<p>提示：</p>
+<ul>
+<li>当你需要证明两个函数相等时，<code>funext</code> 定理可能会很有用。</li>
+</ul>
+<ul>
+<li>定理 <code>FAction.pure_apply</code> 或 <code>FAction.bind_apply</code> 可能会派上用场。</li>
+</ul>
+<pre class="lean"><code>instance FAction.LawfulMonad {σ : Type} : LawfulMonad (FAction σ) :=
+  { FAction.Bind, FAction.Pure with
+    pure_bind :=
+      by
+      sorry
+    bind_pure :=
+      by
+        intro α ma
+        apply funext
+        intro s
+        have bind_pure_helper :
+          (do
+             let x ← ma s
+             pure (Prod.fst x) (Prod.snd x)) =
+          ma s :=
+          by apply LawfulMonad.bind_pure
+        aesop
+    bind_assoc :=
+      sorry
+  }</code></pre>
+<h2 id="问题-2-可选-Kleisli-运算符">问题 2（<strong>可选</strong>）：Kleisli 运算符</h2>
+<p>Kleisli 运算符 <code>&gt;=&gt;</code>（不要与 <code>&gt;&gt;=</code> 混淆）在管道化具有副作用（effectful）的函数时非常有用。需要注意的是，<code>fun a ↦ f a &gt;&gt;= g</code> 应解析为 <code>fun a ↦ (f a &gt;&gt;= g)</code>，而不是 <code>(fun a ↦ f a) &gt;&gt;= g</code>。</p>
+<pre class="lean"><code>def kleisli {m : Type → Type} [LawfulMonad m] {α β γ : Type} (f : α → m β)
+    (g : β → m γ) : α → m γ :=
+  fun a ↦ f a &gt;&gt;= g
+
+infixr:90 (priority := high) &quot; &gt;=&gt; &quot; =&gt; kleisli</code></pre>
+<p>2.1 （<strong>可选</strong>）。证明 <code>pure</code> 是 Kleisli 运算符的左单位和右单位。</p>
+<pre class="lean"><code>theorem pure_kleisli {m : Type → Type} [LawfulMonad m] {α β : Type}
+      (f : α → m β) :
+    (pure &gt;=&gt; f) = f :=
+  sorry
+
+theorem kleisli_pure {m : Type → Type} [LawfulMonad m] {α β : Type}
+      (f : α → m β) :
+    (f &gt;=&gt; pure) = f :=
+  sorry</code></pre>
+<p>2.2 （<strong>可选</strong>）。证明Kleisli运算符满足结合律。</p>
+<pre class="lean"><code>theorem kleisli_assoc {m : Type → Type} [LawfulMonad m] {α β γ δ : Type}
+      (f : α → m β) (g : β → m γ) (h : γ → m δ) :
+    ((f &gt;=&gt; g) &gt;=&gt; h) = (f &gt;=&gt; (g &gt;=&gt; h)) :=
+  sorry</code></pre>
+    <nav class="page-nav"><a href="07-demo.html">上一节：LoVe 演示 7：带副作用的编程</a><a href="07-homeworksheet.html">下一节：LoVe 作业 7（10 分 + 1 分附加分）：单子（Monads）</a></nav>
+  </main>
+</body>
+</html>
