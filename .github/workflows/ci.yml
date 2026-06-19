@@ -1,0 +1,83 @@
+name: build and deploy Chinese book to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup elan
+        run: |
+          curl -O --location https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh
+          chmod u+x elan-init.sh
+          ./elan-init.sh -y --default-toolchain none
+
+      - name: Set elan paths
+        run: |
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Install Lean toolchain
+        run: |
+          cd lean
+          lean --version
+
+      - name: Cache Lake build directory
+        uses: actions/cache@v4
+        with:
+          path: lean/.lake
+          key: ${{ runner.os }}-lake-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-lake-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}-
+
+      - name: Build Lean project
+        run: |
+          cd lean
+          lake build --no-ansi
+
+      - name: Build Chinese book
+        run: |
+          python3 scripts/build_docs.py
+
+      - name: Install deploy helper
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync
+
+      - name: Deploy Chinese book to gh-pages
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        run: |
+          touch book_zh/_out/html-multi/.nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages || true
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git worktree add -B gh-pages gh-pages-worktree origin/gh-pages
+          else
+            git worktree add --detach gh-pages-worktree
+            cd gh-pages-worktree
+            git checkout --orphan gh-pages
+            cd ..
+          fi
+          rsync -a --delete --exclude .git book_zh/_out/html-multi/ gh-pages-worktree/
+          cd gh-pages-worktree
+          git add -A
+          git commit -m "Deploy Chinese book to GitHub Pages" || exit 0
+          git push origin gh-pages
