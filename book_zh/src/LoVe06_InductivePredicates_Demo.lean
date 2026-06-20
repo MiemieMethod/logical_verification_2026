@@ -5,11 +5,14 @@ import LoVe.LoVe04_ForwardProofs_Demo
 import LoVe.LoVe05_FunctionalProgramming_Demo
 
 
-/-
-# LoVe Demo 6: Inductive Predicates
+/- # LoVe 演示 6：归纳谓词
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+__归纳谓词__，也就是归纳定义的命题，是规定类型为 `⋯ → Prop` 的函数的一种便利方式。
+它们让人想起形式系统，也让人想起 Prolog 中的 Horn 子句；Prolog 是逻辑程序设计语言的典范。
+
+Lean 的一种可能图景是：
+
+    Lean = 函数式程序设计 + 逻辑程序设计 + 更多逻辑 -/
 
 
 set_option autoImplicit false
@@ -20,19 +23,29 @@ set_option linter.tacticAnalysis.introMerge false
 namespace LoVe
 
 
-/-
-## Introductory Examples
+/- ## 引导性例子
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+### 偶数
+
+数学家常常把集合定义为满足某些条件的最小集合。例如：
+
+    偶自然数集合 `E` 定义为在下列规则下封闭的最小集合：
+    (1) `0 ∈ E`；(2) 对每个 `k ∈ ℕ`，若 `k ∈ E`，则 `k + 2 ∈ E`。
+
+在 Lean 中，我们可以如下定义相应的“是偶数”谓词： -/
 
 inductive Even : ℕ → Prop where
   | zero    : Even 0
   | add_two : ∀k : ℕ, Even k → Even (k + 2)
 
-/-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- 这应当看起来很熟悉。我们曾经使用相同的语法定义归纳类型，只是那里用的是 `Type`
+而不是 `Prop`。
+
+上面的命令引入了一个新的 unary 谓词 `Even`，以及两个构造子 `Even.zero` 和
+`Even.add_two`，它们可用于构造证明项。由于归纳定义具有“无冗余值”保证，
+`Even.zero` 和 `Even.add_two` 是构造 `Even` 的证明的仅有两种方式。
+
+根据 PAT 原则，`Even` 可以看作一个归纳类型，其值就是证明项。 -/
 
 theorem Even_4 :
     Even 4 :=
@@ -43,27 +56,33 @@ theorem Even_4 :
   show Even 4 from
     Even.add_two _ Even_2
 
-/-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- 为什么不能直接递归地定义 `Even`？确实，为什么不这样做呢？ -/
 
 def evenRec : ℕ → Bool
   | 0     => true
   | 1     => false
   | k + 2 => evenRec k
 
-/-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- 两种风格各有优缺点。
+
+递归版本要求我们指定一个为假的情形（1），并且要求我们关心终止性。另一方面，
+由于它具有计算内容，它能很好地配合 `rfl`、`simp`、`#reduce` 和 `#eval`。
+
+归纳版本通常被认为更加抽象、更加优雅。每条规则都可以独立于其他规则陈述。
+
+定义 `Even` 的另一种方式，是把它定义为一个非递归定义： -/
 
 def evenNonrec (k : ℕ) : Prop :=
   k % 2 = 0
 
-/-
-### Tennis Games
+/- 数学家大概会认为这是最令人满意的定义。但归纳版本是一个便利而直观的例子，
+也很典型地代表了许多现实的归纳定义。
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+
+### 网球比赛
+
+迁移系统由迁移规则组成；这些规则共同规定一个二元谓词，连接“之前”状态和“之后”状态。
+作为迁移系统的一个简单样本，我们考虑一局网球比赛中从 0–0 开始可能发生的比分迁移。 -/
 
 inductive Score : Type where
   | vs       : ℕ → ℕ → Score
@@ -92,9 +111,10 @@ inductive Step : Score → Score → Prop where
 
 infixr:45 " ↝ " => Step
 
-/-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- 注意，虽然 `Score.vs` 允许任意自然数作为参数，但 `Step` 构造子的表述保证了，
+从 `0–0` 出发只能到达合法的网球比分。
+
+我们可以提出并形式化回答这样的问题：比分是否可能回到 `0–0`？ -/
 
 theorem no_Step_to_0_0 (s : Score) :
     ¬ s ↝ 0–0 :=
@@ -103,11 +123,9 @@ theorem no_Step_to_0_0 (s : Score) :
     cases h
 
 
-/-
-### Reflexive Transitive Closure
+/- ### 自反传递闭包
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+最后一个引导性例子是关系 `R` 的自反传递闭包，我们把它建模为一个二元谓词 `Star R`。 -/
 
 inductive Star {α : Type} (R : α → α → Prop) : α → α → Prop
 where
@@ -115,31 +133,36 @@ where
   | refl (a : α)      : Star R a a
   | trans (a b c : α) : Star R a b → Star R b c → Star R a c
 
-/-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- 第一条规则把 `R` 嵌入 `Star R`。第二条规则实现自反闭包。第三条规则实现传递闭包。
+
+这个定义确实优雅。如果对此有所怀疑，不妨尝试把 `Star` 实现为递归函数： -/
 
 def starRec {α : Type} (R : α → α → Bool) :
     α → α → Bool :=
   sorry
 
 
-/-
-### A Nonexample
+/- ### 一个非例子
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+并非所有归纳定义都是合法的。 -/
 
 /-
-译稿待补：请根据英文原文独立翻译本注释块。
+-- fails
+inductive Illegal : Prop where
+  | intro : ¬ Illegal → Illegal
 -/
 
 
-/-
-## Logical Symbols
+/- ## 逻辑符号
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+真值 `False` 和 `True`、联结词 `∧`、`∨` 和 `↔`、存在量词 `∃`，
+以及等式谓词 `=`，全都定义为归纳命题或归纳谓词。相比之下，`∀` 和 `→`
+内建于逻辑之中。
+
+语法糖：
+
+    `∃x : α, P` := `Exists (fun x : α ↦ P)`
+    `x = y`     := `Eq x y` -/
 
 namespace logical_symbols
 
@@ -175,11 +198,12 @@ end logical_symbols
 #print Eq
 
 
-/-
-## Rule Induction
+/- ## 规则归纳
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+正如我们可以对一个项进行归纳，我们也可以对一个证明项进行归纳。
+
+这称为__规则归纳__，因为归纳作用在引入规则上（即证明项的构造子上）。
+由于 PAT 原则，这一点按预期工作。 -/
 
 theorem mod_two_Eq_zero_of_Even (n : ℕ) (h : Even n) :
     n % 2 = 0 :=
@@ -203,9 +227,8 @@ theorem Not_Even_two_mul_add_one (m n : ℕ)
         simp at *
         linarith
 
-/-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- `linarith` 证明涉及线性算术等式或不等式的目标。“线性”意味着它只处理 `+`
+和 `-`，不处理 `*` 和 `/`（但支持乘以常数）。 -/
 
 theorem linarith_example (i : Int) (hi : i > 5) :
     2 * i + 3 > 11 :=
@@ -243,11 +266,20 @@ theorem Star_Star_Iff_Star {α : Type} (R : α → α → Prop)
 #check propext
 
 
-/-
-## Elimination
+/- ## 消去
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+给定一个归纳谓词 `P`，它的引入规则通常形如 `∀…, ⋯ → P …`，
+并可用于证明形如 `⊢ P …` 的目标。
+
+消去则反向工作：它从形如 `P …` 的定理或假设中抽取信息。消去有多种形式：
+模式匹配、`cases` 和 `induction` 策略，以及自定义消去规则（例如 `And.left`）。
+
+* `cases` 的工作方式类似于 `induction`，但没有归纳假设。
+
+* `match` 同样可用。
+
+现在我们终于能够理解 `h : l = r` 时的 `cases h`，以及 `cases Classical.em h`
+是如何工作的。 -/
 
 #print Eq
 
@@ -271,9 +303,16 @@ theorem cases_Classical_em_example {α : Type} (a : α)
     | inl hl => sorry
     | inr hr => sorry
 
-/-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- 我们常常希望重写形如 `P (c …)` 的具体项，其中 `c` 通常是一个构造子。
+为了支持这种消去式推理，可以陈述并证明一个__反演规则__。
+
+典型的反演规则：
+
+    `∀x y, P (c x y) → (∃…, ⋯ ∧ ⋯) ∨ ⋯ ∨ (∃…, ⋯ ∧ ⋯)`
+
+把引入和消去合并到一个定理中也可能有用；这样得到的定理可用于同时重写目标中的假设和结论：
+
+    `∀x y, P (c x y) ↔ (∃…, ⋯ ∧ ⋯) ∨ ⋯ ∨ (∃…, ⋯ ∧ ⋯)` -/
 
 theorem Even_Iff (n : ℕ) :
     Even n ↔ n = 0 ∨ (∃m : ℕ, n = m + 2 ∧ Even m) :=
@@ -321,11 +360,9 @@ theorem Even_Iff_struct (n : ℕ) :
              by simp [heq, Even.add_two _ hm])
 
 
-/-
-## Further Examples
+/- ## 更多例子
 
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+### 有序列表 -/
 
 inductive Sorted : List ℕ → Prop where
   | nil : Sorted []
@@ -368,11 +405,7 @@ theorem Not_Sorted_17_13 :
     | two_or_more _ _ hlet hsorted => simp at hlet
 
 
-/-
-### Palindromes
-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- ### 回文 -/
 
 inductive Palindrome {α : Type} : List α → Prop where
   | nil : Palindrome []
@@ -381,7 +414,12 @@ inductive Palindrome {α : Type} : List α → Prop where
     Palindrome ([x] ++ xs ++ [x])
 
 /-
-译稿待补：请根据英文原文独立翻译本注释块。
+-- fails
+def palindromeRec {α : Type} : List α → Bool
+  | []                 => true
+  | [_]                => true
+  | ([x] ++ xs ++ [x]) => palindromeRec xs
+  | _                  => false
 -/
 
 theorem Palindrome_aa {α : Type} (a : α) :
@@ -404,11 +442,7 @@ theorem Palindrome_reverse {α : Type} (xs : List α)
         exact Palindrome.sandwich _ _ ih
 
 
-/-
-### Full Binary Trees
-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- ### 满二叉树 -/
 
 #check Tree
 
@@ -458,11 +492,7 @@ theorem IsFull_mirror_struct_induct {α : Type} (t : Tree α) :
             · simp [mirror_Eq_nil_Iff, *]
 
 
-/-
-### First-Order Terms
-
-译稿待补：请根据英文原文独立翻译本注释块。
--/
+/- ### 一阶项 -/
 
 inductive Term (α β : Type) : Type where
   | var : β → Term α β
