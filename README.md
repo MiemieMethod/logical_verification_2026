@@ -1,17 +1,19 @@
 # 逻辑验证漫游指南 2026 版
 
-本仓库包含《逻辑验证漫游指南》（2026 版）的中文译本及其配套 Lean 文件。
-英文原书为 _The Hitchhiker's Guide to Logical Verification_。
+本仓库用于维护 _The Hitchhiker's Guide to Logical Verification_
+（2026 版）的独立中文译本及其配套 Lean 文件。
 
-根目录中的 `逻辑验证漫游指南-2026-桌面版.pdf` 与
-`逻辑验证漫游指南-2026-Pad版.pdf` 分别为桌面版和 Pad 版中文 PDF。
+中文译稿以英文原书和仓库中的英文 Lean 注释为内容依据；第三方中文译本不作为译文内容来源。
 
 ## 目录
 
 * `lean/LoVe`：英文版配套 Lean 4 项目，可用 Lake 构建。
-* `lean/LoVe-zh`：中文译文对应的 Lean 文件，正文保留在块注释中，Lean 代码保持原样以便对照阅读。
-* `scripts/build_docs.py`：从 `lean/LoVe-zh` 自动生成静态中文网页。
+* `book_zh/src`：独立中文译稿。Lean 代码保持原样，说明文字位于块注释中。
+* `scripts/build_docs.py`：从 `book_zh/src` 自动生成静态中文网页。
 * `book_zh/_out/html-multi`：本地生成的网页输出目录，不纳入版本控制；GitHub Actions 会把它发布到 `gh-pages` 分支。
+
+根目录中的 `hitchhikers_guide_2026_desktop.pdf` 与
+`hitchhikers_guide_2026_tablet.pdf` 是英文原书 PDF。中文 PDF 将在独立译稿完成后再由本仓库内容生成。
 
 ## 构建
 

@@ -1,4 +1,4 @@
-/- Copyright © 2018–2025 Anne Baanen, Alexander Bentkamp, Jasmin Blanchette,
+/- Copyright © 2018–2026 Anne Baanen, Alexander Bentkamp, Jasmin Blanchette,
 Xavier Généreux, Johannes Hölzl, and Jannis Limperg. See `LICENSE.txt`. -/
 
 import LoVe.LoVelib
@@ -6,24 +6,29 @@ import LoVe.LoVelib
 
 /- # LoVe 演示 2：程序与定理
 
-我们继续学习 Lean 的基础知识，重点关注程序和定理，但暂不进行任何证明。我们将回顾如何定义新类型和函数，以及如何将它们的预期性质表述为定理。 -/
+我们继续学习 Lean 的基础。本讲聚焦于程序与定理，但暂时还不进行任何证明。
+我们将回顾如何定义新的类型和函数，以及如何把它们应当满足的性质陈述为定理。 -/
 
 
 set_option autoImplicit false
-set_option tactic.hygienic false
+set_option linter.unusedVariables false
+set_option linter.unnecessarySeqFocus false
+set_option linter.tacticAnalysis.introMerge false
 
 namespace LoVe
 
 
 /- ## 类型定义
 
-**归纳类型**（也称为**归纳数据类型**、**代数数据类型**，或简称为**数据类型**）是一种类型，它包含所有可以通过其**构造器**有限次应用构建的值，且仅包含这些值。
+__归纳类型__（也称为__归纳数据类型__、__代数数据类型__，或简称为__数据类型__）是这样的类型：
+它恰好由那些能够通过有限次应用其__构造子__而构造出来的值组成。
+
 
 ### 自然数 -/
 
 namespace MyNat
 
-/- 自然数类型 `Nat`（即 `ℕ`）的定义，采用一元表示法： -/
+/- 使用一元记法定义自然数类型 `Nat`（= `ℕ`）： -/
 
 inductive Nat : Type where
   | zero : Nat
@@ -39,7 +44,8 @@ inductive Nat : Type where
 
 end MyNat
 
-/- 在命名空间 `MyNat` 之外，`Nat` 指的是 Lean 核心库中定义的类型，除非它被 `MyNat` 命名空间限定。 -/
+/- 在命名空间 `MyNat` 之外，除非使用 `MyNat` 命名空间加以限定，
+`Nat` 指的是 Lean 核心库中定义的类型。 -/
 
 #print Nat
 #print MyNat.Nat
@@ -77,20 +83,20 @@ end MyList
 
 /- ## 函数定义
 
-定义作用于归纳类型上的函数语法非常简洁：我们定义一个单一函数，并使用**模式匹配**来提取构造器的参数。 -/
+定义作用于归纳类型的函数时，语法非常紧凑：我们定义一个单一函数，并使用__模式匹配__从构造子中取出参数。 -/
 
 def fib : ℕ → ℕ
   | 0     => 0
   | 1     => 1
   | n + 2 => fib (n + 1) + fib n
 
-/- 当存在多个参数时，使用 `,` 分隔各个模式： -/
+/- 当有多个参数时，用 `,` 分隔各个模式： -/
 
 def add : ℕ → ℕ → ℕ
   | m, Nat.zero   => m
   | m, Nat.succ n => Nat.succ (add m n)
 
-/- `#eval` 和 `#reduce` 用于评估并输出一个项的值。 -/
+/- `#eval` 和 `#reduce` 对项求值并输出其值。 -/
 
 #eval add 2 7
 #reduce add 2 7
@@ -109,9 +115,10 @@ def power : ℕ → ℕ → ℕ
 
 #eval power 2 5
 
-/- `add`、`mul` 和 `power` 是人为设计的示例。这些操作在 Lean 中已经以 `+`、`*` 和 `^` 的形式提供。
+/- `add`、`mul` 和 `power` 都是人为构造的例子。这些运算在 Lean 中已经分别以
+`+`、`*` 和 `^` 的形式提供。
 
-如果不需要对某个参数进行模式匹配，可以将其移到 `:` 的左侧，并将其设为命名参数： -/
+如果没有必要对某个参数做模式匹配，可以把它移到 `:` 的左侧，使之成为一个具名参数： -/
 
 def powerParam (m : ℕ) : ℕ → ℕ
   | Nat.zero   => 1
@@ -134,13 +141,15 @@ def append (α : Type) : List α → List α → List α
   | List.nil,       ys => ys
   | List.cons x xs, ys => List.cons x (append α xs ys)
 
-/- 由于 `append` 必须适用于任何类型的列表，因此其元素的类型是作为参数提供的。因此，在每次调用时都必须提供类型（如果 Lean 能够推断出类型，则可以使用 `_`）。 -/
+/- 因为 `append` 必须适用于任意元素类型的列表，所以元素类型本身也作为参数给出。
+因此，每次调用都必须提供该类型（如果 Lean 能够推断出该类型，也可以使用 `_`）。 -/
 
 #check append
 #eval append ℕ [3, 1] [4, 1, 5]
 #eval append _ [3, 1] [4, 1, 5]
 
-/- 如果类型参数被包含在 `{ }` 中而不是 `( )` 中，则该参数是隐式的，无需在每次调用时显式提供（前提是 Lean 能够推断出该参数）。 -/
+/- 如果类型参数写在 `{ }` 而不是 `( )` 中，它就是隐式参数；只要 Lean 能够推断出它，
+就无须在每次调用中显式提供。 -/
 
 def appendImplicit {α : Type} : List α → List α → List α
   | List.nil,       ys => ys
@@ -148,7 +157,8 @@ def appendImplicit {α : Type} : List α → List α → List α
 
 #eval appendImplicit [3, 1] [4, 1, 5]
 
-/- 在定义名称前加上 `@` 符号，可以得到一个对应的定义，其中所有隐式参数都已显式化。这在 Lean 无法确定如何实例化隐式参数的情况下非常有用。 -/
+/- 在定义名前加上 `@`，可以得到相应定义的版本，其中所有隐式参数都被显式化。
+当 Lean 无法确定如何实例化隐式参数时，这很有用。 -/
 
 #check @appendImplicit
 #eval @appendImplicit ℕ [3, 1] [4, 1, 5]
@@ -158,20 +168,7 @@ def appendImplicit {α : Type} : List α → List α → List α
 
     `[]`          := `List.nil`
     `x :: xs`     := `List.cons x xs`
-    `[x₁, …, xN]` := `x₁ :: … :: xN :: []`
-
-翻译为中文：
-
-别名：
-
-    `[]`          := `List.nil`
-    `x :: xs`     := `List.cons x xs`
-    `[x₁, …, xN]` := `x₁ :: … :: xN :: []`
-
-解释：
-- `[]` 表示空列表，等同于 `List.nil`。
-- `x :: xs` 表示将元素 `x` 添加到列表 `xs` 的开头，等同于 `List.cons x xs`。
-- `[x₁, …, xN]` 表示一个包含元素 `x₁` 到 `xN` 的列表，等同于 `x₁ :: … :: xN :: []`。 -/
+    `[x₁, …, xN]` := `x₁ :: … :: xN :: []` -/
 
 def appendPretty {α : Type} : List α → List α → List α
   | [],      ys => ys
@@ -191,11 +188,14 @@ def eval (env : String → ℤ) : AExp → ℤ
 
 #eval eval (fun x ↦ 7) (AExp.div (AExp.var "y") (AExp.num 0))
 
-/- Lean 仅接受那些能够证明其终止性的函数定义。特别是，它接受**结构递归**函数，这些函数每次仅剥离一个构造函数。
+/- Lean 只接受那些它能够证明会终止的函数定义。特别地，它接受__结构递归__函数；
+这种函数每次恰好剥去一个构造子。
 
-## 定理声明
 
-请注意与 `def` 命令的相似性。`theorem` 类似于 `def`，不同之处在于其结果是一个命题，而不是数据或函数。 -/
+## 定理陈述
+
+注意它与 `def` 命令的相似性。`theorem` 类似于 `def`，区别在于其结果是命题，
+而不是数据或函数。 -/
 
 namespace SorryTheorems
 
@@ -223,7 +223,7 @@ theorem reverse_reverse {α : Type} (xs : List α) :
     reverse (reverse xs) = xs :=
   sorry
 
-/- 公理（Axioms）类似于定理（theorems），但没有证明。不透明声明（Opaque declarations）类似于定义（definitions），但没有具体实现体。 -/
+/- 公理类似于没有证明的定理。不透明声明类似于没有主体的定义。 -/
 
 opaque a : ℤ
 opaque b : ℤ

@@ -1,83 +1,54 @@
-/- Copyright © 2018–2025 Anne Baanen, Alexander Bentkamp, Jasmin Blanchette,
+/- Copyright © 2018–2026 Anne Baanen, Alexander Bentkamp, Jasmin Blanchette,
 Xavier Généreux, Johannes Hölzl, and Jannis Limperg. See `LICENSE.txt`. -/
 
 import LoVe.LoVelib
 
 
-/- # LoVe 演示 5：函数式编程
+/-
+# LoVe Demo 5: Functional Programming
 
-我们将深入探讨类型化函数式编程的基础知识：归纳类型、归纳证明、递归函数、模式匹配、结构体（记录）以及类型类。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 
 set_option autoImplicit false
-set_option tactic.hygienic false
+set_option linter.unusedVariables false
+set_option linter.unnecessarySeqFocus false
+set_option linter.tacticAnalysis.introMerge false
 
 namespace LoVe
 
 
-/- ## 归纳类型
+/-
+## Inductive Types
 
-回顾类型 `Nat` 的定义： -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 #print Nat
 
-/- ## 技术文档翻译
+/-
+## Structural Induction
 
-### 格言：
-
-* **无冗余**：类型中不包含无法通过构造函数表达的值。
-* **无混淆**：通过不同方式构建的值是不同的。
-
-对于 `Nat`（自然数类型）：
-
-* **无冗余**意味着没有特殊值（例如 `–1` 或 `ε`）无法通过有限次组合 `Nat.zero` 和 `Nat.succ` 来表达。
-* **无混淆**确保了 `Nat.zero` ≠ `Nat.succ n`。
-
-此外，归纳类型的值始终是有限的。`Nat.succ (Nat.succ …)` 不是一个值。
-
----
-
-## 结构归纳法
-
-**结构归纳法**是数学归纳法在归纳类型上的推广。为了证明所有自然数 `n` 满足性质 `P[n]`，只需证明以下两种情况：
-
-1. **基础情况**：
-
-   ```
-   P[0]
-   ```
-
-2. **归纳步骤**：
-
-   ```
-   ∀k, P[k] → P[k + 1]
-   ```
-
-对于列表类型，基础情况为：
-
-```
-P[[]]
-```
-
-归纳步骤为：
-
-```
-∀y ys, P[ys] → P[y :: ys]
-```
-
-一般来说，每个构造函数对应一个子目标，并且对于我们所进行归纳的类型的所有构造函数参数，都可以使用归纳假设。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 theorem Nat.succ_neq_self (n : ℕ) :
     Nat.succ n ≠ n :=
   by
     induction n with
     | zero       => simp
-    | succ n' ih => simp [ih]
+    | succ n' ih =>
+      intro hsucc
+      apply ih
+      apply Nat.succ.inj hsucc
 
 
-/- ## 结构递归
+/-
+## Structural Recursion
 
-**结构递归**是一种递归形式，它允许我们从递归的值中剥离出一个构造器。这类函数保证在递归停止之前只会有限次地调用自身。这是确保函数终止的一个先决条件。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def fact : ℕ → ℕ
   | 0     => 1
@@ -88,24 +59,12 @@ def factThreeCases : ℕ → ℕ
   | 1     => 1
   | n + 1 => (n + 1) * factThreeCases n
 
-/- 对于结构递归函数，Lean 能够自动证明其终止性。然而，对于更一般的递归模式，终止性检查可能会失败。有时这种失败是有充分理由的，如下例所示： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
-/- -- 失败
-def illegal : ℕ → ℕ
-  | n => illegal n + 1
-
-翻译为中文：
-
--- 失败
-def illegal : ℕ → ℕ
-  | n => illegal n + 1
-
-在这个技术文档中，`illegal` 是一个递归函数，它接受一个自然数 `n` 并返回 `illegal n + 1`。由于这个函数没有终止条件，它将无限递归下去，导致程序失败。 -/文档中，"fails" 通常指系统、设备或组件未能按预期工作或达到设计要求的状态。可以翻译为“故障”或“失效”，具体取决于上下文。例如：
-- **System fails**：系统故障
-- **Component fails**：组件失效
-
-如果需要更具体的上下文，请提供完整句子或段落，以便更准确地翻译。def illegal : ℕ → ℕ
-  | n => illegal n + 1
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
 -/
 
 opaque immoral : ℕ → ℕ
@@ -126,14 +85,11 @@ theorem proof_of_False :
     by simp at h0eq1
 
 
-/- ## 模式匹配表达式
+/-
+## Pattern Matching Expressions
 
-    `match` _项₁_, …, _项M_ `with`
-    | _模式₁₁_, …, _模式₁M_ => _结果₁_
-        ⋮
-    | _模式N₁_, …, _模式NM_ => _结果N_
-
-`match` 允许在项内进行非递归的模式匹配。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def bcount {α : Type} (p : α → Bool) : List α → ℕ
   | []      => 0
@@ -146,9 +102,11 @@ def min (a b : ℕ) : ℕ :=
   if a ≤ b then a else b
 
 
-/- ## 结构体
+/-
+## Structures
 
-Lean 提供了一种便捷的语法来定义记录（record）或结构体（structure）。这些本质上都是非递归的、单一构造函数的归纳类型。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 structure RGB where
   red   : ℕ
@@ -162,7 +120,9 @@ structure RGB where
 
 namespace RGB_as_inductive
 
-/- RGB 结构定义等同于以下一组定义： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 inductive RGB : Type where
   | mk : ℕ → ℕ → ℕ → RGB
@@ -178,12 +138,16 @@ def RGB.blue : RGB → ℕ
 
 end RGB_as_inductive
 
-/- 可以通过扩展现有结构来创建新结构： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 structure RGBA extends RGB where
   alpha : ℕ
 
-/- `RGBA` 是一种带有额外字段 `alpha : ℕ` 的 `RGB`。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 #print RGBA
 
@@ -208,7 +172,9 @@ def shuffle (c : RGB) : RGB :=
     green := RGB.blue c
     blue  := RGB.red c }
 
-/- 使用模式匹配的替代定义： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def shufflePattern : RGB → RGB
   | RGB.mk r g b => RGB.mk g b r
@@ -218,9 +184,11 @@ theorem shuffle_shuffle_shuffle (c : RGB) :
   by rfl
 
 
-/- ## 类型类
+/-
+## Type Classes
 
-__类型类__ 是一种结合了抽象常量及其属性的结构类型。通过为这些常量提供具体定义并证明这些属性成立，可以将一个类型声明为某个类型类的实例。根据类型，Lean 会检索相关的实例。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 #print Inhabited
 
@@ -254,19 +222,25 @@ instance Prod.Inhabited {α β : Type}
   Inhabited (α × β) :=
   { default := (Inhabited.default, Inhabited.default) }
 
-/- 我们在第3讲中遇到了这些类型类： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 #print Std.Associative
 #print Std.Commutative
 
 
-/- ## 列表
+/-
+## Lists
 
-`List` 是一种归纳多态类型，由 `List.nil` 和 `List.cons` 构造而成： -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 #print List
 
-/- `cases` 对指定的项进行情况区分。这会生成与该项类型的定义中构造器数量相同的子目标。该策略的行为与 `induction` 相同，只是它不会生成归纳假设。以下是一个人为设计的示例： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 theorem head_head_cases {α : Type} [Inhabited α]
       (xs : List α) :
@@ -276,7 +250,9 @@ theorem head_head_cases {α : Type} [Inhabited α]
     | nil        => rfl
     | cons x xs' => rfl
 
-/- `match` 是结构化等价物： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 theorem head_head_match {α : Type} [Inhabited α]
       (xs : List α) :
@@ -285,7 +261,9 @@ theorem head_head_match {α : Type} [Inhabited α]
   | List.nil        => by rfl
   | List.cons x xs' => by rfl
 
-/- `cases` 也可以用于形式为 `l = r` 的假设。它会将 `r` 与 `l` 进行匹配，并在目标的所有位置将 `r` 中出现的变量替换为 `l` 中对应的项。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 theorem injection_example {α : Type} (x y : α) (xs ys : List α)
       (h : x :: xs = y :: ys) :
@@ -294,7 +272,9 @@ theorem injection_example {α : Type} (x y : α) (xs ys : List α)
     cases h
     simp
 
-/- 如果 `r` 无法匹配 `l`，则不会产生任何子目标；证明完成。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 theorem distinctness_example {α : Type} (y : α) (ys : List α)
       (h : [] = y :: ys) :
@@ -362,7 +342,9 @@ def length {α : Type} : List α → ℕ
 
 #check List.length
 
-/- `cases` 也可以与 `Classical.em` 结合使用，用于对命题进行情况区分。此时会出现两种情况：一种是命题为真，另一种是命题为假。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 #check Classical.em
 
@@ -390,7 +372,7 @@ theorem length_zip {α β : Type} (xs : List α) (ys : List β) :
     length (zip xs ys) = min (length xs) (length ys) :=
   by
     induction xs generalizing ys with
-    | nil           => simp [min, length]
+    | nil           => simp [zip, min, length]
     | cons x xs' ih =>
       cases ys with
       | nil        => rfl
@@ -408,19 +390,17 @@ theorem map_zip {α α' β β' : Type} (f : α → α')
   | _ :: _,  []      => by rfl
 
 
-/- ## 二叉树
+/-
+## Binary Trees
 
-具有多个递归参数的构造函数的归纳类型定义了类似树的对象。**二叉树**的节点最多有两个子节点。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 #print Tree
 
-/- 类型 `AExp`（算术表达式）也是树数据结构的一个示例。
-
-树的节点，无论是内部节点还是叶节点，通常都带有标签或其他注释。
-
-归纳树不包含无限分支，甚至不包含循环。虽然这比基于指针或引用的数据结构（在命令式语言中）表达能力稍弱，但更易于推理。
-
-递归定义（以及归纳证明）的工作方式与列表大致相同，但我们可能需要在多个子节点上进行递归（或调用归纳假设）。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def mirror {α : Type} : Tree α → Tree α
   | Tree.nil        => Tree.nil
@@ -455,7 +435,11 @@ theorem mirror_Eq_nil_Iff {α : Type} :
   | Tree.node _ _ _ => by simp [mirror]
 
 
-/- ## 依赖归纳类型（**可选**） -/
+/-
+## Dependent Inductive Types (**optional**)
+
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 inductive Vec (α : Type) : ℕ → Type where
   | nil                                : Vec α 0

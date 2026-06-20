@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIR = ROOT / "lean" / "LoVe-zh"
+SOURCE_DIR = ROOT / "book_zh" / "src"
 OUT_DIR = ROOT / "book_zh" / "_out" / "html-multi"
 
 
@@ -16,12 +16,14 @@ KIND_ORDER = {
     "Demo": 0,
     "ExerciseSheet": 1,
     "HomeworkSheet": 2,
+    "ExerciseSolution": 3,
 }
 
 KIND_LABEL = {
     "Demo": "讲义",
     "ExerciseSheet": "习题",
     "HomeworkSheet": "作业",
+    "ExerciseSolution": "习题解答",
 }
 
 PUNCT_TRANSLATIONS = str.maketrans(
@@ -60,7 +62,8 @@ class DocFile:
 def main() -> None:
     docs = discover_docs()
     if not docs:
-        raise SystemExit(f"no Chinese Lean files found in {SOURCE_DIR}")
+        raise SystemExit(f"no independent Chinese translation files found in {SOURCE_DIR}")
+    check_no_untranslated_placeholders(docs)
 
     if OUT_DIR.exists():
         shutil.rmtree(OUT_DIR)
@@ -76,7 +79,9 @@ def main() -> None:
 
 def discover_docs() -> list[DocFile]:
     docs: list[DocFile] = []
-    pattern = re.compile(r"LoVe(\d{2})_(.+)_(Demo|ExerciseSheet|HomeworkSheet)\.lean$")
+    pattern = re.compile(
+        r"LoVe(\d{2})_(.+)_(Demo|ExerciseSheet|HomeworkSheet|ExerciseSolution)\.lean$"
+    )
     for path in SOURCE_DIR.glob("LoVe*.lean"):
         match = pattern.fullmatch(path.name)
         if not match:
@@ -87,6 +92,17 @@ def discover_docs() -> list[DocFile]:
         slug = f"{chapter:02d}-{kind.lower()}.html"
         docs.append(DocFile(path, chapter, title, kind, slug))
     return sorted(docs, key=lambda d: (d.chapter, KIND_ORDER[d.kind], d.path.name))
+
+
+def check_no_untranslated_placeholders(docs: list[DocFile]) -> None:
+    pending = []
+    for doc in docs:
+        text = doc.path.read_text(encoding="utf-8-sig")
+        if "译稿待补" in text:
+            pending.append(doc.path.relative_to(ROOT).as_posix())
+    if pending:
+        joined = "\n".join(f"- {path}" for path in pending)
+        raise SystemExit(f"untranslated placeholders remain:\n{joined}")
 
 
 def first_title(path: Path) -> str | None:
@@ -136,7 +152,7 @@ def write_index(docs: list[DocFile]) -> None:
 
     pdfs = "\n".join(
         f'<li><a href="{html.escape(p.name)}">{html.escape(p.name)}</a></li>'
-        for p in sorted(OUT_DIR.glob("逻辑验证漫游指南-2026-*.pdf"))
+        for p in sorted(OUT_DIR.glob("logical-verification-2026-zh*.pdf"))
     )
     pdf_section = f"<h2>PDF</h2><ul>{pdfs}</ul>" if pdfs else ""
 
@@ -144,7 +160,7 @@ def write_index(docs: list[DocFile]) -> None:
     <header class="hero">
       <p class="eyebrow">Logical Verification 2026</p>
       <h1>逻辑验证漫游指南</h1>
-      <p>本页由仓库中的中文 Lean 讲义注释自动生成，代码块保持原样，便于与 Lean 项目配合阅读。</p>
+      <p>本页由仓库中的独立中文译稿自动生成，代码块保持原样，便于与 Lean 项目配合阅读。</p>
     </header>
     <section class="toc-grid">
       {''.join(chapters)}
@@ -158,7 +174,7 @@ def write_index(docs: list[DocFile]) -> None:
 
 
 def copy_pdfs() -> None:
-    for pdf in ROOT.glob("逻辑验证漫游指南-2026-*.pdf"):
+    for pdf in ROOT.glob("logical-verification-2026-zh*.pdf"):
         shutil.copy2(pdf, OUT_DIR / pdf.name)
 
 

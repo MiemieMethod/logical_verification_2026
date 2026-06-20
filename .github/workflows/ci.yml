@@ -28,8 +28,6 @@ jobs:
         run: |
           python3 scripts/build_docs.py
           test -f book_zh/_out/html-multi/index.html
-          test -f book_zh/_out/html-multi/逻辑验证漫游指南-2026-桌面版.pdf
-          test -f book_zh/_out/html-multi/逻辑验证漫游指南-2026-Pad版.pdf
 
       - name: Install deploy helper
         if: github.event_name == 'push' && github.ref_name == 'main'

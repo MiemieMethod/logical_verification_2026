@@ -1,44 +1,38 @@
-/- Copyright © 2018–2025 Anne Baanen, Alexander Bentkamp, Jasmin Blanchette,
+/- Copyright © 2018–2026 Anne Baanen, Alexander Bentkamp, Jasmin Blanchette,
 Xavier Généreux, Johannes Hölzl, and Jannis Limperg. See `LICENSE.txt`. -/
 
 import LoVe.LoVelib
 
 
-/- # LoVe 示例 14：有理数与实数
+/-
+# LoVe Demo 14: Rational and Real Numbers
 
-我们回顾了将 `ℚ` 和 `ℝ` 构造为商类型的过程。
-
-我们构造具有特定属性的类型的步骤如下：
-
-1. 创建一个新类型，该类型可以表示所有元素，但不一定以唯一的方式表示。
-
-2. 对这个表示进行商化，将应该相等的元素等同起来。
-
-3. 通过从基类型提升函数来定义商类型上的运算符，并证明它们与商关系兼容。
-
-我们在第12讲中使用了这种方法来构造 `ℤ`。这种方法同样适用于 `ℚ` 和 `ℝ`。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 
 set_option autoImplicit false
-set_option tactic.hygienic false
+set_option linter.unusedVariables false
+set_option linter.unnecessarySeqFocus false
+set_option linter.tacticAnalysis.introMerge false
 
 namespace LoVe
 
 
-/- ## 有理数
+/-
+## Rational Numbers
 
-**步骤 1:** 有理数是指可以表示为整数 `n` 和 `d ≠ 0` 的分数 `n / d` 的数： -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 structure Fraction where
   num            : ℤ
   denom          : ℤ
   denom_Neq_zero : denom ≠ 0
 
-/- 数字 `n` 被称为**分子**，数字 `d` 被称为**分母**。
-
-有理数表示为分数的形式并不唯一——例如，`1 / 2 = 2 / 4 = -1 / -2`。
-
-**步骤 2：** 如果两个分数 `n₁ / d₁` 和 `n₂ / d₂` 的分子与分母的比例相同，即 `n₁ * d₂ = n₂ * d₁`，那么它们表示的是同一个有理数。这将作为我们在分数上的等价关系 `≈`。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 namespace Fraction
 
@@ -63,19 +57,15 @@ instance Setoid : Setoid Fraction :=
               _ = num c * denom b * denom a :=
                 by rw [heq_bc]
               _ = num c * denom a * denom b :=
-                by ac_rfl
-            } }
+                by ac_rfl } }
 
 theorem Setoid_Iff (a b : Fraction) :
     a ≈ b ↔ num a * denom b = num b * denom a :=
   by rfl
 
-/- **步骤 3:** 定义 `0 := 0 / 1`，`1 := 1 / 1`，加法、乘法等运算。
-
-    `n₁ / d₁ + n₂ / d₂`     := `(n₁ * d₂ + n₂ * d₁) / (d₁ * d₂)`
-    `(n₁ / d₁) * (n₂ / d₂)` := `(n₁ * n₂) / (d₁ * d₂)`
-
-然后证明这些定义与等价关系 `≈` 是兼容的。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def of_int (i : ℤ) : Fraction :=
   { num            := i
@@ -112,17 +102,13 @@ theorem Setoid_add {a a' b b' : Fraction} (ha : a ≈ a')
           * (denom a' * denom b')
       = num a * denom a' * denom b * denom b'
         + num b * denom b' * denom a * denom a' :=
-        by
-          simp [add_mul, mul_add]
-          ac_rfl
+        by grind
       _ = num a' * denom a * denom b * denom b'
             + num b' * denom b * denom a * denom a' :=
         by simp [*]
       _ = (num a' * denom b' + num b' * denom a')
             * (denom a * denom b) :=
-        by
-          simp [add_mul, mul_add]
-          ac_rfl
+        by grind
 
 instance Neg : Neg Fraction :=
   { neg := fun a : Fraction ↦
@@ -147,8 +133,7 @@ instance Mul : Mul Fraction :=
   { mul := fun a b : Fraction ↦
       { num            := num a * num b
         denom          := denom a * denom b
-        denom_Neq_zero :=
-          by simp [Int.mul_eq_zero, denom_Neq_zero] } }
+        denom_Neq_zero := by simp [denom_Neq_zero] } }
 
 @[simp] theorem mul_num (a b : Fraction) :
     num (a * b) = num a * num b :=
@@ -265,9 +250,11 @@ instance Inv : Inv Rat :=
 end Rat
 
 
-/- ### `ℚ` 的替代定义
+/-
+### Alternative Definition of `ℚ`
 
-将 `ℚ` 定义为 `fraction` 的子类型，要求分母为正数，且分子和分母除了 `1` 和 `-1` 之外没有其他公约数： -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 namespace Alternative
 
@@ -281,48 +268,18 @@ def Rat : Type :=
 
 end Alternative
 
-/- 这大致是 `mathlib` 的定义。
+/-
+### Real Numbers
 
-优点：
-
-* 不需要商集（quotient）；
-* 计算效率更高；
-* 更多性质在计算上是语法等价的。
-
-缺点：
-
-* 函数定义更为复杂。
-
-### 实数
-
-一些有理数序列看起来是收敛的，因为序列中的数越来越接近，但它们并不收敛到一个有理数。
-
-示例：
-
-    `a₀ = 1`
-    `a₁ = 1.4`
-    `a₂ = 1.41`
-    `a₃ = 1.414`
-    `a₄ = 1.4142`
-    `a₅ = 1.41421`
-    `a₆ = 1.414213`
-    `a₇ = 1.4142135`
-       ⋮
-
-这个序列看起来是收敛的，因为每个 `aₙ` 与后续数的差距最多为 `10^-n`。但极限是 `√2`，它不是一个有理数。
-
-有理数是不完备的，而实数是它们的**完备化**。
-
-为了构造实数，我们需要填补这些看起来收敛但实际上不收敛的序列所揭示的“空隙”。
-
-从数学上讲，一个有理数序列 `a₀, a₁, …` 是**柯西序列**（Cauchy），如果对于任意 `ε > 0`，存在一个 `N ∈ ℕ`，使得对于所有 `m ≥ N`，都有 `|a_N - a_m| < ε`。
-
-换句话说，无论我们选择的 `ε` 有多小，我们总能找到序列中的一个点，使得从该点开始的所有后续数与它的偏差都小于 `ε`。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def IsCauchySeq (f : ℕ → ℚ) : Prop :=
   ∀ε > 0, ∃N, ∀m ≥ N, abs (f N - f m) < ε
 
-/- 并非每个序列都是柯西序列： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 theorem id_Not_CauchySeq :
     ¬ IsCauchySeq (fun n : ℕ ↦ (n : ℚ)) :=
@@ -333,9 +290,11 @@ theorem id_Not_CauchySeq :
     | intro i hi =>
       have hi_succi :=
         hi (i + 1) (by simp)
-      simp [←sub_sub] at hi_succi
+      simp at hi_succi
 
-/- 我们将一种柯西序列定义为子类型： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def CauchySeq : Type :=
   {f : ℕ → ℚ // IsCauchySeq f}
@@ -343,13 +302,9 @@ def CauchySeq : Type :=
 def seqOf (f : CauchySeq) : ℕ → ℚ :=
   Subtype.val f
 
-/- 柯西序列表示实数：
-
-* `a_n = 1 / n` 表示实数 `0`；
-* `1, 1.4, 1.41, …` 表示实数 `√2`；
-* `a_n = 0` 也表示实数 `0`。
-
-由于不同的柯西序列可以表示相同的实数，我们需要进行等价类的划分。形式上，当两个序列的差收敛于零时，它们表示相同的实数： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 namespace CauchySeq
 
@@ -397,7 +352,9 @@ theorem Setoid_iff (f g : CauchySeq) :
     ∀ε > 0, ∃N, ∀m ≥ N, abs (seqOf f m - seqOf g m) < ε :=
   by rfl
 
-/- 我们可以将诸如 `0` 和 `1` 这样的常量定义为常量序列。任何常量序列都是柯西序列： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def const (q : ℚ) : CauchySeq :=
   Subtype.mk (fun _ : ℕ ↦ q)
@@ -406,22 +363,86 @@ def const (q : ℚ) : CauchySeq :=
        intro ε hε
        aesop)
 
-/- 定义实数的加法需要稍多一些步骤。我们将柯西序列的加法定义为逐项相加： -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 instance Add : Add CauchySeq :=
   { add := fun f g : CauchySeq ↦
-      Subtype.mk (fun n : ℕ ↦ seqOf f n + seqOf g n) sorry }
+      Subtype.mk (fun n : ℕ ↦ seqOf f n + seqOf g n)
+        (by
+           intro ε hε
+           obtain ⟨N1, hN1⟩ :=
+             Subtype.property f (ε / 4) (by linarith)
+           obtain ⟨N2, hN2⟩ :=
+             Subtype.property g (ε / 4) (by linarith)
+           let N := N1 + N2
+           use N
+           intro m m_geq_N
+           have m_geq_N1 : m ≥ N1 :=
+             by simp[N] at m_geq_N; linarith
+           have m_geq_N2 : m ≥ N2 :=
+             by simp[N] at m_geq_N; linarith
 
-/- 在上文中，我们省略了两个柯西序列相加仍为柯西序列的证明。
+           have h_fN_fm : |seqOf f N - seqOf f m| < ε / 2 :=
+             by
+               have : |seqOf f N1 - seqOf f N| < ε / 4 :=
+                 hN1 N (by aesop)
+               have : |seqOf f N1 - seqOf f m| < ε / 4 :=
+                 hN1 m m_geq_N1
+               calc
+                 |seqOf f N - seqOf f m|
+                 = |(seqOf f N - seqOf f N1) + (seqOf f N1 - seqOf f m)| :=
+                   by aesop
+               _ ≤ |seqOf f N - seqOf f N1| + |seqOf f N1 - seqOf f m| :=
+                   by apply abs_add_le
+               _ = |seqOf f N1 - seqOf f N| + |seqOf f N1 - seqOf f m| :=
+                   by simp[abs_sub_comm]
+               _ < ε / 4  + ε / 4 :=
+                   by linarith
+               _ = ε / 2 :=
+                   by linarith
 
-接下来，我们需要证明这种加法与`≈`是兼容的。 -/
+           have h_gN_gm: |seqOf g N - seqOf g m| < ε / 2 :=
+             by
+               have : |seqOf g N2 - seqOf g N| < ε / 4 :=
+                 hN2 N (by aesop)
+               have : |seqOf g N2 - seqOf g m| < ε / 4 :=
+                 hN2 m m_geq_N2
+               calc
+                 |seqOf g N - seqOf g m|
+                 = |(seqOf g N - seqOf g N2) + (seqOf g N2 - seqOf g m)| :=
+                   by aesop
+               _ ≤ |seqOf g N - seqOf g N2| + |seqOf g N2 - seqOf g m| :=
+                   by apply abs_add_le
+               _ = |seqOf g N2 - seqOf g N| + |seqOf g N2 - seqOf g m| :=
+                   by simp [abs_sub_comm]
+               _ < ε / 4  + ε / 4 :=
+                   by linarith
+               _ = ε / 2 :=
+                   by linarith
+
+           calc
+             |seqOf f N + seqOf g N - (seqOf f m + seqOf g m)|
+             = |(seqOf f N - seqOf f m) + (seqOf g N - seqOf g m)| :=
+               by rw [add_sub_add_comm]
+           _ ≤ |(seqOf f N - seqOf f m)| + |(seqOf g N - seqOf g m)| :=
+               by apply abs_add_le
+           _ < ε / 2 + ε / 2 :=
+               by linarith
+           _ = ε :=
+               by linarith) }
+
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 theorem Setoid_add {f f' g g' : CauchySeq} (hf : f ≈ f')
       (hg : g ≈ g') :
     f + g ≈ f' + g' :=
   by
     intro ε₀ hε₀
-    simp [Setoid_iff]
+    simp
     cases hf (ε₀ / 2) (by linarith) with
     | intro Nf hNf =>
       cases hg (ε₀ / 2) (by linarith) with
@@ -445,7 +466,7 @@ theorem Setoid_add {f f' g g' : CauchySeq} (hf : f ≈ f')
               rw [arg_eq]
           _ ≤ abs (seqOf f m - seqOf f' m)
               + abs (seqOf g m - seqOf g' m) :=
-            by apply abs_add
+            by apply abs_add_le
           _ < ε₀ / 2 + ε₀ / 2 :=
             add_lt_add (hNf m (le_of_max_le_left hm))
               (hNg m (le_of_max_le_right hm))
@@ -454,7 +475,9 @@ theorem Setoid_add {f f' g g' : CauchySeq} (hf : f ≈ f')
 
 end CauchySeq
 
-/- 实数是通过商（quotient）的方式定义的。 -/
+/-
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 def Real : Type :=
   Quotient CauchySeq.Setoid
@@ -477,10 +500,10 @@ instance Add : Add Real :=
 end Real
 
 
-/- ### `ℝ` 的替代定义
+/-
+### Alternative Definitions of `ℝ`
 
-* **戴德金分割**：`r : ℝ` 本质上表示为 `{x : ℚ | x < r}`。
-
-* **二进制序列**：`ℕ → Bool` 可以表示区间 `[0, 1]`。这可以用于构建 `ℝ`。 -/
+译稿待补：请根据英文原文独立翻译本注释块。
+-/
 
 end LoVe
