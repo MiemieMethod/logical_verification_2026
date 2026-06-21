@@ -2,3 +2,4 @@
 lean/.lake
 book_zh/_out
 __pycache__
+lean-build*.log
